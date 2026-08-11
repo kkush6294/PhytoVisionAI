@@ -1,0 +1,837 @@
+split,class,filename,path
+test,Aloevera,4288.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4288.jpg
+test,Aloevera,4331.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4331.jpg
+test,Aloevera,4273.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4273.jpg
+test,Aloevera,4324.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4324.jpg
+test,Aloevera,863.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\863.jpg
+test,Aloevera,4267.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4267.jpg
+test,Aloevera,4360.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4360.jpg
+test,Aloevera,869.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\869.jpg
+test,Aloevera,4346.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4346.jpg
+test,Aloevera,4276.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4276.jpg
+test,Aloevera,4272.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4272.jpg
+test,Aloevera,4240.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4240.jpg
+test,Aloevera,346.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\346.jpg
+test,Aloevera,347.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\347.jpg
+test,Aloevera,4325.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4325.jpg
+test,Aloevera,859.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\859.jpg
+test,Aloevera,4239.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4239.jpg
+test,Aloevera,4356.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4356.jpg
+test,Aloevera,4243.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4243.jpg
+test,Aloevera,4252.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4252.jpg
+test,Aloevera,4274.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4274.jpg
+test,Aloevera,4279.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4279.jpg
+test,Aloevera,4287.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4287.jpg
+test,Aloevera,345.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\345.jpg
+test,Aloevera,4245.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\4245.jpg
+test,Aloevera,871.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Aloevera\871.jpg
+test,Amla,1372.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1372.jpg
+test,Amla,1412.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1412.jpg
+test,Amla,1330.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1330.jpg
+test,Amla,1307.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1307.jpg
+test,Amla,1361.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1361.jpg
+test,Amla,1378.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1378.jpg
+test,Amla,1392.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1392.jpg
+test,Amla,1328.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1328.jpg
+test,Amla,1304.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1304.jpg
+test,Amla,32.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\32.jpg
+test,Amla,1382.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1382.jpg
+test,Amla,1300.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1300.jpg
+test,Amla,549.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\549.jpg
+test,Amla,1341.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1341.jpg
+test,Amla,1395.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1395.jpg
+test,Amla,1339.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1339.jpg
+test,Amla,1350.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1350.jpg
+test,Amla,557.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\557.jpg
+test,Amla,1376.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1376.jpg
+test,Amla,1327.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1327.jpg
+test,Amla,36.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\36.jpg
+test,Amla,1345.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\1345.jpg
+test,Amla,35.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Amla\35.jpg
+test,Ashoka,572.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\572.jpg
+test,Ashoka,1450.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1450.jpg
+test,Ashoka,1523.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1523.jpg
+test,Ashoka,1480.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1480.jpg
+test,Ashoka,mmpd_3 (32).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (32).jpg
+test,Ashoka,mmpd_3 (71).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (71).jpg
+test,Ashoka,mmpd_3 (14).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (14).jpg
+test,Ashoka,1437.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1437.jpg
+test,Ashoka,1467.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1467.jpg
+test,Ashoka,1440.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1440.jpg
+test,Ashoka,50.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\50.jpg
+test,Ashoka,mmpd_3 (82).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (82).jpg
+test,Ashoka,1460.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1460.jpg
+test,Ashoka,562.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\562.jpg
+test,Ashoka,mmpd_3 (74).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (74).jpg
+test,Ashoka,48.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\48.jpg
+test,Ashoka,42.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\42.jpg
+test,Ashoka,mmpd_3 (11).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (11).jpg
+test,Ashoka,1432.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1432.jpg
+test,Ashoka,mmpd_3 (89).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (89).jpg
+test,Ashoka,1500.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1500.jpg
+test,Ashoka,mmpd_3 (5).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (5).jpg
+test,Ashoka,1435.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1435.jpg
+test,Ashoka,565.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\565.jpg
+test,Ashoka,mmpd_3 (47).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (47).jpg
+test,Ashoka,mmpd_3 (100).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (100).jpg
+test,Ashoka,1434.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1434.jpg
+test,Ashoka,1475.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1475.jpg
+test,Ashoka,1495.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1495.jpg
+test,Ashoka,1468.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1468.jpg
+test,Ashoka,1459.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\1459.jpg
+test,Ashoka,44.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\44.jpg
+test,Ashoka,mmpd_3 (42).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (42).jpg
+test,Ashoka,mmpd_3 (3).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (3).jpg
+test,Ashoka,569.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\569.jpg
+test,Ashoka,mmpd_3 (58).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (58).jpg
+test,Ashoka,mmpd_3 (46).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (46).jpg
+test,Ashoka,mmpd_3 (38).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashoka\mmpd_3 (38).jpg
+test,Ashwagandha,123.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\123.jpg
+test,Ashwagandha,121.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\121.jpg
+test,Ashwagandha,2167.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2167.jpg
+test,Ashwagandha,2174.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2174.jpg
+test,Ashwagandha,2253.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2253.jpg
+test,Ashwagandha,2177.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2177.jpg
+test,Ashwagandha,2188.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2188.jpg
+test,Ashwagandha,2235.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2235.jpg
+test,Ashwagandha,2209.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2209.jpg
+test,Ashwagandha,2172.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2172.jpg
+test,Ashwagandha,2234.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2234.jpg
+test,Ashwagandha,2221.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2221.jpg
+test,Ashwagandha,2170.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2170.jpg
+test,Ashwagandha,2192.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2192.jpg
+test,Ashwagandha,2276.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2276.jpg
+test,Ashwagandha,641.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\641.jpg
+test,Ashwagandha,2203.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2203.jpg
+test,Ashwagandha,648.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\648.jpg
+test,Ashwagandha,2267.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2267.jpg
+test,Ashwagandha,2274.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2274.jpg
+test,Ashwagandha,2231.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Ashwagandha\2231.jpg
+test,Betel,4109.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4109.jpg
+test,Betel,4149.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4149.jpg
+test,Betel,4181.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4181.jpg
+test,Betel,4105.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4105.jpg
+test,Betel,330.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\330.jpg
+test,Betel,4212.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4212.jpg
+test,Betel,4112.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4112.jpg
+test,Betel,4156.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4156.jpg
+test,Betel,4199.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4199.jpg
+test,Betel,4163.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4163.jpg
+test,Betel,851.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\851.jpg
+test,Betel,4178.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4178.jpg
+test,Betel,850.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\850.jpg
+test,Betel,4208.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4208.jpg
+test,Betel,4146.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4146.jpg
+test,Betel,4175.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4175.jpg
+test,Betel,4189.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4189.jpg
+test,Betel,4158.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4158.jpg
+test,Betel,338.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\338.jpg
+test,Betel,4138.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4138.jpg
+test,Betel,4210.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4210.jpg
+test,Betel,4126.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4126.jpg
+test,Betel,4201.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4201.jpg
+test,Betel,4113.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Betel\4113.jpg
+test,Brahmi,4830.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4830.jpg
+test,Brahmi,920.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\920.jpg
+test,Brahmi,4801.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4801.jpg
+test,Brahmi,4828.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4828.jpg
+test,Brahmi,4863.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4863.jpg
+test,Brahmi,4813.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4813.jpg
+test,Brahmi,4782.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4782.jpg
+test,Brahmi,4763.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4763.jpg
+test,Brahmi,4792.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4792.jpg
+test,Brahmi,4797.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4797.jpg
+test,Brahmi,922.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\922.jpg
+test,Brahmi,4802.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4802.jpg
+test,Brahmi,4849.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4849.jpg
+test,Brahmi,4823.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4823.jpg
+test,Brahmi,4817.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4817.jpg
+test,Brahmi,4841.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4841.jpg
+test,Brahmi,4821.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4821.jpg
+test,Brahmi,913.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\913.jpg
+test,Brahmi,919.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\919.jpg
+test,Brahmi,4854.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4854.jpg
+test,Brahmi,4827.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4827.jpg
+test,Brahmi,4811.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4811.jpg
+test,Brahmi,4795.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Brahmi\4795.jpg
+test,Castor,4546.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4546.jpg
+test,Castor,4588.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4588.jpg
+test,Castor,4607.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4607.jpg
+test,Castor,4595.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4595.jpg
+test,Castor,4519.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4519.jpg
+test,Castor,888.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\888.jpg
+test,Castor,4543.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4543.jpg
+test,Castor,370.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\370.jpg
+test,Castor,4533.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4533.jpg
+test,Castor,4498.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4498.jpg
+test,Castor,371.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\371.jpg
+test,Castor,4539.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4539.jpg
+test,Castor,4557.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4557.jpg
+test,Castor,4585.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4585.jpg
+test,Castor,375.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\375.jpg
+test,Castor,4495.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4495.jpg
+test,Castor,4587.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4587.jpg
+test,Castor,4601.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4601.jpg
+test,Castor,4613.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4613.jpg
+test,Castor,4603.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4603.jpg
+test,Castor,4544.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4544.jpg
+test,Castor,4578.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4578.jpg
+test,Castor,4552.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4552.jpg
+test,Castor,4594.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Castor\4594.jpg
+test,Curry_Leaf,3905.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3905.jpg
+test,Curry_Leaf,3862.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3862.jpg
+test,Curry_Leaf,mmpd_27 (2).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (2).jpg
+test,Curry_Leaf,309.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\309.jpg
+test,Curry_Leaf,825.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\825.jpg
+test,Curry_Leaf,3969.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3969.jpg
+test,Curry_Leaf,mmpd_27 (52).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (52).jpg
+test,Curry_Leaf,mmpd_27 (42).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (42).jpg
+test,Curry_Leaf,mmpd_27 (21).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (21).jpg
+test,Curry_Leaf,3926.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3926.jpg
+test,Curry_Leaf,3942.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3942.jpg
+test,Curry_Leaf,823.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\823.jpg
+test,Curry_Leaf,mmpd_27 (75).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (75).jpg
+test,Curry_Leaf,mmpd_27 (32).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (32).jpg
+test,Curry_Leaf,mmpd_27 (8).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (8).jpg
+test,Curry_Leaf,3929.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3929.jpg
+test,Curry_Leaf,mmpd_27 (74).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (74).jpg
+test,Curry_Leaf,3865.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3865.jpg
+test,Curry_Leaf,mmpd_27 (27).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (27).jpg
+test,Curry_Leaf,3946.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3946.jpg
+test,Curry_Leaf,mmpd_27 (37).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (37).jpg
+test,Curry_Leaf,mmpd_27 (20).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (20).jpg
+test,Curry_Leaf,3931.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3931.jpg
+test,Curry_Leaf,3912.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3912.jpg
+test,Curry_Leaf,mmpd_27 (58).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (58).jpg
+test,Curry_Leaf,3965.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3965.jpg
+test,Curry_Leaf,3864.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3864.jpg
+test,Curry_Leaf,3884.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3884.jpg
+test,Curry_Leaf,mmpd_27 (28).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (28).jpg
+test,Curry_Leaf,mmpd_27 (78).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (78).jpg
+test,Curry_Leaf,3949.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3949.jpg
+test,Curry_Leaf,3881.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3881.jpg
+test,Curry_Leaf,mmpd_27 (43).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (43).jpg
+test,Curry_Leaf,303.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\303.jpg
+test,Curry_Leaf,3961.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3961.jpg
+test,Curry_Leaf,mmpd_27 (88).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\mmpd_27 (88).jpg
+test,Curry_Leaf,821.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\821.jpg
+test,Curry_Leaf,3870.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Curry_Leaf\3870.jpg
+test,Doddapatre,5349.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5349.jpg
+test,Doddapatre,459.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\459.jpg
+test,Doddapatre,5443.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5443.jpg
+test,Doddapatre,978.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\978.jpg
+test,Doddapatre,5361.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5361.jpg
+test,Doddapatre,5377.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5377.jpg
+test,Doddapatre,5397.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5397.jpg
+test,Doddapatre,5366.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5366.jpg
+test,Doddapatre,977.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\977.jpg
+test,Doddapatre,5403.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5403.jpg
+test,Doddapatre,456.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\456.jpg
+test,Doddapatre,5370.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5370.jpg
+test,Doddapatre,5417.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5417.jpg
+test,Doddapatre,5392.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5392.jpg
+test,Doddapatre,5388.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5388.jpg
+test,Doddapatre,5386.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5386.jpg
+test,Doddapatre,5350.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5350.jpg
+test,Doddapatre,5385.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5385.jpg
+test,Doddapatre,5365.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5365.jpg
+test,Doddapatre,5395.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5395.jpg
+test,Doddapatre,5418.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\5418.jpg
+test,Doddapatre,468.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\468.jpg
+test,Doddapatre,461.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Doddapatre\461.jpg
+test,Gauva,2662.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2662.jpg
+test,Gauva,2702.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2702.jpg
+test,Gauva,2730.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2730.jpg
+test,Gauva,181.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\181.jpg
+test,Gauva,696.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\696.jpg
+test,Gauva,2766.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2766.jpg
+test,Gauva,2652.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2652.jpg
+test,Gauva,2737.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2737.jpg
+test,Gauva,2671.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2671.jpg
+test,Gauva,695.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\695.jpg
+test,Gauva,171.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\171.jpg
+test,Gauva,2724.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2724.jpg
+test,Gauva,2721.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2721.jpg
+test,Gauva,2714.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2714.jpg
+test,Gauva,2704.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2704.jpg
+test,Gauva,2681.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2681.jpg
+test,Gauva,177.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\177.jpg
+test,Gauva,2703.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2703.jpg
+test,Gauva,176.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\176.jpg
+test,Gauva,699.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\699.jpg
+test,Gauva,700.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\700.jpg
+test,Gauva,2744.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2744.jpg
+test,Gauva,2692.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Gauva\2692.jpg
+test,Geranium,6.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\6.jpg
+test,Geranium,1048.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1048.jpg
+test,Geranium,1102.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1102.jpg
+test,Geranium,532.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\532.jpg
+test,Geranium,1053.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1053.jpg
+test,Geranium,1108.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1108.jpg
+test,Geranium,1115.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1115.jpg
+test,Geranium,1151.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1151.jpg
+test,Geranium,1158.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1158.jpg
+test,Geranium,1056.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1056.jpg
+test,Geranium,1150.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1150.jpg
+test,Geranium,1077.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1077.jpg
+test,Geranium,1118.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1118.jpg
+test,Geranium,1120.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1120.jpg
+test,Geranium,1152.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1152.jpg
+test,Geranium,1156.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1156.jpg
+test,Geranium,3.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\3.jpg
+test,Geranium,1084.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1084.jpg
+test,Geranium,1058.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1058.jpg
+test,Geranium,1078.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1078.jpg
+test,Geranium,1083.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1083.jpg
+test,Geranium,1089.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1089.jpg
+test,Geranium,1103.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Geranium\1103.jpg
+test,Henna,mmpd_18 (59).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (59).jpg
+test,Henna,4660.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4660.jpg
+test,Henna,mmpd_18 (62).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (62).jpg
+test,Henna,4650.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4650.jpg
+test,Henna,4716.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4716.jpg
+test,Henna,4744.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4744.jpg
+test,Henna,4737.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4737.jpg
+test,Henna,4706.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4706.jpg
+test,Henna,mmpd_18 (53).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (53).jpg
+test,Henna,mmpd_18 (91).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (91).jpg
+test,Henna,mmpd_18 (50).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (50).jpg
+test,Henna,4727.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4727.jpg
+test,Henna,4721.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4721.jpg
+test,Henna,907.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\907.jpg
+test,Henna,mmpd_18 (96).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (96).jpg
+test,Henna,4703.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4703.jpg
+test,Henna,4658.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4658.jpg
+test,Henna,mmpd_18 (66).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (66).jpg
+test,Henna,4729.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4729.jpg
+test,Henna,mmpd_18 (89).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (89).jpg
+test,Henna,mmpd_18 (60).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (60).jpg
+test,Henna,4688.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4688.jpg
+test,Henna,4670.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4670.jpg
+test,Henna,4745.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4745.jpg
+test,Henna,4668.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4668.jpg
+test,Henna,4723.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4723.jpg
+test,Henna,mmpd_18 (54).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (54).jpg
+test,Henna,mmpd_18 (46).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (46).jpg
+test,Henna,mmpd_18 (47).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (47).jpg
+test,Henna,4681.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4681.jpg
+test,Henna,mmpd_18 (14).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (14).jpg
+test,Henna,4722.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4722.jpg
+test,Henna,4669.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4669.jpg
+test,Henna,mmpd_18 (4).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (4).jpg
+test,Henna,mmpd_18 (3).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\mmpd_18 (3).jpg
+test,Henna,4702.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4702.jpg
+test,Henna,4714.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\4714.jpg
+test,Henna,389.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Henna\389.jpg
+test,Hibiscus,mmpd_12 (2).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (2).jpg
+test,Hibiscus,1234.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1234.jpg
+test,Hibiscus,538.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\538.jpg
+test,Hibiscus,1215.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1215.jpg
+test,Hibiscus,1275.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1275.jpg
+test,Hibiscus,mmpd_12 (22).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (22).jpg
+test,Hibiscus,1227.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1227.jpg
+test,Hibiscus,mmpd_12 (39).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (39).jpg
+test,Hibiscus,1228.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1228.jpg
+test,Hibiscus,1191.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1191.jpg
+test,Hibiscus,18.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\18.jpg
+test,Hibiscus,mmpd_12 (70).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (70).jpg
+test,Hibiscus,1260.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1260.jpg
+test,Hibiscus,1293.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1293.jpg
+test,Hibiscus,1288.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1288.jpg
+test,Hibiscus,1208.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1208.jpg
+test,Hibiscus,mmpd_12 (3).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (3).jpg
+test,Hibiscus,1167.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1167.jpg
+test,Hibiscus,1190.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1190.jpg
+test,Hibiscus,1224.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1224.jpg
+test,Hibiscus,1232.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1232.jpg
+test,Hibiscus,mmpd_12 (10).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (10).jpg
+test,Hibiscus,1241.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1241.jpg
+test,Hibiscus,1262.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1262.jpg
+test,Hibiscus,1254.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1254.jpg
+test,Hibiscus,1296.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1296.jpg
+test,Hibiscus,1196.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1196.jpg
+test,Hibiscus,21.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\21.jpg
+test,Hibiscus,1180.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1180.jpg
+test,Hibiscus,mmpd_12 (36).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (36).jpg
+test,Hibiscus,1274.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1274.jpg
+test,Hibiscus,mmpd_12 (31).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (31).jpg
+test,Hibiscus,mmpd_12 (30).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (30).jpg
+test,Hibiscus,mmpd_12 (68).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (68).jpg
+test,Hibiscus,1239.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1239.jpg
+test,Hibiscus,1177.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1177.jpg
+test,Hibiscus,mmpd_12 (37).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (37).jpg
+test,Hibiscus,mmpd_12 (27).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (27).jpg
+test,Hibiscus,mmpd_12 (29).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\mmpd_12 (29).jpg
+test,Hibiscus,1281.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1281.jpg
+test,Hibiscus,1195.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Hibiscus\1195.jpg
+test,Honge,3155.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3155.jpg
+test,Honge,3193.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3193.jpg
+test,Honge,3234.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3234.jpg
+test,Honge,3156.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3156.jpg
+test,Honge,3247.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3247.jpg
+test,Honge,3153.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3153.jpg
+test,Honge,3231.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3231.jpg
+test,Honge,3236.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3236.jpg
+test,Honge,3200.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3200.jpg
+test,Honge,3150.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3150.jpg
+test,Honge,231.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\231.jpg
+test,Honge,233.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\233.jpg
+test,Honge,232.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\232.jpg
+test,Honge,3243.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3243.jpg
+test,Honge,3217.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3217.jpg
+test,Honge,3245.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3245.jpg
+test,Honge,3165.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3165.jpg
+test,Honge,3151.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3151.jpg
+test,Honge,3208.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3208.jpg
+test,Honge,751.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\751.jpg
+test,Honge,3201.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3201.jpg
+test,Honge,3210.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3210.jpg
+test,Honge,3215.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Honge\3215.jpg
+test,Insulin,1015.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\1015.jpg
+test,Insulin,499.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\499.jpg
+test,Insulin,5779.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5779.jpg
+test,Insulin,5768.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5768.jpg
+test,Insulin,5816.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5816.jpg
+test,Insulin,5740.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5740.jpg
+test,Insulin,5772.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5772.jpg
+test,Insulin,5722.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5722.jpg
+test,Insulin,5787.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5787.jpg
+test,Insulin,507.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\507.jpg
+test,Insulin,495.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\495.jpg
+test,Insulin,5739.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5739.jpg
+test,Insulin,5737.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5737.jpg
+test,Insulin,1027.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\1027.jpg
+test,Insulin,5742.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5742.jpg
+test,Insulin,5741.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5741.jpg
+test,Insulin,5707.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5707.jpg
+test,Insulin,5715.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5715.jpg
+test,Insulin,5824.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5824.jpg
+test,Insulin,5749.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5749.jpg
+test,Insulin,5823.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Insulin\5823.jpg
+test,Jasmine,3468.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3468.jpg
+test,Jasmine,3488.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3488.jpg
+test,Jasmine,3438.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3438.jpg
+test,Jasmine,3397.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3397.jpg
+test,Jasmine,3393.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3393.jpg
+test,Jasmine,776.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\776.jpg
+test,Jasmine,3501.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3501.jpg
+test,Jasmine,3406.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3406.jpg
+test,Jasmine,3484.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3484.jpg
+test,Jasmine,778.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\778.jpg
+test,Jasmine,3370.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3370.jpg
+test,Jasmine,3383.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3383.jpg
+test,Jasmine,3499.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3499.jpg
+test,Jasmine,3374.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3374.jpg
+test,Jasmine,3447.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3447.jpg
+test,Jasmine,3490.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3490.jpg
+test,Jasmine,3469.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3469.jpg
+test,Jasmine,3489.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3489.jpg
+test,Jasmine,3375.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3375.jpg
+test,Jasmine,3507.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3507.jpg
+test,Jasmine,768.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\768.jpg
+test,Jasmine,3418.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3418.jpg
+test,Jasmine,3410.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3410.jpg
+test,Jasmine,3525.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3525.jpg
+test,Jasmine,3492.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3492.jpg
+test,Jasmine,3475.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3475.jpg
+test,Jasmine,3495.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3495.jpg
+test,Jasmine,773.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\773.jpg
+test,Jasmine,3461.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Jasmine\3461.jpg
+test,Lemon,mmpd_23 (78).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (78).jpg
+test,Lemon,5147.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5147.jpg
+test,Lemon,433.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\433.jpg
+test,Lemon,5170.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5170.jpg
+test,Lemon,5178.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5178.jpg
+test,Lemon,5146.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5146.jpg
+test,Lemon,5215.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5215.jpg
+test,Lemon,5148.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5148.jpg
+test,Lemon,960.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\960.jpg
+test,Lemon,mmpd_23 (31).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (31).jpg
+test,Lemon,mmpd_23 (89).png,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (89).png
+test,Lemon,mmpd_23 (12).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (12).jpg
+test,Lemon,mmpd_23 (52).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (52).jpg
+test,Lemon,mmpd_23 (62).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (62).jpg
+test,Lemon,mmpd_23 (87).png,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (87).png
+test,Lemon,5111.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5111.jpg
+test,Lemon,mmpd_23 (79).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (79).jpg
+test,Lemon,440.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\440.jpg
+test,Lemon,mmpd_23 (82).png,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (82).png
+test,Lemon,mmpd_23 (16).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (16).jpg
+test,Lemon,mmpd_23 (32).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (32).jpg
+test,Lemon,5189.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5189.jpg
+test,Lemon,5161.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5161.jpg
+test,Lemon,5106.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5106.jpg
+test,Lemon,5141.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5141.jpg
+test,Lemon,mmpd_23 (69).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (69).jpg
+test,Lemon,mmpd_23 (44).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (44).jpg
+test,Lemon,954.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\954.jpg
+test,Lemon,5116.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5116.jpg
+test,Lemon,5187.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5187.jpg
+test,Lemon,mmpd_23 (72).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (72).jpg
+test,Lemon,5208.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5208.jpg
+test,Lemon,mmpd_23 (90).png,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (90).png
+test,Lemon,5113.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5113.jpg
+test,Lemon,mmpd_23 (26).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\mmpd_23 (26).jpg
+test,Lemon,5177.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5177.jpg
+test,Lemon,5145.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5145.jpg
+test,Lemon,5158.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon\5158.jpg
+test,Lemon_grass,1000.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\1000.jpg
+test,Lemon_grass,478.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\478.jpg
+test,Lemon_grass,480.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\480.jpg
+test,Lemon_grass,5498.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5498.jpg
+test,Lemon_grass,5491.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5491.jpg
+test,Lemon_grass,5501.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5501.jpg
+test,Lemon_grass,5547.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5547.jpg
+test,Lemon_grass,5470.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5470.jpg
+test,Lemon_grass,5533.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5533.jpg
+test,Lemon_grass,5553.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5553.jpg
+test,Lemon_grass,5544.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5544.jpg
+test,Lemon_grass,997.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\997.jpg
+test,Lemon_grass,5490.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5490.jpg
+test,Lemon_grass,5520.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5520.jpg
+test,Lemon_grass,996.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\996.jpg
+test,Lemon_grass,5469.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5469.jpg
+test,Lemon_grass,5515.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5515.jpg
+test,Lemon_grass,5527.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5527.jpg
+test,Lemon_grass,5472.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5472.jpg
+test,Lemon_grass,5550.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5550.jpg
+test,Lemon_grass,5499.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5499.jpg
+test,Lemon_grass,5566.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Lemon_grass\5566.jpg
+test,Mango,5099.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5099.jpg
+test,Mango,941.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\941.jpg
+test,Mango,947.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\947.jpg
+test,Mango,5096.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5096.jpg
+test,Mango,943.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\943.jpg
+test,Mango,428.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\428.jpg
+test,Mango,5015.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5015.jpg
+test,Mango,5063.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5063.jpg
+test,Mango,5036.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5036.jpg
+test,Mango,5000.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5000.jpg
+test,Mango,4994.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\4994.jpg
+test,Mango,5065.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5065.jpg
+test,Mango,426.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\426.jpg
+test,Mango,5080.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5080.jpg
+test,Mango,5102.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5102.jpg
+test,Mango,940.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\940.jpg
+test,Mango,5075.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5075.jpg
+test,Mango,5095.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5095.jpg
+test,Mango,5087.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5087.jpg
+test,Mango,4991.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\4991.jpg
+test,Mango,5069.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5069.jpg
+test,Mango,5081.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5081.jpg
+test,Mango,5012.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mango\5012.jpg
+test,Mint,836.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\836.jpg
+test,Mint,mmpd_20 (90).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (90).jpg
+test,Mint,mmpd_20 (59).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (59).jpg
+test,Mint,4014.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4014.jpg
+test,Mint,3999.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\3999.jpg
+test,Mint,mmpd_20 (88).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (88).jpg
+test,Mint,315.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\315.jpg
+test,Mint,4056.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4056.jpg
+test,Mint,mmpd_20 (70).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (70).jpg
+test,Mint,3978.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\3978.jpg
+test,Mint,mmpd_20 (13).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (13).jpg
+test,Mint,4080.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4080.jpg
+test,Mint,mmpd_20 (65).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (65).jpg
+test,Mint,4045.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4045.jpg
+test,Mint,mmpd_20 (89).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (89).jpg
+test,Mint,mmpd_20 (92).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (92).jpg
+test,Mint,4038.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4038.jpg
+test,Mint,4090.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4090.jpg
+test,Mint,4007.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4007.jpg
+test,Mint,835.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\835.jpg
+test,Mint,4009.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4009.jpg
+test,Mint,mmpd_20 (2).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (2).jpg
+test,Mint,mmpd_20 (83).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (83).jpg
+test,Mint,mmpd_20 (98).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (98).jpg
+test,Mint,4102.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4102.jpg
+test,Mint,mmpd_20 (17).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (17).jpg
+test,Mint,4089.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4089.jpg
+test,Mint,4012.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4012.jpg
+test,Mint,4073.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4073.jpg
+test,Mint,4063.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4063.jpg
+test,Mint,840.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\840.jpg
+test,Mint,4000.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4000.jpg
+test,Mint,845.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\845.jpg
+test,Mint,4072.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4072.jpg
+test,Mint,4064.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4064.jpg
+test,Mint,4095.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4095.jpg
+test,Mint,4001.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4001.jpg
+test,Mint,mmpd_20 (30).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\mmpd_20 (30).jpg
+test,Mint,4060.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Mint\4060.jpg
+test,Nagadali,2305.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2305.jpg
+test,Nagadali,2347.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2347.jpg
+test,Nagadali,2362.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2362.jpg
+test,Nagadali,2401.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2401.jpg
+test,Nagadali,2345.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2345.jpg
+test,Nagadali,2406.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2406.jpg
+test,Nagadali,2407.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2407.jpg
+test,Nagadali,2290.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2290.jpg
+test,Nagadali,2339.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2339.jpg
+test,Nagadali,2332.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2332.jpg
+test,Nagadali,657.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\657.jpg
+test,Nagadali,2350.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2350.jpg
+test,Nagadali,2383.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2383.jpg
+test,Nagadali,2359.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2359.jpg
+test,Nagadali,2368.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2368.jpg
+test,Nagadali,2300.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2300.jpg
+test,Nagadali,2304.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2304.jpg
+test,Nagadali,2294.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2294.jpg
+test,Nagadali,2291.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2291.jpg
+test,Nagadali,2324.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2324.jpg
+test,Nagadali,2387.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2387.jpg
+test,Nagadali,2378.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2378.jpg
+test,Nagadali,2307.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Nagadali\2307.jpg
+test,Neem,mmpd_11 (41).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (41).jpg
+test,Neem,mmpd_11 (62).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (62).jpg
+test,Neem,87.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\87.jpg
+test,Neem,1789.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1789.jpg
+test,Neem,1825.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1825.jpg
+test,Neem,1818.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1818.jpg
+test,Neem,1878.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1878.jpg
+test,Neem,1873.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1873.jpg
+test,Neem,599.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\599.jpg
+test,Neem,mmpd_11 (78).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (78).jpg
+test,Neem,1842.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1842.jpg
+test,Neem,1783.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1783.jpg
+test,Neem,mmpd_11 (76).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (76).jpg
+test,Neem,mmpd_11 (93).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (93).jpg
+test,Neem,1791.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1791.jpg
+test,Neem,1780.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1780.jpg
+test,Neem,mmpd_11 (97).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (97).jpg
+test,Neem,mmpd_11 (48).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (48).jpg
+test,Neem,1838.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1838.jpg
+test,Neem,1809.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1809.jpg
+test,Neem,mmpd_11 (44).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (44).jpg
+test,Neem,mmpd_11 (32).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (32).jpg
+test,Neem,mmpd_11 (1).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (1).jpg
+test,Neem,mmpd_11 (83).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (83).jpg
+test,Neem,1806.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1806.jpg
+test,Neem,mmpd_11 (55).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (55).jpg
+test,Neem,1845.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1845.jpg
+test,Neem,1820.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1820.jpg
+test,Neem,1874.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1874.jpg
+test,Neem,1822.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1822.jpg
+test,Neem,91.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\91.jpg
+test,Neem,mmpd_11 (75).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (75).jpg
+test,Neem,mmpd_11 (99).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\mmpd_11 (99).jpg
+test,Neem,1794.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1794.jpg
+test,Neem,1872.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1872.jpg
+test,Neem,609.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\609.jpg
+test,Neem,1896.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\1896.jpg
+test,Neem,606.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Neem\606.jpg
+test,Pappaya,108.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\108.jpg
+test,Pappaya,2057.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2057.jpg
+test,Pappaya,2105.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2105.jpg
+test,Pappaya,2069.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2069.jpg
+test,Pappaya,111.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\111.jpg
+test,Pappaya,2075.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2075.jpg
+test,Pappaya,2098.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2098.jpg
+test,Pappaya,2128.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2128.jpg
+test,Pappaya,2111.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2111.jpg
+test,Pappaya,2157.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2157.jpg
+test,Pappaya,2117.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2117.jpg
+test,Pappaya,2153.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2153.jpg
+test,Pappaya,2151.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2151.jpg
+test,Pappaya,2120.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2120.jpg
+test,Pappaya,2126.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2126.jpg
+test,Pappaya,109.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\109.jpg
+test,Pappaya,2092.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2092.jpg
+test,Pappaya,626.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\626.jpg
+test,Pappaya,2080.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2080.jpg
+test,Pappaya,2136.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2136.jpg
+test,Pappaya,2064.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2064.jpg
+test,Pappaya,2127.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2127.jpg
+test,Pappaya,2100.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pappaya\2100.jpg
+test,Pepper,5307.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5307.jpg
+test,Pepper,5270.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5270.jpg
+test,Pepper,5262.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5262.jpg
+test,Pepper,449.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\449.jpg
+test,Pepper,443.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\443.jpg
+test,Pepper,5306.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5306.jpg
+test,Pepper,5240.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5240.jpg
+test,Pepper,5279.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5279.jpg
+test,Pepper,5303.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5303.jpg
+test,Pepper,5230.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5230.jpg
+test,Pepper,5277.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5277.jpg
+test,Pepper,5267.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5267.jpg
+test,Pepper,5281.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5281.jpg
+test,Pepper,445.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\445.jpg
+test,Pepper,5329.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5329.jpg
+test,Pepper,5299.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5299.jpg
+test,Pepper,5235.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5235.jpg
+test,Pepper,5255.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5255.jpg
+test,Pepper,5295.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5295.jpg
+test,Pepper,5302.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5302.jpg
+test,Pepper,5274.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5274.jpg
+test,Pepper,5232.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pepper\5232.jpg
+test,Pomegranate,3019.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3019.jpg
+test,Pomegranate,3098.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3098.jpg
+test,Pomegranate,3022.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3022.jpg
+test,Pomegranate,3016.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3016.jpg
+test,Pomegranate,3123.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3123.jpg
+test,Pomegranate,735.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\735.jpg
+test,Pomegranate,3039.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3039.jpg
+test,Pomegranate,3110.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3110.jpg
+test,Pomegranate,3025.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3025.jpg
+test,Pomegranate,3032.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3032.jpg
+test,Pomegranate,3126.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3126.jpg
+test,Pomegranate,217.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\217.jpg
+test,Pomegranate,3096.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3096.jpg
+test,Pomegranate,3015.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3015.jpg
+test,Pomegranate,3071.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3071.jpg
+test,Pomegranate,737.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\737.jpg
+test,Pomegranate,3055.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3055.jpg
+test,Pomegranate,3118.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3118.jpg
+test,Pomegranate,736.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\736.jpg
+test,Pomegranate,3102.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3102.jpg
+test,Pomegranate,732.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\732.jpg
+test,Pomegranate,3094.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Pomegranate\3094.jpg
+test,Raktachandini,5899.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5899.jpg
+test,Raktachandini,5873.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5873.jpg
+test,Raktachandini,5909.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5909.jpg
+test,Raktachandini,515.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\515.jpg
+test,Raktachandini,1040.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\1040.jpg
+test,Raktachandini,5898.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5898.jpg
+test,Raktachandini,5942.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5942.jpg
+test,Raktachandini,5872.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5872.jpg
+test,Raktachandini,518.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\518.jpg
+test,Raktachandini,5866.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5866.jpg
+test,Raktachandini,5841.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5841.jpg
+test,Raktachandini,5888.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5888.jpg
+test,Raktachandini,5889.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5889.jpg
+test,Raktachandini,5921.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5921.jpg
+test,Raktachandini,5845.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5845.jpg
+test,Raktachandini,5914.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5914.jpg
+test,Raktachandini,5925.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5925.jpg
+test,Raktachandini,5895.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5895.jpg
+test,Raktachandini,5861.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5861.jpg
+test,Raktachandini,1035.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\1035.jpg
+test,Raktachandini,5831.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5831.jpg
+test,Raktachandini,5901.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5901.jpg
+test,Raktachandini,5929.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Raktachandini\5929.jpg
+test,Rose,1941.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1941.jpg
+test,Rose,1975.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1975.jpg
+test,Rose,1931.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1931.jpg
+test,Rose,2012.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\2012.jpg
+test,Rose,2040.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\2040.jpg
+test,Rose,1999.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1999.jpg
+test,Rose,1982.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1982.jpg
+test,Rose,1946.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1946.jpg
+test,Rose,1930.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1930.jpg
+test,Rose,1933.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1933.jpg
+test,Rose,98.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\98.jpg
+test,Rose,2000.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\2000.jpg
+test,Rose,1971.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1971.jpg
+test,Rose,2030.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\2030.jpg
+test,Rose,1992.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1992.jpg
+test,Rose,1925.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1925.jpg
+test,Rose,2023.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\2023.jpg
+test,Rose,1944.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1944.jpg
+test,Rose,99.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\99.jpg
+test,Rose,1913.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1913.jpg
+test,Rose,623.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\623.jpg
+test,Rose,613.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\613.jpg
+test,Rose,614.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\614.jpg
+test,Rose,94.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\94.jpg
+test,Rose,1908.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\1908.jpg
+test,Rose,2015.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Rose\2015.jpg
+test,Sapota,1614.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1614.jpg
+test,Sapota,1550.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1550.jpg
+test,Sapota,1584.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1584.jpg
+test,Sapota,mmpd_9 (20)_flip_vertical.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (20)_flip_vertical.jpg
+test,Sapota,mmpd_9 (5).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (5).jpg
+test,Sapota,1552.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1552.jpg
+test,Sapota,1658.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1658.jpg
+test,Sapota,1607.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1607.jpg
+test,Sapota,1615.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1615.jpg
+test,Sapota,1656.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1656.jpg
+test,Sapota,1599.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1599.jpg
+test,Sapota,mmpd_9 (12)_rotate_45_512x512.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (12)_rotate_45_512x512.jpg
+test,Sapota,1605.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1605.jpg
+test,Sapota,1565.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1565.jpg
+test,Sapota,mmpd_9 (5)_flip_vertical.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (5)_flip_vertical.jpg
+test,Sapota,mmpd_9 (16)_rotate_neg45_512x512.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (16)_rotate_neg45_512x512.jpg
+test,Sapota,1559.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1559.jpg
+test,Sapota,578.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\578.jpg
+test,Sapota,mmpd_9 (19)_rotate_45_512x512.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (19)_rotate_45_512x512.jpg
+test,Sapota,1563.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1563.jpg
+test,Sapota,1578.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1578.jpg
+test,Sapota,574.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\574.jpg
+test,Sapota,mmpd_9 (8).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (8).jpg
+test,Sapota,mmpd_9 (1).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (1).jpg
+test,Sapota,mmpd_9 (3)_flip_vertical.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (3)_flip_vertical.jpg
+test,Sapota,1568.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1568.jpg
+test,Sapota,mmpd_9 (7)_flip_horizontal.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (7)_flip_horizontal.jpg
+test,Sapota,1562.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1562.jpg
+test,Sapota,mmpd_9 (14).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (14).jpg
+test,Sapota,1543.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1543.jpg
+test,Sapota,1540.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1540.jpg
+test,Sapota,1600.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1600.jpg
+test,Sapota,1624.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1624.jpg
+test,Sapota,56.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\56.jpg
+test,Sapota,mmpd_9 (8)_flip_vertical.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (8)_flip_vertical.jpg
+test,Sapota,mmpd_9 (15).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (15).jpg
+test,Sapota,1593.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\1593.jpg
+test,Sapota,mmpd_9 (7)_flip_vertical.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Sapota\mmpd_9 (7)_flip_vertical.jpg
+test,Tulasi,3604.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3604.jpg
+test,Tulasi,mmpd_1 (35).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (35).jpg
+test,Tulasi,3590.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3590.jpg
+test,Tulasi,mmpd_1 (75).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (75).jpg
+test,Tulasi,mmpd_1 (20).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (20).jpg
+test,Tulasi,3569.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3569.jpg
+test,Tulasi,3567.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3567.jpg
+test,Tulasi,3571.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3571.jpg
+test,Tulasi,mmpd_1 (22).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (22).jpg
+test,Tulasi,789.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\789.jpg
+test,Tulasi,mmpd_1 (47).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (47).jpg
+test,Tulasi,mmpd_1 (41).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (41).jpg
+test,Tulasi,3596.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3596.jpg
+test,Tulasi,mmpd_1 (76).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (76).jpg
+test,Tulasi,788.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\788.jpg
+test,Tulasi,mmpd_1 (84).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (84).jpg
+test,Tulasi,mmpd_1 (71).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (71).jpg
+test,Tulasi,3592.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3592.jpg
+test,Tulasi,3647.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3647.jpg
+test,Tulasi,mmpd_1 (5).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (5).jpg
+test,Tulasi,mmpd_1 (81).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (81).jpg
+test,Tulasi,mmpd_1 (39).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (39).jpg
+test,Tulasi,mmpd_1 (16).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (16).jpg
+test,Tulasi,3621.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3621.jpg
+test,Tulasi,3551.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3551.jpg
+test,Tulasi,3550.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3550.jpg
+test,Tulasi,mmpd_1 (63).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (63).jpg
+test,Tulasi,3631.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3631.jpg
+test,Tulasi,3591.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3591.jpg
+test,Tulasi,3603.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3603.jpg
+test,Tulasi,3617.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3617.jpg
+test,Tulasi,3586.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3586.jpg
+test,Tulasi,3579.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3579.jpg
+test,Tulasi,mmpd_1 (53).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (53).jpg
+test,Tulasi,mmpd_1 (37).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (37).jpg
+test,Tulasi,mmpd_1 (89).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (89).jpg
+test,Tulasi,mmpd_1 (17).jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\mmpd_1 (17).jpg
+test,Tulasi,3623.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Tulasi\3623.jpg
+test,Wood_sorel,4881.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4881.jpg
+test,Wood_sorel,4921.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4921.jpg
+test,Wood_sorel,4873.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4873.jpg
+test,Wood_sorel,4913.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4913.jpg
+test,Wood_sorel,411.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\411.jpg
+test,Wood_sorel,4954.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4954.jpg
+test,Wood_sorel,4950.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4950.jpg
+test,Wood_sorel,4965.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4965.jpg
+test,Wood_sorel,4925.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4925.jpg
+test,Wood_sorel,4875.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4875.jpg
+test,Wood_sorel,4930.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4930.jpg
+test,Wood_sorel,4927.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4927.jpg
+test,Wood_sorel,4880.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4880.jpg
+test,Wood_sorel,4981.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4981.jpg
+test,Wood_sorel,4944.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4944.jpg
+test,Wood_sorel,4871.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4871.jpg
+test,Wood_sorel,415.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\415.jpg
+test,Wood_sorel,4869.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4869.jpg
+test,Wood_sorel,405.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\405.jpg
+test,Wood_sorel,927.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\927.jpg
+test,Wood_sorel,4883.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4883.jpg
+test,Wood_sorel,4952.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\4952.jpg
+test,Wood_sorel,408.jpg,C:\Users\Kushal A\OneDrive\Desktop\MAINPROJECT\PhytoVisionAI_Research\dataset\final_split\test\Wood_sorel\408.jpg

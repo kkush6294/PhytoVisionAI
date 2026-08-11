@@ -1,0 +1,31 @@
+{
+  "model": "efficientnetb0",
+  "architecture": "EfficientNetB0 (ImageNet, transfer learning)",
+  "input_size": 224,
+  "batch_size": 32,
+  "split_seed": 42,
+  "split_ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "epochs_stage1": 25,
+  "epochs_stage2": 20,
+  "lr_stage1": 0.0001,
+  "lr_stage2": 1e-05,
+  "early_stopping_patience": 5,
+  "reduce_lr_patience": 3,
+  "class_weight": "inverse frequency",
+  "preprocessing": "efficientnet.preprocess_input",
+  "augmentation": "flip_h, rotation0.2, zoom0.15, translate0.1, brightness0.15, contrast0.1",
+  "num_classes": 30,
+  "total_params": 4385217,
+  "trainable_params": 335646,
+  "frozen_layers_stage1": 239,
+  "fine_tuned_base_layers": 40,
+  "best_model_path": "C:\\Users\\Kushal A\\OneDrive\\Desktop\\MAINPROJECT\\PhytoVisionAI_Research\\training\\models\\efficientnetb0\\efficientnetb0_best.keras",
+  "training_time_s": 3207.82,
+  "training_date": "2026-08-09T10:48:44.998360",
+  "val_accuracy": 0.853875458240509,
+  "val_loss": 0.5058870315551758
+}

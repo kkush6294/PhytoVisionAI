@@ -1,0 +1,3 @@
+model,macro_recall
+mobilenetv2,0.9243
+efficientnetb0,0.8443

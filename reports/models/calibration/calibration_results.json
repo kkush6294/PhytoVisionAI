@@ -1,0 +1,28 @@
+{
+  "mobilenetv2": {
+    "temperature": 0.8126,
+    "n_val": 787,
+    "ece_val": 0.017,
+    "ece_test": 0.0183,
+    "reject_threshold": 0.5982,
+    "reject_percentile": 5.0,
+    "test_reject_rate": 0.0598,
+    "test_known_accuracy": 0.944,
+    "n_test": 836,
+    "reliability_csv": "reports\\models\\calibration\\reliability_mobilenetv2.csv",
+    "confidence_csv": "reports\\models\\calibration\\confidence_mobilenetv2.csv"
+  },
+  "efficientnetb0": {
+    "temperature": 0.756,
+    "n_val": 787,
+    "ece_val": 0.0143,
+    "ece_test": 0.0275,
+    "reject_threshold": 0.5156,
+    "reject_percentile": 5.0,
+    "test_reject_rate": 0.1041,
+    "test_known_accuracy": 0.8999,
+    "n_test": 836,
+    "reliability_csv": "reports\\models\\calibration\\reliability_efficientnetb0.csv",
+    "confidence_csv": "reports\\models\\calibration\\confidence_efficientnetb0.csv"
+  }
+}

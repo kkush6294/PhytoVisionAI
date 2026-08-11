@@ -1,0 +1,53 @@
+{
+  "selected_model": "mobilenetv2",
+  "scores": {
+    "mobilenetv2": 0.9,
+    "efficientnetb0": 0.25
+  },
+  "criterion_scores": {
+    "mobilenetv2": {
+      "top1_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "top5_accuracy": 1.0,
+      "ece": 1.0,
+      "inference_per_image_ms": 1.0,
+      "model_size_mb": 0.0
+    },
+    "efficientnetb0": {
+      "top1_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "top5_accuracy": 0.0,
+      "ece": 1.0,
+      "inference_per_image_ms": 0.0,
+      "model_size_mb": 1.0
+    }
+  },
+  "raw_values": {
+    "mobilenetv2": {
+      "top1_accuracy": 0.9199,
+      "macro_f1": 0.9212,
+      "top5_accuracy": 0.9892,
+      "ece": 1.0,
+      "inference_per_image_ms": 11.4539,
+      "model_size_mb": 25.88
+    },
+    "efficientnetb0": {
+      "top1_accuracy": 0.8349,
+      "macro_f1": 0.8346,
+      "top5_accuracy": 0.9725,
+      "ece": 1.0,
+      "inference_per_image_ms": 14.4491,
+      "model_size_mb": 20.1
+    }
+  },
+  "weights": {
+    "top1_accuracy": 0.3,
+    "macro_f1": 0.25,
+    "top5_accuracy": 0.1,
+    "ece": 0.15,
+    "inference_per_image_ms": 0.1,
+    "model_size_mb": 0.1
+  },
+  "selection_method": "weighted_objective_rubric",
+  "note": "Selection is based on test-set performance metrics, calibration, inference speed, and model size. The test set was not used for training, model selection during training, temperature fitting, or rejection-threshold fitting. Calibration and rejection parameters were fitted using validation data."
+}
