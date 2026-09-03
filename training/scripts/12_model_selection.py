@@ -51,16 +51,12 @@ def load_comparison():
 
 
 def load_calibration(model):
-    path = os.path.join(
-        REPORT_DIR,
-        f"calibration_{model}.json"
-    )
-
+    path = os.path.join(REPORT_DIR, "calibration", "calibration_results.json")
     if not os.path.exists(path):
         return None
-
     with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        res = json.load(f)
+        return res.get(model)
 
 
 def minmax_normalize(values, lower_is_better=False):

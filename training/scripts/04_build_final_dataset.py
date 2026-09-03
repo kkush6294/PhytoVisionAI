@@ -63,40 +63,50 @@ CREATED = datetime.datetime.now().isoformat(timespec="seconds")
 
 
 # ---------------------------------------------------------------------------
-# Scientific identity + MMPD mapping for the SELECTED 30 classes
+# Scientific identity + MMPD mapping for ALL 40 valid classes
 # ---------------------------------------------------------------------------
 # canonical_class -> (scientific_name, common_name, mmpd_class_or_None)
 FINAL_CLASSES = OrderedDict([
-    ("Aloevera",      ("Aloe vera",              "Aloe Vera",       None)),
-    ("Amla",          ("Phyllanthus emblica",    "Amla",            None)),
-    ("Ashoka",        ("Saraca asoca",           "Ashoka",          "3.Bashok")),
-    ("Ashwagandha",   ("Withania somnifera",     "Ashwagandha",     None)),
-    ("Betel",         ("Piper betle",            "Betel",           None)),
-    ("Brahmi",        ("Bacopa monnieri",        "Brahmi",          None)),
-    ("Castor",        ("Ricinus communis",       "Castor",          None)),
-    ("Curry_Leaf",    ("Murraya koenigii",       "Curry Leaf",      "27.Karipata")),
-    ("Doddapatre",    ("Coleus amboinicus",      "Doddapatre",      None)),
-    ("Gauva",         ("Psidium guajava",        "Guava",           None)),
-    ("Geranium",      ("Pelargonium graveolens", "Geranium",        None)),
-    ("Henna",         ("Lawsonia inermis",       "Henna",           "18.Mehedi")),
-    ("Hibiscus",      ("Hibiscus rosa-sinensis", "Hibiscus",        "12.Joba")),
-    ("Honge",         ("Pongamia pinnata",       "Honge",           None)),
-    ("Insulin",       ("Costus igneus",          "Insulin Plant",   None)),
-    ("Jasmine",       ("Jasminum auriculatum",   "Jasmine",         None)),
-    ("Lemon",         ("Citrus limon",           "Lemon",           "23.Lemon")),
-    ("Lemon_grass",   ("Cymbopogon citratus",    "Lemon Grass",     None)),
-    ("Mango",         ("Mangifera indica",       "Mango",           None)),
-    ("Mint",          ("Mentha arvensis",        "Mint",            "20.Pudina")),
-    ("Nagadali",      ("Ruta graveolens",        "Nagadali",        None)),
-    ("Neem",          ("Azadirachta indica",     "Neem",            "11.Neem")),
-    ("Pappaya",       ("Carica papaya",          "Papaya",          None)),
-    ("Pepper",        ("Piper nigrum",           "Pepper",          None)),
-    ("Pomegranate",   ("Punica granatum",        "Pomegranate",     None)),
-    ("Raktachandini", ("Caesalpinia sappan",     "Raktachandini",   None)),
-    ("Rose",          ("Rosa indica",            "Rose",            None)),
-    ("Sapota",        ("Manilkara zapota",       "Sapota",          "9.Sofeda")),
-    ("Tulasi",        ("Ocimum tenuiflorum",     "Tulsi",           "1.Tulshi")),
-    ("Wood_sorel",    ("Oxalis corniculata",     "Wood Sorrel",     None)),
+    ("Aloevera",      ("Aloe vera",              "Aloe Vera",             None)),
+    ("Amla",          ("Phyllanthus emblica",    "Amla",                  None)),
+    ("Amruta_Balli",  ("Tinospora cordifolia",   "Heart-leaved Moonseed", None)),
+    ("Arali",         ("Nerium oleander",        "Oleander",              None)),
+    ("Ashoka",        ("Saraca asoca",           "Ashoka",                "3.Bashok")),
+    ("Ashwagandha",   ("Withania somnifera",     "Ashwagandha",           None)),
+    ("Avacado",       ("Persea americana",       "Avocado",               None)),
+    ("Bamboo",        ("Bambusa vulgaris",       "Bamboo",                None)),
+    ("Basale",        ("Basella alba",           "Malabar Spinach",       None)),
+    ("Betel",         ("Piper betle",            "Betel",                 None)),
+    ("Betel_Nut",     ("Areca catechu",          "Betel Nut",             None)),
+    ("Brahmi",        ("Bacopa monnieri",        "Brahmi",                None)),
+    ("Castor",        ("Ricinus communis",       "Castor",                None)),
+    ("Curry_Leaf",    ("Murraya koenigii",       "Curry Leaf",            "27.Karipata")),
+    ("Doddapatre",    ("Coleus amboinicus",      "Doddapatre",            None)),
+    ("Ekka",          ("Calotropis gigantea",    "Crown Flower",          None)),
+    ("Ganike",        ("Solanum nigrum",         "Black Nightshade",      None)),
+    ("Gauva",         ("Psidium guajava",        "Guava",                 None)),
+    ("Geranium",      ("Pelargonium graveolens", "Geranium",              None)),
+    ("Henna",         ("Lawsonia inermis",       "Henna",                 "18.Mehedi")),
+    ("Hibiscus",      ("Hibiscus rosa-sinensis", "Hibiscus",              "12.Joba")),
+    ("Honge",         ("Pongamia pinnata",       "Honge",                 None)),
+    ("Insulin",       ("Costus igneus",          "Insulin Plant",         None)),
+    ("Jasmine",       ("Jasminum auriculatum",   "Jasmine",               None)),
+    ("Lemon",         ("Citrus limon",           "Lemon",                 "23.Lemon")),
+    ("Lemon_grass",   ("Cymbopogon citratus",    "Lemon Grass",           None)),
+    ("Mango",         ("Mangifera indica",       "Mango",                 None)),
+    ("Mint",          ("Mentha arvensis",        "Mint",                  "20.Pudina")),
+    ("Nagadali",      ("Ruta graveolens",        "Nagadali",              None)),
+    ("Neem",          ("Azadirachta indica",     "Neem",                  "11.Neem")),
+    ("Nithyapushpa",  ("Catharanthus roseus",    "Madagascar Periwinkle", None)),
+    ("Nooni",         ("Morinda citrifolia",     "Noni",                  None)),
+    ("Pappaya",       ("Carica papaya",          "Papaya",                None)),
+    ("Pepper",        ("Piper nigrum",           "Pepper",                None)),
+    ("Pomegranate",   ("Punica granatum",        "Pomegranate",           None)),
+    ("Raktachandini", ("Caesalpinia sappan",     "Raktachandini",         None)),
+    ("Rose",          ("Rosa indica",            "Rose",                  None)),
+    ("Sapota",        ("Manilkara zapota",       "Sapota",                "9.Sofeda")),
+    ("Tulasi",        ("Ocimum tenuiflorum",     "Tulsi",                 "1.Tulshi")),
+    ("Wood_sorel",    ("Oxalis corniculata",     "Wood Sorrel",           None)),
 ])
 
 
@@ -134,8 +144,13 @@ def unique_dst_path(class_dir, src_name):
 # ---------------------------------------------------------------------------
 def main():
     print("=" * 70)
-    print("BUILD FINAL COMBINED DATASET (Option A)")
+    print("BUILD FINAL COMBINED DATASET (Option B: 40 classes)")
     print("=" * 70)
+
+    # Clean existing final directory to prevent file duplication
+    if os.path.exists(FINAL_DIR):
+        shutil.rmtree(FINAL_DIR)
+    os.makedirs(FINAL_DIR, exist_ok=True)
 
     final_counts = {}
     provenance = []  # rows: image,dest_rel,class,source,orig_class,md5

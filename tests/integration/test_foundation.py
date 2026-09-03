@@ -83,8 +83,8 @@ class PhytoVisionFoundationTest(unittest.TestCase):
 
     def test_05_oversized_image(self):
         """5. Test oversized image (> 5MB) is rejected."""
-        # Create a large image in-memory
-        large_img = Image.fromarray(np.zeros((3000, 3000, 3), dtype=np.uint8))
+        # Create a high-entropy random image in-memory (> 5MB when encoded)
+        large_img = Image.fromarray(np.random.randint(0, 256, (3000, 3000, 3), dtype=np.uint8))
         img_byte_arr = io.BytesIO()
         large_img.save(img_byte_arr, format="JPEG", quality=100)
         
@@ -195,15 +195,15 @@ class PhytoVisionFoundationTest(unittest.TestCase):
         self.assertIsInstance(cal_conf, float)
         self.assertTrue(0.0 <= cal_conf <= 1.0)
 
-    def test_11_rejection_threshold_is_0_5982(self):
-        """11. Test that the rejection threshold returned is exactly 0.5982."""
+    def test_11_rejection_threshold_is_calibrated(self):
+        """11. Test that the rejection threshold returned is exactly 0.6234 (40-class model)."""
         sample_path = list(self.sample_images.values())[0]
         with open(sample_path, "rb") as f:
             files = {"image": ("leaf.jpg", f, "image/jpeg")}
             response = requests.post(BACKEND_URL, files=files)
             
         data = response.json()
-        self.assertEqual(data["prediction"]["rejectionThreshold"], 0.5982)
+        self.assertEqual(data["prediction"]["rejectionThreshold"], 0.6234)
 
     def test_12_mobilenetv2_is_production_model(self):
         """12. Test that MobileNetV2 is identified as the production model."""

@@ -74,7 +74,7 @@ def main():
     print("=" * 70)
     print("MOBILENETV2 CONTROLLED EXPERIMENT")
     print("=" * 70)
-    class_names, counts = common.create_fixed_split()
+    class_names, counts = common.create_fixed_split(force=False)
     num_classes = len(class_names)
     print(f"Classes ({num_classes}): {class_names}")
 

@@ -180,7 +180,7 @@ def _load_split_manifests():
 
 def verify_leakage():
     """
-    Verify no image appears in more than one split (by MD5 + filename).
+    Verify no image appears in more than one split (by MD5).
     Returns (ok, overlap_report).
     """
     seen = {}  # md5 -> split
@@ -194,7 +194,7 @@ def verify_leakage():
             for fn in os.listdir(d):
                 p = os.path.join(d, fn)
                 md5 = md5sum(p)
-                if md5 in seen:
+                if md5 in seen and seen[md5] != split:
                     overlaps.append((md5, seen[md5], split, cls, fn))
                 else:
                     seen[md5] = split

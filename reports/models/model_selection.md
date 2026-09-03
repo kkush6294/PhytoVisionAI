@@ -19,8 +19,8 @@ The following criteria were considered:
 
 | Model | top1_accuracy | macro_f1 | top5_accuracy | ece | inference_per_image_ms | model_size_mb |
 |---|---|---|---|---|---|---|
-| mobilenetv2 | 0.9199 | 0.9212 | 0.9892 | 1.0000 | 11.4539 | 25.8800 |
-| efficientnetb0 | 0.8349 | 0.8346 | 0.9725 | 1.0000 | 14.4491 | 20.1000 |
+| mobilenetv2 | 0.8970 | 0.8959 | 0.9896 | 1.0000 | 13.2860 | 25.9100 |
+| efficientnetb0 | 0.0444 | 0.0382 | 0.0983 | 1.0000 | 22.6530 | 20.1000 |
 
 ## Normalized scores
 

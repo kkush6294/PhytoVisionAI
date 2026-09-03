@@ -4,7 +4,7 @@
   "sample_image": "dataset/final_split/test\\Aloevera\\345.jpg",
   "predicted_class": "Aloevera",
   "predicted_class_index": 0,
-  "raw_confidence": 0.9994896650314331,
+  "raw_confidence": 0.9990344047546387,
   "gradcam_method": "Grad-CAM",
   "backbone": "mobilenetv2_1.00_224",
   "target_layer": "Conv_1",

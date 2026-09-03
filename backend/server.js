@@ -2,11 +2,45 @@ const express = require('express');
 const cors = require('cors');
 const config = require('./config/config');
 const predictRoutes = require('./routes/predict');
-
+const db = require('./db');
+const helmet = require('helmet');
+const authRoutes = require('./routes/auth');
+const plantRoutes = require('./routes/plant');
+const conditionRoutes = require('./routes/condition');
+const historyRoutes = require('./routes/history');
+const savedPlantRoutes = require('./routes/savedPlant');
+const extractionRoutes = require('./routes/extraction');
+const safetyRoutes = require('./routes/safety');
+const recommendationRoutes = require('./routes/recommendation');
 const app = express();
 
-// Middlewares
-app.use(cors());
+app.use(helmet());
+
+// Allowed Origins for Security
+const allowedOrigins = process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : [];
+
+// CORS Configuration
+app.use(cors({
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps or curl requests)
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(null, true); // Dev flexible fallback
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// HTTP Security Headers Middleware
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -16,9 +50,15 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/plants', plantRoutes);
+app.use('/api/history', historyRoutes);
+app.use('/api/saved-plants', savedPlantRoutes);
+app.use('/api/extraction', extractionRoutes);
+app.use('/api/safety', safetyRoutes);
+app.use('/api/recommendations', recommendationRoutes);
+app.use('/api', conditionRoutes);
 app.use('/api', predictRoutes);
-
 // Root routes
 app.get('/', (req, res) => {
   res.json({

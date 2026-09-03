@@ -239,6 +239,9 @@ def main():
         print(f"\n=== Calibrating {key} ===")
         model = keras.models.load_model(model_path, compile=False)
         preprocess_fn = get_preprocess(cfg["preprocess"])
+        if model.output_shape[-1] != len(class_names):
+            print(f"  [SKIP] {key}: model output size {model.output_shape[-1]} != dataset classes {len(class_names)}")
+            continue
 
         # 1) Validation predictions (for fitting ONLY)
         val_y_true, val_y_proba = generate_val_predictions(model, preprocess_fn, class_names)

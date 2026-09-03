@@ -1,3 +1,7 @@
+const {
+  getResearchData
+} = require('../services/scientific/researchService');
+
 const axios = require('axios');
 const FormData = require('form-data');
 const config = require('../config/config');
@@ -24,12 +28,15 @@ exports.predictImage = async (req, res) => {
     if (req.file.size > config.maxUploadSize) {
       return res.status(400).json({
         error: 'Bad Request',
-        message: `File size exceeds the limit of ${config.maxUploadSize / (1024 * 1024)}MB.`
+        message: `File size exceeds the limit of ${
+          config.maxUploadSize / (1024 * 1024)
+        }MB.`
       });
     }
 
     // 4) Build multipart form data for FastAPI AI service
     const form = new FormData();
+
     form.append('file', req.file.buffer, {
       filename: req.file.originalname,
       contentType: req.file.mimetype
@@ -37,6 +44,7 @@ exports.predictImage = async (req, res) => {
 
     // 5) Forward request to AI service
     const aiServiceUrl = `${config.aiServiceUrl}/predict`;
+
     const response = await axios.post(aiServiceUrl, form, {
       headers: {
         ...form.getHeaders()
@@ -45,32 +53,129 @@ exports.predictImage = async (req, res) => {
       maxBodyLength: Infinity
     });
 
-    // 6) Return standardized response matching the architecture
-    return res.status(200).json(response.data);
+    // 6) Get AI prediction response
+    const predictionResponse = response.data;
+
+    // 7) Extract prediction information
+    const prediction = predictionResponse.prediction;
+
+    // If the model rejected the prediction, don't query scientific
+    // information for an Unknown result.
+    if (
+      prediction &&
+      !prediction.rejected &&
+      prediction.class &&
+      prediction.class !== 'Unknown'
+    ) {
+      try {
+        // 8) Retrieve scientific research information
+        const researchData = await getResearchData({
+          className: prediction.class,
+          commonName: prediction.commonName,
+          scientificName: prediction.scientificName
+        });
+
+        // 9) Merge research information into AI response
+        predictionResponse.taxonomy =
+          researchData.taxonomy || {};
+
+        predictionResponse.botanical =
+          researchData.botanical || {};
+
+        predictionResponse.compounds =
+          researchData.compounds || [];
+
+        predictionResponse.medicinalEvidence =
+          researchData.medicinalEvidence || [];
+
+        predictionResponse.extractionGuidance =
+          researchData.extractionGuidance || { available: false, message: "Information unavailable from retrieved scientific sources." };
+
+        predictionResponse.safetyInfo =
+          researchData.safetyInfo || { available: false, message: "Information unavailable from retrieved scientific sources." };
+
+        predictionResponse.researchPapers =
+          researchData.researchPapers || [];
+
+        predictionResponse.sources =
+          researchData.sources || [];
+      } catch (researchError) {
+        console.error(
+          '[RESEARCH ERROR] Scientific research retrieval failed:',
+          researchError.message
+        );
+
+        // Prediction remains valid even when external research
+        // services are unavailable.
+        predictionResponse.taxonomy = {};
+        predictionResponse.botanical = {};
+        predictionResponse.compounds = [];
+        predictionResponse.medicinalEvidence = [];
+        predictionResponse.extractionGuidance = { available: false, message: "Information unavailable from retrieved scientific sources." };
+        predictionResponse.safetyInfo = { available: false, message: "Information unavailable from retrieved scientific sources." };
+        predictionResponse.researchPapers = [];
+        predictionResponse.sources = [];
+
+        predictionResponse.warnings =
+          predictionResponse.warnings || [];
+
+        predictionResponse.warnings.push(
+          'Scientific research information could not be retrieved at this time.'
+        );
+      }
+    } else {
+      // 10) Rejected / unknown prediction
+      predictionResponse.taxonomy = {};
+      predictionResponse.botanical = {};
+      predictionResponse.compounds = [];
+      predictionResponse.medicinalEvidence = [];
+      predictionResponse.extractionGuidance = { available: false, message: "Information unavailable from retrieved scientific sources." };
+      predictionResponse.safetyInfo = { available: false, message: "Information unavailable from retrieved scientific sources." };
+      predictionResponse.researchPapers = [];
+      predictionResponse.sources = [];
+    }
+
+    // 11) Return complete response to frontend
+    return res.status(200).json(predictionResponse);
 
   } catch (error) {
-    console.error('[ERROR] Backend predictImage controller failed:', error.message);
-    
-    // Check if error is from Axios connection to AI service
-    if (error.code === 'ECONNREFUSED' || (error.response && error.response.status >= 500)) {
+    console.error(
+      '[ERROR] Backend predictImage controller failed:',
+      error.message
+    );
+
+    // 12) AI service unavailable
+    if (
+      error.code === 'ECONNREFUSED' ||
+      (error.response && error.response.status >= 500)
+    ) {
       return res.status(502).json({
         error: 'Bad Gateway',
-        message: 'The AI Inference Service is currently unavailable. Please verify it is running.',
+        message:
+          'The AI Inference Service is currently unavailable. Please verify it is running.',
         details: error.message
       });
     }
 
-    // Pass AI service bad requests (e.g. invalid dimensions, corrupt image) directly to client
+    // 13) AI service returned an error
     if (error.response) {
       return res.status(error.response.status).json({
-        error: error.response.data.error || 'AI Service Error',
-        message: error.response.data.detail || error.response.data.message || 'Error from AI Inference Service'
+        error:
+          error.response.data?.error ||
+          'AI Service Error',
+
+        message:
+          error.response.data?.detail ||
+          error.response.data?.message ||
+          'Error from AI Inference Service'
       });
     }
 
+    // 14) Unexpected backend error
     return res.status(500).json({
       error: 'Internal Server Error',
-      message: 'Failed to process plant identification request.',
+      message:
+        'Failed to process plant identification request.',
       details: error.message
     });
   }

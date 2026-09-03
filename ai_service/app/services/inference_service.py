@@ -6,8 +6,8 @@ from PIL import Image
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as mobilenet_preprocess
 
 # Load calibration and threshold constants
-TEMPERATURE = 0.8126
-REJECTION_THRESHOLD = 0.5982
+TEMPERATURE = 0.8037
+REJECTION_THRESHOLD = 0.6234
 MODEL_NAME = "MobileNetV2"
 MODEL_VERSION = "1.0.0"
 INPUT_SIZE = 224
@@ -16,13 +16,21 @@ INPUT_SIZE = 224
 CLASS_SCIENTIFIC_MAP = {
     "Aloevera": ("Aloe vera", "Aloe Vera"),
     "Amla": ("Phyllanthus emblica", "Amla"),
+    "Amruta_Balli": ("Tinospora cordifolia", "Heart-leaved Moonseed"),
+    "Arali": ("Nerium oleander", "Oleander"),
     "Ashoka": ("Saraca asoca", "Ashoka"),
     "Ashwagandha": ("Withania somnifera", "Ashwagandha"),
+    "Avacado": ("Persea americana", "Avocado"),
+    "Bamboo": ("Bambusa vulgaris", "Bamboo"),
+    "Basale": ("Basella alba", "Malabar Spinach"),
     "Betel": ("Piper betle", "Betel"),
+    "Betel_Nut": ("Areca catechu", "Betel Nut"),
     "Brahmi": ("Bacopa monnieri", "Brahmi"),
     "Castor": ("Ricinus communis", "Castor"),
     "Curry_Leaf": ("Murraya koenigii", "Curry Leaf"),
     "Doddapatre": ("Coleus amboinicus", "Doddapatre"),
+    "Ekka": ("Calotropis gigantea", "Crown Flower"),
+    "Ganike": ("Solanum nigrum", "Black Nightshade"),
     "Gauva": ("Psidium guajava", "Guava"),
     "Geranium": ("Pelargonium graveolens", "Geranium"),
     "Henna": ("Lawsonia inermis", "Henna"),
@@ -36,6 +44,8 @@ CLASS_SCIENTIFIC_MAP = {
     "Mint": ("Mentha arvensis", "Mint"),
     "Nagadali": ("Ruta graveolens", "Nagadali"),
     "Neem": ("Azadirachta indica", "Neem"),
+    "Nithyapushpa": ("Catharanthus roseus", "Madagascar Periwinkle"),
+    "Nooni": ("Morinda citrifolia", "Noni"),
     "Pappaya": ("Carica papaya", "Papaya"),
     "Pepper": ("Piper nigrum", "Pepper"),
     "Pomegranate": ("Punica granatum", "Pomegranate"),
