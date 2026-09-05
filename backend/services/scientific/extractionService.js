@@ -8,7 +8,7 @@
  *      Searches peer-reviewed papers for plant-specific extraction parameters
  *      (Method, Solvent, Concentration, Temperature, Duration, Preparation, Plant Part, DOI).
  *      No parameters are fabricated: if a parameter is unmentioned in the source,
- *      it is explicitly set to "Not reported in retrieved source".
+ *      it is explicitly set to null and omitted from presentation.
  *   2. Curated Monograph Fallback:
  *      If dynamic search returns no verifiable extraction parameters, cleanly falls back
  *      to the curated pharmacological monograph dictionary, explicitly tagged as static/curated.
@@ -25,6 +25,7 @@ const REQUEST_TIMEOUT = 12000;
  */
 const PLANT_EXTRACTION_GUIDANCE = {
     Aloevera: {
+        plantPart: "Inner leaf fillet / gel",
         method: "Cold maceration / Aqueous extraction",
         solvent: "Deionized Water or 70% Ethanol",
         temperature: "Room Temperature (25°C) to 40°C",
@@ -33,6 +34,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Food Engineering / International Journal of Pharmaceutics (Aloin & Acemannan isolation)."
     },
     Amla: {
+        plantPart: "Deseeded pericarp (fruit)",
         method: "Ultrasound-Assisted Extraction (UAE) or Decoction",
         solvent: "50-70% Ethanol in Water",
         temperature: "50°C - 60°C",
@@ -41,6 +43,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Industrial Crops and Products (Gallic acid & Ellagic acid extraction optimization)."
     },
     Ashwagandha: {
+        plantPart: "Roots",
         method: "Reflux Extraction or Soxhlet Extraction",
         solvent: "70% Ethanol or Hydroalcoholic (1:1 Water:Ethanol)",
         temperature: "60°C - 70°C",
@@ -49,6 +52,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Phytochemical Analysis / Pharmacognosy Magazine (Withanolide extraction protocols)."
     },
     Brahmi: {
+        plantPart: "Whole aerial plant",
         method: "Maceration or Microwave-Assisted Extraction (MAE)",
         solvent: "Methanol or 80% Ethanol",
         temperature: "45°C - 50°C",
@@ -57,6 +61,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Separation and Purification Technology (Bacoside A recovery protocol)."
     },
     Betel: {
+        plantPart: "Mature leaves",
         method: "Hydrodistillation (Essential Oil) or Soxhlet (Extract)",
         solvent: "Water (for hydrodistillation) or Ethyl Acetate / 95% Ethanol",
         temperature: "100°C (Steam distillation) or 60°C (Solvent extraction)",
@@ -65,6 +70,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Food Chemistry (Eugenol & Hydroxychavicol extraction)."
     },
     Castor: {
+        plantPart: "Decorticated mature seeds",
         method: "Cold Hydraulic Pressing (Castor Oil)",
         solvent: "Solvent-free cold press; Hexane for residual oil cake extraction",
         temperature: "Below 50°C (Cold press to ensure ricin denaturation/separation)",
@@ -73,6 +79,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "JAOCS Journal of the American Oil Chemists' Society."
     },
     Curry_Leaf: {
+        plantPart: "Leaves",
         method: "Soxhlet Extraction or Supercritical CO2 Fluid Extraction",
         solvent: "Petroleum Ether / Ethanol or CO2 at 25 MPa",
         temperature: "40°C - 60°C",
@@ -81,6 +88,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Chromatography A (Carbazole alkaloid enrichment)."
     },
     Doddapatre: {
+        plantPart: "Succulent leaves",
         method: "Hydrodistillation (Clevenger apparatus) or Sonication",
         solvent: "Distilled Water (Essential oil) or 70% Ethanol",
         temperature: "100°C (Hydrodistillation) or 35°C (Sonication)",
@@ -89,6 +97,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Industrial Crops and Products (Carvacrol yield optimization)."
     },
     Gauva: {
+        plantPart: "Tender leaves",
         method: "Maceration with Mechanical Agitation",
         solvent: "80% Aqueous Methanol or 70% Ethanol",
         temperature: "30°C - 40°C",
@@ -97,6 +106,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Agricultural and Food Chemistry (Quercetin & polyphenol recovery)."
     },
     Henna: {
+        plantPart: "Leaves",
         method: "Aqueous Maceration or Ultrasound-Assisted Extraction",
         solvent: "Water adjusted to pH 5.5 or 50% Ethanol",
         temperature: "40°C",
@@ -105,6 +115,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Dyes and Pigments (Lawsone isolation and stability study)."
     },
     Hibiscus: {
+        plantPart: "Red calyces / petals",
         method: "Acidified Aqueous Extraction",
         solvent: "Water with 0.1% Citric Acid or 50% Ethanol (pH 3.0)",
         temperature: "30°C - 50°C (Protect anthocyanins from thermal degradation)",
@@ -113,6 +124,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Food Chemistry (Anthocyanin & polyphenolic yield optimization)."
     },
     Lemon: {
+        plantPart: "Fruit peel / pericarp",
         method: "Cold Expression (Pericarp oil) or Solvent Extraction",
         solvent: "Solvent-free pressing or 80% Ethanol (Flavonoids)",
         temperature: "Ambient (20°C - 25°C)",
@@ -121,6 +133,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Essential Oil Research."
     },
     Lemon_grass: {
+        plantPart: "Leaves",
         method: "Steam Hydrodistillation",
         solvent: "Water / Steam",
         temperature: "100°C",
@@ -129,6 +142,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Flavour and Fragrance Journal (Citral recovery optimization)."
     },
     Mint: {
+        plantPart: "Leaves",
         method: "Steam Distillation or Solvent Maceration",
         solvent: "Water / Steam (Oil) or 70% Ethanol (Rosmarinic acid)",
         temperature: "100°C (Steam) or 40°C (Ethanol)",
@@ -137,6 +151,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Ethnopharmacology (Menthol & phenolic extraction)."
     },
     Neem: {
+        plantPart: "Mature leaves",
         method: "Maceration / Soxhlet Extraction",
         solvent: "95% Ethanol or Methanol (Azadirachtin extraction)",
         temperature: "50°C",
@@ -145,6 +160,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Phytochemical Analysis (Azadirachtin & nimbin HPLC standardization)."
     },
     Pappaya: {
+        plantPart: "Green leaves",
         method: "Cold Aqueous Extraction / Maceration",
         solvent: "Cold Distilled Water or 50% Ethanol",
         temperature: "4°C - 25°C (Cold extraction prevents heat-labile enzyme inactivation)",
@@ -153,6 +169,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "BMC Complementary Medicine (Carpaine & leaf extract preparation)."
     },
     Pepper: {
+        plantPart: "Dried black peppercorns",
         method: "Soxhlet Extraction or Supercritical Fluid Extraction",
         solvent: "95% Ethanol or Dichloromethane",
         temperature: "60°C - 78°C",
@@ -161,6 +178,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Food Science (Piperine isolation protocol)."
     },
     Pomegranate: {
+        plantPart: "Fruit peel / rind",
         method: "Ultrasound-Assisted Solvent Extraction",
         solvent: "70% Ethanol or Water",
         temperature: "40°C - 50°C",
@@ -169,6 +187,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Food and Bioproducts Processing (Punicalagin extraction optimization)."
     },
     Rose: {
+        plantPart: "Flower petals",
         method: "Hydrodistillation / Solvent Extraction (Absolutes)",
         solvent: "Water (Rose water / essential oil) or Hexane/Ethanol (Concrete/Absolute)",
         temperature: "100°C (Hydrodistillation) or 40°C (Solvent)",
@@ -177,6 +196,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Industrial Crops and Products (Geraniol & citronellol recovery)."
     },
     Tulasi: {
+        plantPart: "Leaves",
         method: "Hydrodistillation or Hydroalcoholic Maceration",
         solvent: "Water (Oil) or 70% Ethanol (Rosmarinic acid)",
         temperature: "100°C (Distillation) or 45°C (Maceration)",
@@ -185,6 +205,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Pharmacognosy Research (Eugenol & rosmarinic acid standardization)."
     },
     Amruta_Balli: {
+        plantPart: "Mature dry stems",
         method: "Soxhlet Extraction or Decoction",
         solvent: "Water or 80% Methanol/Ethanol",
         temperature: "60°C - 80°C",
@@ -193,6 +214,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Ayurveda and Integrative Medicine (Berberine & tinosporaside extraction)."
     },
     Arali: {
+        plantPart: "Leaves",
         method: "Maceration for Phytochemical Assay (LABORATORY ONLY)",
         solvent: "95% Ethanol or Methanol",
         temperature: "25°C (Room Temp)",
@@ -201,6 +223,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Analytical Toxicology (Oleandrin laboratory isolation)."
     },
     Avacado: {
+        plantPart: "Leaves / fruit flesh",
         method: "Solvent Maceration or Centrifugal Oil Separation",
         solvent: "Hexane/Ethyl Acetate (Leaves/Pit) or Cold Press (Fruit flesh)",
         temperature: "40°C",
@@ -209,6 +232,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Agricultural and Food Chemistry."
     },
     Bamboo: {
+        plantPart: "Leaves",
         method: "Reflux Extraction with Aqueous Ethanol",
         solvent: "60% Ethanol",
         temperature: "70°C",
@@ -217,6 +241,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Food Chemistry (Flavone C-glycoside extraction)."
     },
     Basale: {
+        plantPart: "Leaves",
         method: "Cold Water Extraction (Betalains)",
         solvent: "Distilled Water (pH 5.0 with ascorbic acid)",
         temperature: "15°C - 20°C (Cold extraction prevents betalain degradation)",
@@ -225,6 +250,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Food Science and Technology."
     },
     Betel_Nut: {
+        plantPart: "Areca nut (seeds)",
         method: "Aqueous Acidic Maceration (LABORATORY ONLY)",
         solvent: "0.1 N HCl or 50% Ethanol",
         temperature: "40°C",
@@ -233,6 +259,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Chromatography B (Arecoline analysis)."
     },
     Ekka: {
+        plantPart: "Leaves and latex",
         method: "Soxhlet / Maceration (LABORATORY RESEARCH ONLY)",
         solvent: "Methanol or Chloroform",
         temperature: "50°C",
@@ -241,6 +268,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Ethnopharmacology (Cardenolide analysis)."
     },
     Ganike: {
+        plantPart: "Leaves or ripe berries",
         method: "Acidic Alcohol Extraction (Glycoalkaloids)",
         solvent: "5% Acetic acid in Ethanol",
         temperature: "50°C",
@@ -249,6 +277,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Phytochemical Analysis (Solasodine & solamargine recovery)."
     },
     Nithyapushpa: {
+        plantPart: "Whole plant",
         method: "Acid-Base Partition Extraction (PHARMACOLOGICAL INDUSTRY ONLY)",
         solvent: "Methanol followed by Acid-Base extraction (Toluene/Chloroform)",
         temperature: "25°C",
@@ -257,6 +286,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Natural Products (Vincristine & vinblastine industrial isolation)."
     },
     Nooni: {
+        plantPart: "Fruit and leaves",
         method: "Maceration / Fermentation",
         solvent: "Water / Juice expression or 70% Ethanol",
         temperature: "30°C",
@@ -265,6 +295,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Food Research International (Damnacanthal & scopoletin recovery)."
     },
     Ashoka: {
+        plantPart: "Stem bark",
         method: "Decoction or Soxhlet Extraction",
         solvent: "Water or 70% Ethanol",
         temperature: "80°C - 100°C (Decoction) or 60°C (Soxhlet)",
@@ -273,6 +304,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Indian Herbal Pharmacopoeia / Journal of Ethnopharmacology (Saracin & catechin isolation)."
     },
     Geranium: {
+        plantPart: "Aerial flowering tops and leaves",
         method: "Steam Hydrodistillation or Solvent Maceration",
         solvent: "Water / Steam (Essential oil) or 80% Ethanol",
         temperature: "100°C (Distillation) or 35°C (Maceration)",
@@ -281,6 +313,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Essential Oil Research (Citronellol & geraniol yield optimization)."
     },
     Honge: {
+        plantPart: "Decorticated mature seeds",
         method: "Soxhlet Extraction or Cold Pressing (Seed oil)",
         solvent: "n-Hexane or 95% Ethanol",
         temperature: "60°C - 70°C",
@@ -289,6 +322,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Industrial Crops and Products (Furanoflavonoid karanjin enrichment)."
     },
     Insulin: {
+        plantPart: "Succulent leaves",
         method: "Ultrasound-Assisted Extraction (UAE) or Maceration",
         solvent: "80% Aqueous Ethanol or Water",
         temperature: "40°C - 50°C",
@@ -297,6 +331,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Clinical and Diagnostic Research (Corosolic acid extraction)."
     },
     Jasmine: {
+        plantPart: "Flower buds",
         method: "Solvent Extraction (Concrete & Absolute) or Enfleurage",
         solvent: "Hexane followed by Ethanol (Absolute production)",
         temperature: "25°C - 35°C (Low temperature protects delicate scent compounds)",
@@ -305,6 +340,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Flavour and Fragrance Journal (Linalool & benzyl acetate recovery)."
     },
     Mango: {
+        plantPart: "Tender young leaves",
         method: "Maceration with Agitation or Reflux Extraction",
         solvent: "70% Methanol or Hydroalcoholic (1:1 Water:Ethanol)",
         temperature: "50°C",
@@ -313,6 +349,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Phytochemical Analysis (Mangiferin HPLC standardization protocol)."
     },
     Nagadali: {
+        plantPart: "Fresh aerial herb",
         method: "Hydrodistillation or Soxhlet (LABORATORY ONLY)",
         solvent: "Water (Oil) or 90% Ethanol (Rutin & furocoumarins)",
         temperature: "100°C (Hydrodistillation) or 60°C (Soxhlet)",
@@ -321,6 +358,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Chromatography A (Rutin & furocoumarin assay)."
     },
     Raktachandini: {
+        plantPart: "Heartwood",
         method: "Aqueous Hot Decoction or Ultrasound-Assisted Extraction",
         solvent: "Distilled Water or 50% Ethanol",
         temperature: "80°C - 90°C",
@@ -329,6 +367,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Journal of Natural Products (Brazilin & brazilein extraction)."
     },
     Sapota: {
+        plantPart: "Fruit pulp",
         method: "Maceration or Sonication",
         solvent: "80% Aqueous Ethanol or Water",
         temperature: "35°C - 40°C",
@@ -337,6 +376,7 @@ const PLANT_EXTRACTION_GUIDANCE = {
         reference: "Food Chemistry (Polyphenol & antioxidant capacity assay)."
     },
     Wood_sorel: {
+        plantPart: "Whole plant",
         method: "Cold Aqueous Maceration",
         solvent: "Distilled Water",
         temperature: "20°C - 25°C",
@@ -348,61 +388,71 @@ const PLANT_EXTRACTION_GUIDANCE = {
 
 function extractParametersFromAbstract(text) {
     if (!text || typeof text !== 'string') return null;
-    const lower = text.toLowerCase();
+    // Strip XML/HTML tags if present
+    const cleanText = text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+    const lower = cleanText.toLowerCase();
 
-    let plantPart = "Not reported in retrieved source";
-    if (/\b(leaf|leaves)\b/.test(lower)) plantPart = "Leaves";
-    else if (/\b(bark|stem bark)\b/.test(lower)) plantPart = "Stem Bark";
-    else if (/\b(root|roots|rhizome)\b/.test(lower)) plantPart = "Roots / Rhizome";
-    else if (/\b(fruit|pericarp|peel)\b/.test(lower)) plantPart = "Fruit / Pericarp";
-    else if (/\b(seed|seeds)\b/.test(lower)) plantPart = "Seeds";
-    else if (/\b(flower|flowers|petals|calyx)\b/.test(lower)) plantPart = "Flowers / Calyces";
-    else if (/\b(aerial parts|whole plant)\b/.test(lower)) plantPart = "Aerial Parts";
+    let plantPart = null;
+    if (/\b(leaves|leaf|foliar|blade)\b/.test(lower)) plantPart = "Leaves";
+    else if (/\b(roots?|rhizomes?|tubers?|bulbs?)\b/.test(lower)) plantPart = "Roots / Rhizome";
+    else if (/\b(stems?|stem bark|bark|barks)\b/.test(lower)) plantPart = "Stem Bark";
+    else if (/\b(flowers?|floral|petals?|inflorescence|calyx|calyces|buds?)\b/.test(lower)) plantPart = "Flowers / Inflorescence";
+    else if (/\b(seeds?|kernels?)\b/.test(lower)) plantPart = "Seeds";
+    else if (/\b(fruits?|pericarps?|peels?|rinds?|pulps?|berries|berry)\b/.test(lower)) plantPart = "Fruit / Pericarp";
+    else if (/\b(aerial parts?|whole plant|whole herb|herb|shoots?)\b/.test(lower)) plantPart = "Aerial Parts";
+    else if (/\b(heartwood|wood)\b/.test(lower)) plantPart = "Heartwood";
 
-    let method = "Not reported in retrieved source";
-    if (/\b(ultrasound|ultrasonic|uae|sonication)\b/.test(lower)) method = "Ultrasound-Assisted Extraction (UAE)";
-    else if (/\b(microwave|mae)\b/.test(lower)) method = "Microwave-Assisted Extraction (MAE)";
+    let method = null;
+    if (/\b(ultrasound|ultrasonic|uae|sonication|sonicated)\b/.test(lower)) method = "Ultrasound-Assisted Extraction (UAE)";
+    else if (/\b(microwave|mae|microwave-assisted)\b/.test(lower)) method = "Microwave-Assisted Extraction (MAE)";
     else if (/\bsoxhlet\b/.test(lower)) method = "Soxhlet Extraction";
-    else if (/\bmaceration|macerated\b/.test(lower)) method = "Maceration";
-    else if (/\b(hydrodistillation|steam distillation|clevenger)\b/.test(lower)) method = "Hydrodistillation / Steam Distillation";
-    else if (/\breflux\b/.test(lower)) method = "Reflux Extraction";
-    else if (/\bsupercritical\b/.test(lower)) method = "Supercritical CO2 Fluid Extraction";
-    else if (/\bdecoction\b/.test(lower)) method = "Decoction";
+    else if (/\bmaceration|macerated|macerating\b/.test(lower)) method = "Maceration";
+    else if (/\b(hydrodistillation|steam distillation|clevenger|distillation)\b/.test(lower)) method = "Hydrodistillation / Steam Distillation";
+    else if (/\breflux|refluxing|refluxed\b/.test(lower)) method = "Reflux Extraction";
+    else if (/\b(supercritical|sfe|supercritical co2|co2 extraction)\b/.test(lower)) method = "Supercritical Fluid Extraction (SFE)";
+    else if (/\b(decoction|hot aqueous decoction|boiled|boiling)\b/.test(lower)) method = "Decoction";
+    else if (/\b(percolation|percolated)\b/.test(lower)) method = "Percolation";
+    else if (/\b(infusion|infused)\b/.test(lower)) method = "Infusion";
+    else if (/\b(cold press|cold pressing|hydraulic press)\b/.test(lower)) method = "Cold Pressing";
 
-    let solvent = "Not reported in retrieved source";
-    if (/\b(ethanol|ethanolic)\b/.test(lower)) solvent = "Ethanol / Aqueous Ethanol";
-    else if (/\b(methanol|methanolic)\b/.test(lower)) solvent = "Methanol / Aqueous Methanol";
-    else if (/\b(water|aqueous|hydrodistillation|water extraction)\b/.test(lower)) solvent = "Water / Aqueous";
-    else if (/\bethyl acetate\b/.test(lower)) solvent = "Ethyl Acetate";
+    let solvent = null;
+    if (/\b(aqueous ethanol|ethanolic|ethanol)\b/.test(lower)) solvent = "Ethanol / Aqueous Ethanol";
+    else if (/\b(aqueous methanol|methanolic|methanol)\b/.test(lower)) solvent = "Methanol / Aqueous Methanol";
+    else if (/\b(hydroalcoholic|hydro-alcoholic)\b/.test(lower)) solvent = "Hydroalcoholic Solvent";
+    else if (/\b(water|aqueous|distilled water|hot water|deionized water)\b/.test(lower)) solvent = "Water / Aqueous";
+    else if (/\b(ethyl acetate|etoac)\b/.test(lower)) solvent = "Ethyl Acetate";
     else if (/\b(hexane|n-hexane)\b/.test(lower)) solvent = "Hexane";
     else if (/\bpetroleum ether\b/.test(lower)) solvent = "Petroleum Ether";
     else if (/\bchloroform\b/.test(lower)) solvent = "Chloroform";
+    else if (/\bacetone\b/.test(lower)) solvent = "Acetone";
+    else if (/\b(dichloromethane|dcm)\b/.test(lower)) solvent = "Dichloromethane";
 
-    let solventConcentration = "Not reported in retrieved source";
-    const concMatch = text.match(/(\d{1,3}\s*%\s*(v\/v|w\/v|ethanol|methanol|hydroalcoholic)?|\d\.\d+\s*N)/i);
+    let solventConcentration = null;
+    const concMatch = cleanText.match(/\b(\d{1,3}\s*%\s*(?:v\/v|w\/v|vol\/vol|ethanol|methanol|aq|aqueous)?|\d+(?:\.\d+)?\s*(?:M|N|mM)|\d+:\d+\s*(?:v\/v|water[:\s]ethanol|ethanol[:\s]water)?)\b/i);
     if (concMatch) {
         solventConcentration = concMatch[0].trim();
     }
 
-    let temperature = "Not reported in retrieved source";
-    const tempMatch = text.match(/(\d{1,3}\s*(?:°C|deg C|degrees Celsius)|room temperature|ambient temperature)/i);
+    let temperature = null;
+    const tempMatch = cleanText.match(/\b(\d{1,3}\s*[-–to]\s*\d{1,3}\s*°\s*C|\d{1,3}\s*°\s*C|\d{1,3}\s*deg(?:rees)?\s*C(?:elsius)?|room\s+temperature|ambient\s+temperature)\b/i);
     if (tempMatch) {
         temperature = tempMatch[0].trim();
     }
 
-    let duration = "Not reported in retrieved source";
-    const durMatch = text.match(/(\d{1,3}\s*(?:hours?|hrs?|minutes?|mins?|days?))/i);
+    let duration = null;
+    const durMatch = cleanText.match(/\b(\d+(?:\.\d+)?\s*[-–to]?\s*\d*(?:\.\d+)?\s*(?:hours?|hrs?|minutes?|mins?|days?|seconds?)|overnight)\b/i);
     if (durMatch) {
         duration = durMatch[0].trim();
     }
 
-    let samplePreparation = "Not reported in retrieved source";
-    if (/\b(shade-dried|shade dried)\b/.test(lower)) samplePreparation = "Shade-dried plant material";
-    else if (/\b(powdered|ground|milled|coarse powder|fine powder)\b/.test(lower)) samplePreparation = "Powdered / Milled plant material";
-    else if (/\b(fresh|freshly harvested|succulent)\b/.test(lower)) samplePreparation = "Fresh / Crushed plant material";
-    else if (/\b(lyophilized|freeze-dried)\b/.test(lower)) samplePreparation = "Lyophilized / Freeze-dried material";
+    let samplePreparation = null;
+    if (/\b(shade[- ]dried|shade drying)\b/.test(lower)) samplePreparation = "Shade-dried plant material";
+    else if (/\b(sun[- ]dried|air[- ]dried|oven[- ]dried)\b/.test(lower)) samplePreparation = "Air-dried / Oven-dried plant material";
+    else if (/\b(powdered|pulverized|ground|milled|coarse powder|fine powder|\d+\s*mesh|grinding)\b/.test(lower)) samplePreparation = "Powdered / Milled plant material";
+    else if (/\b(fresh leaves|freshly harvested|fresh material|succulent)\b/.test(lower)) samplePreparation = "Fresh / Succulent plant material";
+    else if (/\b(lyophilized|freeze[- ]dried)\b/.test(lower)) samplePreparation = "Lyophilized / Freeze-dried material";
 
-    if (method === "Not reported in retrieved source" && solvent === "Not reported in retrieved source") {
+    if (!method || !solvent) {
         return null;
     }
 
@@ -434,20 +484,25 @@ async function fetchDynamicExtractionLiterature(queryName) {
         const extractedRecords = [];
 
         for (const article of articles) {
-            const abstractText = article.abstractText || '';
-            const parsed = extractParametersFromAbstract(`${article.title || ''} ${abstractText}`);
+            const rawAbstract = article.abstractText || '';
+            const combinedText = `${article.title || ''} ${rawAbstract}`;
+            const parsed = extractParametersFromAbstract(combinedText);
 
             if (parsed) {
+                const journalName = article.journalInfo?.journal?.title || article.journalTitle || article.publisher || 'Scientific Journal';
+                const pubYear = article.pubYear || (article.firstPublicationDate ? article.firstPublicationDate.substring(0, 4) : null);
+                const refText = pubYear ? `${journalName} (${pubYear})` : journalName;
+
                 extractedRecords.push({
-                    plantPart: parsed.plantPart,
-                    method: parsed.method,
-                    solvent: parsed.solvent,
-                    solventConcentration: parsed.solventConcentration,
-                    temperature: parsed.temperature,
-                    extractionTime: parsed.extractionTime,
-                    samplePreparation: parsed.samplePreparation,
-                    title: article.title || 'Extraction study',
-                    reference: `${article.journalTitle || 'Scientific Journal'} (${article.firstPublicationDate ? article.firstPublicationDate.substring(0, 4) : 'N/A'})`,
+                    plantPart: parsed.plantPart || null,
+                    method: parsed.method || null,
+                    solvent: parsed.solvent || null,
+                    solventConcentration: parsed.solventConcentration || null,
+                    temperature: parsed.temperature || null,
+                    extractionTime: parsed.extractionTime || null,
+                    samplePreparation: parsed.samplePreparation || null,
+                    title: article.title ? article.title.replace(/<[^>]+>/g, '') : 'Extraction study',
+                    reference: refText,
                     doi: article.doi || null,
                     pmid: article.pmid || null,
                     sourceType: "Europe PMC Literature API"
@@ -484,16 +539,16 @@ async function getExtractionGuidance(scientificName, className) {
             retrievedMode: "dynamic_literature",
             isStaticFallback: false,
             source: "Europe PMC Scientific Literature API",
-            method: top.method,
-            solvent: top.solvent,
-            solventConcentration: top.solventConcentration,
-            temperature: top.temperature,
-            extractionTime: top.extractionTime,
-            preparation: top.samplePreparation,
-            plantPart: top.plantPart,
-            reference: top.reference,
-            doi: top.doi,
-            pmid: top.pmid,
+            method: top.method || null,
+            solvent: top.solvent || null,
+            solventConcentration: top.solventConcentration || null,
+            temperature: top.temperature || null,
+            extractionTime: top.extractionTime || null,
+            preparation: top.samplePreparation || null,
+            plantPart: top.plantPart || null,
+            reference: top.reference || null,
+            doi: top.doi || null,
+            pmid: top.pmid || null,
             records: dynamicRecords
         };
     }
@@ -508,34 +563,38 @@ async function getExtractionGuidance(scientificName, className) {
         };
     }
 
+    // Extract concentration from solvent string if present, otherwise null
+    const concMatch = staticData.solvent ? staticData.solvent.match(/\b(\d{1,3}\s*%\s*(?:v\/v|w\/v|vol\/vol|ethanol|methanol|aqueous)?|\d+(?:\.\d+)?\s*N)\b/i) : null;
+    const solventConcentration = concMatch ? concMatch[0].trim() : (staticData.solventConcentration || null);
+
     return {
         available: true,
         retrievedMode: "static_curated",
         isStaticFallback: true,
         source: "Curated Pharmacological Monograph Database (Fallback)",
         note: "Dynamic literature search returned no explicit parameter matches for this species; displaying curated monograph fallback.",
-        method: staticData.method,
-        solvent: staticData.solvent,
-        solventConcentration: "Curated concentration in solvent system",
-        temperature: staticData.temperature,
-        extractionTime: staticData.extractionTime,
-        preparation: staticData.preparation,
-        plantPart: "Leaves / Aerial parts",
-        reference: staticData.reference,
-        doi: null,
-        pmid: null,
+        method: staticData.method || null,
+        solvent: staticData.solvent || null,
+        solventConcentration: solventConcentration,
+        temperature: staticData.temperature || null,
+        extractionTime: staticData.extractionTime || null,
+        preparation: staticData.preparation || null,
+        plantPart: staticData.plantPart || null,
+        reference: staticData.reference || null,
+        doi: staticData.doi || null,
+        pmid: staticData.pmid || null,
         records: [
             {
-                method: staticData.method,
-                solvent: staticData.solvent,
-                solventConcentration: "Curated in solvent system",
-                temperature: staticData.temperature,
-                extractionTime: staticData.extractionTime,
-                samplePreparation: staticData.preparation,
-                plantPart: "Leaves / Aerial parts",
+                method: staticData.method || null,
+                solvent: staticData.solvent || null,
+                solventConcentration: solventConcentration,
+                temperature: staticData.temperature || null,
+                extractionTime: staticData.extractionTime || null,
+                samplePreparation: staticData.preparation || null,
+                plantPart: staticData.plantPart || null,
                 title: `${key} Extraction Protocol (Monograph)`,
-                reference: staticData.reference,
-                doi: null,
+                reference: staticData.reference || null,
+                doi: staticData.doi || null,
                 sourceType: "Curated Monograph Database"
             }
         ]

@@ -86,8 +86,8 @@ function RecommendationsView() {
       ) : searched && results.length === 0 ? (
         <div className="empty-history-card">
           <span className="empty-icon">🔍</span>
-          <h3>No Plants Found for "{query}"</h3>
-          <p>Try searching for broader botanical properties such as <em>skin</em>, <em>digestive</em>, or <em>inflammatory</em>.</p>
+          <h3>No documented plant associations found for "{query}".</h3>
+          <p>No verified scientific associations exist in the catalog for this specific query.</p>
         </div>
       ) : (
         <div className="recommendations-catalog-grid">
@@ -95,17 +95,35 @@ function RecommendationsView() {
             <div key={plant.id} className="recommendation-plant-card">
               <div className="rec-card-top">
                 <span className="rec-plant-badge">MEDICINAL SPECIMEN</span>
-                <span className="rec-tox-pill">{plant.toxicityLevel ? "Toxicity Documented" : "Verified"}</span>
+                <span className="rec-tox-pill">{plant.toxicityLevel ? "Toxicity Documented" : "Monograph Grounded"}</span>
               </div>
 
-              <h3 className="rec-plant-common">{plant.commonName}</h3>
+              <h3 className="rec-plant-common">{plant.commonName || plant.plant}</h3>
               <p className="rec-plant-sci">
                 <em>{plant.scientificName}</em>
               </p>
 
+              {/* Transparent Recommendation Provenance */}
+              <div className="rec-basis-info">
+                <span className="rec-basis-label">Matched indication:</span> {plant.matchedIndication || query}
+              </div>
+              <div className="rec-basis-info">
+                <span className="rec-basis-label">Evidence basis:</span> {plant.evidenceType ? plant.evidenceType.replace(/_/g, " ") : "traditional use reported"}
+              </div>
+              {plant.evidenceSource && (
+                <div className="rec-basis-info">
+                  <span className="rec-basis-label">Evidence source:</span> {plant.evidenceSource}
+                </div>
+              )}
+              {plant.citation && (
+                <div className="rec-citation-snippet">
+                  <small><em>Citation:</em> {plant.citation}</small>
+                </div>
+              )}
+
               {plant.dosage && (
                 <div className="rec-dosage-box">
-                  <strong>Recommended Dosage:</strong>
+                  <strong>Source-Reported Dosage:</strong>
                   <p>{plant.dosage}</p>
                 </div>
               )}
@@ -130,6 +148,13 @@ function RecommendationsView() {
           ))}
         </div>
       )}
+
+      {/* Mandatory Medical Disclaimer */}
+      <div className="recommendations-disclaimer-card">
+        <p>
+          ⚕️ <strong>Medical Disclaimer:</strong> Research and educational information only. This information is not medical advice and should not be used to diagnose, treat, cure, or prevent disease. Dosage and treatment decisions should be made with a qualified healthcare professional.
+        </p>
+      </div>
     </div>
   );
 }

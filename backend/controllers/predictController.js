@@ -2,6 +2,7 @@ const {
   getResearchData
 } = require('../services/scientific/researchService');
 
+const Plant = require('../models/Plant');
 const axios = require('axios');
 const FormData = require('form-data');
 const config = require('../config/config');
@@ -99,6 +100,64 @@ exports.predictImage = async (req, res) => {
 
         predictionResponse.sources =
           researchData.sources || [];
+
+        // 10) Merge verified plant database properties, taxonomy, and local names
+        try {
+          const plantDoc = await Plant.findOne({
+            $or: [
+              { modelClass: prediction.class },
+              { scientificName: prediction.scientificName }
+            ]
+          }).select('localName commonName scientificName taxonomy medicinalProperties indications modelClass');
+
+          if (plantDoc) {
+            if (plantDoc.localName) {
+              prediction.localName = plantDoc.localName;
+              predictionResponse.localName = plantDoc.localName;
+            }
+            if (plantDoc.commonName) {
+              prediction.commonName = plantDoc.commonName;
+              predictionResponse.commonName = plantDoc.commonName;
+            }
+            if (plantDoc.scientificName) {
+              prediction.scientificName = plantDoc.scientificName;
+              predictionResponse.scientificName = plantDoc.scientificName;
+            }
+            if (plantDoc.modelClass) {
+              prediction.modelClass = plantDoc.modelClass;
+              predictionResponse.modelClass = plantDoc.modelClass;
+            }
+            if (plantDoc.taxonomy) {
+              prediction.taxonomy = plantDoc.taxonomy;
+              prediction.family = plantDoc.taxonomy.family;
+              prediction.genus = plantDoc.taxonomy.genus;
+              prediction.species = plantDoc.taxonomy.species;
+
+              const existingTax = predictionResponse.taxonomy || {};
+              predictionResponse.taxonomy = {
+                ...existingTax,
+                family: plantDoc.taxonomy.family,
+                genus: plantDoc.taxonomy.genus,
+                species: plantDoc.taxonomy.species,
+                taxonomy: {
+                  ...(existingTax.taxonomy || {}),
+                  family: plantDoc.taxonomy.family,
+                  genus: plantDoc.taxonomy.genus,
+                  species: plantDoc.taxonomy.species
+                }
+              };
+            }
+            predictionResponse.medicinalProperties = plantDoc.medicinalProperties || [];
+            predictionResponse.indications = plantDoc.indications || [];
+          } else {
+            predictionResponse.medicinalProperties = [];
+            predictionResponse.indications = [];
+          }
+        } catch (dbErr) {
+          console.debug('[Predict Controller] Plant record lookup skipped:', dbErr.message);
+          predictionResponse.medicinalProperties = [];
+          predictionResponse.indications = [];
+        }
       } catch (researchError) {
         console.error(
           '[RESEARCH ERROR] Scientific research retrieval failed:',

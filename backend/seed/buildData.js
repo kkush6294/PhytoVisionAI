@@ -3,6 +3,7 @@ const path = require('path');
 
 const safety = require('../services/scientific/safetyService');
 const extraction = require('../services/scientific/extractionService');
+const evidence = require('./plantEvidenceData');
 const classMapping = require('../../training/models/mobilenetv2/class_mapping.json');
 const scientificMap = require('./scientific_map.json');
 
@@ -14,22 +15,30 @@ const catalog = Object.keys(classMapping)
   .sort((a, b) => Number(a) - Number(b))
   .map(k => {
     const modelClass = classMapping[k];
-    const sciInfo = scientificMap[modelClass] || [modelClass, modelClass];
-    const scientificName = sciInfo[0];
-    const commonName = sciInfo[1];
+    const sciInfo = scientificMap[modelClass] || {};
+    const scientificName = sciInfo.scientificName || (Array.isArray(sciInfo) ? sciInfo[0] : modelClass);
+    const commonName = sciInfo.commonName || (Array.isArray(sciInfo) ? sciInfo[1] : modelClass);
+    const localName = sciInfo.localName || (Array.isArray(sciInfo) ? sciInfo[2] : modelClass);
+    const family = sciInfo.family || (Array.isArray(sciInfo) ? sciInfo[3] : 'Magnoliophyta');
+    const genus = sciInfo.genus || scientificName.split(' ')[0] || null;
+    const species = sciInfo.species || scientificName.split(' ')[1] || null;
     const safe = safety.PLANT_SAFETY_EVIDENCE[modelClass] || {};
     const ext = extraction.PLANT_EXTRACTION_GUIDANCE[modelClass] || {};
     const comp = candidates[modelClass] || [];
+    const ev = evidence[modelClass] || {};
 
     return {
       scientificName: scientificName,
       commonName: commonName,
-      alternateNames: [modelClass, commonName].filter((v, i, a) => a.indexOf(v) === i),
+      localName: localName,
+      alternateNames: [modelClass, commonName, localName].filter((v, i, a) => v && a.indexOf(v) === i),
       taxonomy: {
-        genus: scientificName.split(' ')[0] || null,
-        species: scientificName.split(' ')[1] || null
+        family: family,
+        genus: genus,
+        species: species
       },
-      medicinalProperties: safe.safetyNotes ? [safe.safetyNotes] : [],
+      medicinalProperties: ev.medicinalProperties || [],
+      indications: ev.indications || [],
       compounds: comp,
       safety: {
         recommendedDosage: safe.recommendedDosage || null,

@@ -13,6 +13,43 @@ import { predictImage, recordHistory, getMe, createGuestSession } from "./servic
 const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
 const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5 MB
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("PhytoVision ErrorBoundary caught an error:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="empty-history-card" style={{ padding: "40px", textAlign: "center" }}>
+          <span className="empty-icon">⚠️</span>
+          <h3>Unable to display view</h3>
+          <p>{this.state.error?.message || "An unexpected rendering error occurred."}</p>
+          <button
+            className="predict-button"
+            onClick={() => {
+              this.setState({ hasError: false, error: null });
+              if (this.props.onReset) this.props.onReset();
+            }}
+          >
+            🔄 Reset and Try Again
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 function App() {
   const [user, setUser] = useState(null);
   const [authModal, setAuthModal] = useState(null); // 'login' | 'register' | null
@@ -244,7 +281,7 @@ function App() {
 
         {/* VIEW 2: SCREEN 6 IDENTIFICATION RESULT DASHBOARD */}
         {currentView === "result" && (
-          <>
+          <ErrorBoundary onReset={resetPrediction}>
             {result ? (
               <ResultDashboard
                 result={result}
@@ -263,16 +300,18 @@ function App() {
                 </button>
               </div>
             )}
-          </>
+          </ErrorBoundary>
         )}
 
         {/* VIEW 3: SCREEN 7 DEDICATED AI ANALYSIS VIEW */}
         {currentView === "analysis" && (
-          <AnalysisView
-            result={result}
-            previewImage={preview}
-            onNavigateIdentify={() => setCurrentView("identify")}
-          />
+          <ErrorBoundary onReset={resetPrediction}>
+            <AnalysisView
+              result={result}
+              previewImage={preview}
+              onNavigateIdentify={() => setCurrentView("identify")}
+            />
+          </ErrorBoundary>
         )}
 
         {/* VIEW 4: RECOMMENDATIONS VIEW */}

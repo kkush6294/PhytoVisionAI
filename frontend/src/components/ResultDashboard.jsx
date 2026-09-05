@@ -44,18 +44,75 @@ function ResultDashboard({
   const [extractionData, setExtractionData] = useState(result?.extractionGuidance || null);
   const [safetyData, setSafetyData] = useState(result?.safetyInfo || null);
 
+  // Safe fallback guard against missing/null result
+  if (!result || !result.prediction) {
+    return (
+      <div className="result-empty-container" style={{ padding: "40px", textAlign: "center" }}>
+        <div className="empty-state-card">
+          <span style={{ fontSize: "2.5rem" }}>🌿</span>
+          <h3>No Plant Identification Data Available</h3>
+          <p>Please upload a botanical leaf specimen image to view identification results.</p>
+          <button className="predict-button" onClick={onReset} style={{ marginTop: "16px" }}>
+            🔍 Identify a Plant Specimen
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   const prediction = result?.prediction || {};
-  const taxonomy = result?.taxonomy || {};
-  const compounds = result?.compounds || [];
-  const medicinalEvidence = result?.medicinalEvidence || [];
+  const taxonomy = result?.taxonomy || prediction?.taxonomy || {};
+  const compounds = Array.isArray(result?.compounds) ? result.compounds : [];
+  const medicinalEvidence = Array.isArray(result?.medicinalEvidence) ? result.medicinalEvidence : [];
   const gradcam = result?.gradcam || {};
 
-  const plantClass = prediction.class || "";
-  const scientificName = prediction.scientificName || "";
-  const commonName = prediction.commonName || plantClass;
+  const plantClass = prediction.class || prediction.modelClass || result?.modelClass || "";
+  const scientificName =
+    prediction.scientificName ||
+    result?.scientificName ||
+    result?.plant?.scientificName ||
+    "";
+  const commonName =
+    prediction.commonName ||
+    result?.commonName ||
+    result?.plant?.commonName ||
+    plantClass;
+  const localName =
+    prediction.localName ||
+    result?.localName ||
+    result?.plant?.localName ||
+    "";
+  const primaryName = localName || commonName || "Unknown Plant";
   const confidencePercent = (
     (prediction.calibratedConfidence || prediction.confidence || 0) * 100
   ).toFixed(1);
+
+  const familyName =
+    taxonomy.taxonomy?.family ||
+    taxonomy.family ||
+    prediction.family ||
+    result?.family ||
+    "Magnoliophyta";
+  const genusName =
+    taxonomy.taxonomy?.genus ||
+    taxonomy.genus ||
+    prediction.genus ||
+    result?.genus ||
+    (scientificName ? scientificName.split(" ")[0] : "");
+
+  // Compile medicinal properties safely from database, prediction, or literature
+  const rawMedicinalProps =
+    (Array.isArray(result?.medicinalProperties) && result.medicinalProperties.length > 0)
+      ? result.medicinalProperties
+      : (Array.isArray(prediction?.medicinalProperties) && prediction.medicinalProperties.length > 0)
+      ? prediction.medicinalProperties
+      : (Array.isArray(result?.plant?.medicinalProperties) && result.plant.medicinalProperties.length > 0)
+      ? result.plant.medicinalProperties
+      : (Array.isArray(medicinalEvidence) && medicinalEvidence.length > 0)
+      ? medicinalEvidence
+      : [];
+
+  const displayedProperties = rawMedicinalProps;
 
   // Check saved plant status on mount (Phase 2.4 API)
   useEffect(() => {
@@ -158,23 +215,52 @@ function ResultDashboard({
     }
   };
 
-  // Compile medicinal properties cleanly from database or literature
-  const rawMedicinalProps =
-    result?.medicinalProperties ||
-    (Array.isArray(result?.safety?.precautions) ? [] : []) ||
-    [];
+  // Safe availability helper rejecting null, undefined, blanks, and unpopulated placeholders
+  const isAvailable = (value) => {
+    if (value === null || value === undefined) return false;
+    if (typeof value !== "string") return true;
+    const trimmed = value.trim().toLowerCase();
+    if (!trimmed) return false;
+    if (
+      trimmed === "not reported in retrieved source" ||
+      trimmed === "not reported" ||
+      trimmed === "not specified" ||
+      trimmed === "unavailable" ||
+      trimmed === "information unavailable" ||
+      trimmed.includes("not reported") ||
+      trimmed.includes("not specified") ||
+      trimmed.includes("unavailable")
+    ) {
+      return false;
+    }
+    return true;
+  };
 
-  // Fallback to sample medicinal indications if array is empty
-  const displayedProperties =
-    rawMedicinalProps.length > 0
-      ? rawMedicinalProps
-      : [
-          "Antimicrobial & Antiseptic activity",
-          "Antioxidant & Free-radical scavenging",
-          "Anti-inflammatory response modulation",
-          "Wound healing acceleration",
-          "Immunomodulatory properties",
-        ];
+  // Construct laboratory extraction protocol parameters list dynamically
+  const protocolParameters = [
+    { label: "Plant Part", value: extractionData?.plantPart },
+    { label: "Extraction Method", value: extractionData?.method },
+    { label: "Solvent System", value: extractionData?.solvent },
+    { label: "Solvent Concentration", value: extractionData?.solventConcentration },
+    { label: "Temperature", value: extractionData?.temperature },
+    { label: "Extraction Duration", value: extractionData?.extractionTime },
+    { label: "Sample Preparation", value: extractionData?.preparation, isFullSpan: true },
+    {
+      label: "Literature Reference & DOI",
+      value: extractionData?.reference,
+      doi: extractionData?.doi,
+      isReference: true,
+      isFullSpan: true
+    }
+  ];
+
+  // Strictly filter to only parameters with verified evidence
+  const availableParameters = protocolParameters.filter((param) => {
+    if (param.isReference) {
+      return isAvailable(param.value) || isAvailable(param.doi);
+    }
+    return isAvailable(param.value);
+  });
 
   return (
     <div className="result-dashboard-wrapper">
@@ -185,8 +271,8 @@ function ResultDashboard({
           <div>
             <h2 className="status-banner-title">Plant Identified Successfully</h2>
             <p className="status-banner-desc">
-              Identified: <strong>{commonName}</strong> (<em>{scientificName}</em>) • Calibrated
-              Confidence: <strong>{confidencePercent}%</strong> • Model: {result.model?.name || "MobileNetV2"}
+              Identified: <strong>{primaryName}</strong> (<em>{scientificName}</em>) • Calibrated
+              Confidence: <strong>{confidencePercent}%</strong> • Model: {result?.model?.name || "MobileNetV2"}
             </p>
           </div>
         </div>
@@ -211,34 +297,52 @@ function ResultDashboard({
           <div className="plant-image-container">
             <img
               src={gradcam.original || previewImage || "/placeholder-leaf.png"}
-              alt={commonName}
+              alt={primaryName}
               className="specimen-display-image"
             />
           </div>
 
           <div className="plant-identity-details">
-            <h1 className="specimen-common-name">{commonName}</h1>
+            <h1 className="specimen-common-name">{primaryName}</h1>
             <p className="specimen-scientific-name">
               <em>{scientificName}</em>
             </p>
 
             <div className="taxonomy-mini-list">
-              <div className="tax-item">
-                <span className="tax-label">Family:</span>
-                <span className="tax-val">
-                  {taxonomy.taxonomy?.family || taxonomy.family || "Magnoliophyta"}
-                </span>
-              </div>
-              <div className="tax-item">
-                <span className="tax-label">Class:</span>
-                <span className="tax-val">{plantClass}</span>
-              </div>
-              {taxonomy.taxonomy?.genus && (
+              {localName && (
                 <div className="tax-item">
-                  <span className="tax-label">Genus:</span>
-                  <span className="tax-val">{taxonomy.taxonomy.genus}</span>
+                  <span className="tax-label">Local Name:</span>
+                  <span className="tax-val">{localName}</span>
                 </div>
               )}
+              {commonName && (
+                <div className="tax-item">
+                  <span className="tax-label">Common Name (English):</span>
+                  <span className="tax-val">{commonName}</span>
+                </div>
+              )}
+              {scientificName && (
+                <div className="tax-item">
+                  <span className="tax-label">Scientific Name:</span>
+                  <span className="tax-val">
+                    <em>{scientificName}</em>
+                  </span>
+                </div>
+              )}
+              <div className="tax-item">
+                <span className="tax-label">Family:</span>
+                <span className="tax-val">{familyName}</span>
+              </div>
+              {genusName && (
+                <div className="tax-item">
+                  <span className="tax-label">Genus:</span>
+                  <span className="tax-val">{genusName}</span>
+                </div>
+              )}
+              <div className="tax-item">
+                <span className="tax-label">Model Class:</span>
+                <span className="tax-val">{plantClass}</span>
+              </div>
             </div>
 
             <div className="confidence-meter-block">
@@ -264,16 +368,16 @@ function ResultDashboard({
           </div>
         </div>
 
-        {/* CARD 2: PREDICTED BIOACTIVE COMPOUNDS CARD */}
+        {/* CARD 2: REPORTED BIOACTIVE COMPOUNDS CARD */}
         <div className="dashboard-card compounds-card">
           <div className="card-header-row">
             <span className="card-label-badge">BIOACTIVE COMPOUNDS</span>
-            <span className="count-badge">{compounds.length} Identified</span>
+            <span className="count-badge">{compounds.length} Documented</span>
           </div>
 
-          <h3 className="card-section-title">Phytochemical Profile</h3>
+          <h3 className="card-section-title">Literature- and Database-Reported Bioactive Compounds</h3>
           <p className="card-section-desc">
-            Verified secondary metabolites identified via PubChem chemical structure repository.
+            These compounds are reported in scientific literature and chemical databases (PubChem) for the identified plant species. They are not predicted directly from the uploaded leaf image.
           </p>
 
           <div className="compounds-grid-list">
@@ -281,13 +385,32 @@ function ResultDashboard({
               <div key={comp.cid || idx} className="compound-badge-pill">
                 <div className="comp-info-top">
                   <strong className="comp-name">{comp.name || `Compound #${idx + 1}`}</strong>
-                  {comp.cid && <span className="comp-cid-tag">CID: {comp.cid}</span>}
+                  {comp.cid ? (
+                    <a
+                      href={`https://pubchem.ncbi.nlm.nih.gov/compound/${comp.cid}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="comp-cid-tag"
+                      title="View verified record in PubChem"
+                    >
+                      Source: PubChem (CID: {comp.cid}) ↗
+                    </a>
+                  ) : (
+                    <span className="comp-cid-tag">Source: Monograph</span>
+                  )}
                 </div>
                 {comp.iupacName && (
                   <span className="comp-iupac-snippet" title={comp.iupacName}>
-                    {comp.iupacName.length > 38
+                    IUPAC: {comp.iupacName.length > 38
                       ? comp.iupacName.substring(0, 38) + "..."
                       : comp.iupacName}
+                  </span>
+                )}
+                {comp.connectivitySMILES && (
+                  <span className="comp-smiles-snippet" title={comp.connectivitySMILES}>
+                    SMILES: {comp.connectivitySMILES.length > 32
+                      ? comp.connectivitySMILES.substring(0, 32) + "..."
+                      : comp.connectivitySMILES}
                   </span>
                 )}
               </div>
@@ -295,7 +418,7 @@ function ResultDashboard({
 
             {compounds.length === 0 && (
               <div className="empty-state-card">
-                <span>🧪 Pharmacological compounds cataloged in monograph database.</span>
+                <span>🧪 Phytochemical constituents cataloged in botanical monograph database.</span>
               </div>
             )}
           </div>
@@ -305,7 +428,7 @@ function ResultDashboard({
               className="view-all-compounds-btn"
               onClick={() => setShowAllCompounds(!showAllCompounds)}
             >
-              {showAllCompounds ? "Show Fewer Compounds" : `View All ${compounds.length} Compounds`}
+              {showAllCompounds ? "Show Fewer Compounds" : `View All ${compounds.length} Reported Compounds`}
             </button>
           )}
         </div>
@@ -314,22 +437,28 @@ function ResultDashboard({
         <div className="dashboard-card medicinal-card">
           <div className="card-header-row">
             <span className="card-label-badge">PHARMACOLOGICAL ACTIONS</span>
-            <span className="verified-badge">Clinically Documented</span>
+            <span className="verified-badge">Research Evidence Available</span>
           </div>
 
           <h3 className="card-section-title">Medicinal Properties</h3>
           <p className="card-section-desc">
-            Therapeutic activities documented in botanical pharmacopoeias and biomedical databases.
+            Pharmacological actions reported in botanical pharmacopoeias, ethnobotanical literature, and biomedical databases.
           </p>
 
-          <ul className="medicinal-checklist">
-            {displayedProperties.map((prop, idx) => (
-              <li key={idx} className="medicinal-item">
-                <span className="check-icon">✓</span>
-                <span className="prop-text">{prop}</span>
-              </li>
-            ))}
-          </ul>
+          {displayedProperties.length > 0 ? (
+            <ul className="medicinal-checklist">
+              {displayedProperties.map((prop, idx) => (
+                <li key={idx} className="medicinal-item">
+                  <span className="check-icon">✓</span>
+                  <span className="prop-text">{prop}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="empty-state-card">
+              <span>Medicinal property information is not available from connected evidence sources.</span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -349,77 +478,55 @@ function ResultDashboard({
 
           <h3 className="card-section-title">Laboratory Extraction Protocol</h3>
           <p className="card-section-desc">
-            Evidence-grounded parameters for bioactive metabolite isolation and solvent yield
-            optimization.
+            Evidence-grounded parameters for bioactive metabolite isolation and solvent yield optimization.
           </p>
 
-          <div className="protocol-parameters-grid">
-            <div className="protocol-cell">
-              <span className="cell-label">Plant Part:</span>
-              <strong className="cell-val">
-                {extractionData?.plantPart || "Not reported in retrieved source"}
-              </strong>
-            </div>
-
-            <div className="protocol-cell">
-              <span className="cell-label">Extraction Method:</span>
-              <strong className="cell-val">
-                {extractionData?.method || "Not reported in retrieved source"}
-              </strong>
-            </div>
-
-            <div className="protocol-cell">
-              <span className="cell-label">Solvent System:</span>
-              <strong className="cell-val">
-                {extractionData?.solvent || "Not reported in retrieved source"}
-              </strong>
-            </div>
-
-            <div className="protocol-cell">
-              <span className="cell-label">Solvent Concentration:</span>
-              <strong className="cell-val">
-                {extractionData?.solventConcentration || "Not reported in retrieved source"}
-              </strong>
-            </div>
-
-            <div className="protocol-cell">
-              <span className="cell-label">Temperature:</span>
-              <strong className="cell-val">
-                {extractionData?.temperature || "Not reported in retrieved source"}
-              </strong>
-            </div>
-
-            <div className="protocol-cell">
-              <span className="cell-label">Extraction Duration:</span>
-              <strong className="cell-val">
-                {extractionData?.extractionTime || "Not reported in retrieved source"}
-              </strong>
-            </div>
-
-            <div className="protocol-cell full-span">
-              <span className="cell-label">Sample Preparation:</span>
-              <strong className="cell-val">
-                {extractionData?.preparation || "Not reported in retrieved source"}
-              </strong>
-            </div>
-
-            <div className="protocol-cell full-span reference-cell">
-              <span className="cell-label">Literature Reference & DOI:</span>
-              <span className="cell-reference-text">
-                {extractionData?.reference || "Not reported in retrieved source"}
-              </span>
-              {extractionData?.doi && (
-                <a
-                  href={`https://doi.org/${extractionData.doi}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="doi-link-btn"
-                >
-                  🔗 View Peer-Reviewed Publication (DOI: {extractionData.doi})
-                </a>
-              )}
-            </div>
+          {/* Completeness indicator */}
+          <div className="extraction-completeness-banner">
+            <span className="completeness-count">
+              Available protocol parameters: <strong>{availableParameters.length} of 8 parameters available</strong>
+            </span>
           </div>
+
+          {availableParameters.length === 0 ? (
+            <div className="extraction-empty-notice">
+              <p className="empty-protocol-message">
+                No validated extraction parameters were found in the retrieved literature source.
+              </p>
+            </div>
+          ) : (
+            <div className="protocol-parameters-grid">
+              {availableParameters.map((param, idx) => (
+                <div
+                  key={param.label || idx}
+                  className={`protocol-cell ${param.isFullSpan ? "full-span" : ""} ${
+                    param.isReference ? "reference-cell" : ""
+                  }`}
+                >
+                  <span className="cell-label">{param.label}:</span>
+                  {param.isReference ? (
+                    <>
+                      {param.value && isAvailable(param.value) && (
+                        <span className="cell-reference-text">{param.value}</span>
+                      )}
+                      {param.doi && isAvailable(param.doi) && (
+                        <a
+                          href={`https://doi.org/${param.doi}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="doi-link-btn"
+                        >
+                          🔗 View Peer-Reviewed Publication (DOI: {param.doi})
+                        </a>
+                      )}
+                    </>
+                  ) : (
+                    <strong className="cell-val">{param.value}</strong>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* CARD 5: SAFETY & PHARMACOLOGICAL DOSAGE CARD */}
@@ -433,17 +540,17 @@ function ResultDashboard({
 
           <h3 className="card-section-title">Safety & Dosage Guidance</h3>
           <p className="card-section-desc">
-            Evidence-backed toxicological thresholds, clinical contraindications, and dosage standards.
+            Evidence-backed toxicological thresholds, clinical contraindications, and source-reported dosage standards.
           </p>
 
           <div className="safety-info-blocks">
             <div className="safety-callout dosage-block">
               <span className="callout-icon">💊</span>
               <div>
-                <strong className="callout-title">Recommended Dosage:</strong>
+                <strong className="callout-title">Source-Reported Dosage:</strong>
                 <p className="callout-content">
                   {safetyData?.recommendedDosage ||
-                    "Information unavailable from retrieved scientific sources."}
+                    "Dosage information not specified in retrieved monographs. Consult a qualified professional."}
                 </p>
               </div>
             </div>
@@ -451,7 +558,7 @@ function ResultDashboard({
             <div className="safety-callout toxicity-block">
               <span className="callout-icon">⚠️</span>
               <div>
-                <strong className="callout-title">Toxicity Level:</strong>
+                <strong className="callout-title">Toxicity Evaluation:</strong>
                 <p className="callout-content">
                   {safetyData?.toxicityLevel ||
                     "Information unavailable from retrieved scientific sources."}
@@ -461,7 +568,7 @@ function ResultDashboard({
 
             {safetyData?.precautions && safetyData.precautions.length > 0 && (
               <div className="precautions-list-block">
-                <strong className="precautions-title">Clinical Precautions:</strong>
+                <strong className="precautions-title">Documented Precautions & Contraindications:</strong>
                 <ul className="precautions-bullet-list">
                   {safetyData.precautions.map((prec, idx) => (
                     <li key={idx}>{prec}</li>
@@ -472,13 +579,20 @@ function ResultDashboard({
 
             {safetyData?.safetyNotes && (
               <div className="safety-notes-block">
-                <strong>Pharmacological Notes:</strong>
+                <strong>Pharmacological Remarks:</strong>
                 <p>{safetyData.safetyNotes}</p>
               </div>
             )}
 
             <div className="safety-source-tag">
-              <strong>Evidence Source:</strong> <em>{safetyData?.source || "WHO Monographs / PubChem"}</em>
+              <strong>Evidence Source:</strong> <em>{safetyData?.source || "WHO Monographs on Selected Medicinal Plants / Standard Pharmacopoeias"}</em>
+            </div>
+
+            {/* MANDATORY MEDICAL DISCLAIMER */}
+            <div className="safety-medical-disclaimer-box">
+              <p>
+                ⚕️ <strong>Medical Disclaimer:</strong> Research and educational information only. This information is not medical advice and should not be used to diagnose, treat, cure, or prevent disease. Dosage and treatment decisions should be made with a qualified healthcare professional.
+              </p>
             </div>
           </div>
         </div>
@@ -490,13 +604,12 @@ function ResultDashboard({
         <div className="dashboard-card condition-rec-card">
           <div className="card-header-row">
             <span className="card-label-badge">SYMPTOM SEARCH</span>
-            <span className="verified-badge">Cross-Species Discovery</span>
+            <span className="verified-badge">Catalog Matching</span>
           </div>
 
           <h3 className="card-section-title">Condition & Symptom Recommendations</h3>
           <p className="card-section-desc">
-            Search pharmacological indications (e.g. <em>digestive</em>, <em>skin</em>, <em>inflammation</em>)
-            across verified catalog records.
+            Explore plant species matched against pharmacological indications (e.g. <em>digestive</em>, <em>skin</em>, <em>inflammation</em>) based on cataloged monograph properties.
           </p>
 
           <form onSubmit={handleConditionSearch} className="condition-search-form">
@@ -517,7 +630,7 @@ function ResultDashboard({
 
             {!recLoading && recSearched && recommendations.length === 0 && (
               <div className="empty-state-card">
-                No plant records found matching "{conditionQuery}". Try <em>skin</em>, <em>digestive</em>, or <em>inflammatory</em>.
+                No documented plant associations found for "{conditionQuery}".
               </div>
             )}
 
@@ -526,10 +639,26 @@ function ResultDashboard({
                 {recommendations.map((rec) => (
                   <div key={rec.id} className="rec-result-item">
                     <div className="rec-item-header">
-                      <strong>{rec.commonName}</strong>
+                      <strong>{rec.commonName || rec.plant}</strong>
                       <em>({rec.scientificName})</em>
                     </div>
-                    {rec.dosage && <p className="rec-item-dosage">💊 Dosage: {rec.dosage}</p>}
+                    <div className="rec-basis-info">
+                      <span className="rec-basis-label">Matched indication:</span> {rec.matchedIndication || conditionQuery}
+                    </div>
+                    <div className="rec-basis-info">
+                      <span className="rec-basis-label">Evidence basis:</span> {rec.evidenceType ? rec.evidenceType.replace(/_/g, " ") : "monograph documented"}
+                    </div>
+                    {rec.evidenceSource && (
+                      <div className="rec-basis-info">
+                        <span className="rec-basis-label">Evidence source:</span> {rec.evidenceSource}
+                      </div>
+                    )}
+                    {rec.citation && (
+                      <div className="rec-citation-snippet">
+                        <small><em>Citation:</em> {rec.citation}</small>
+                      </div>
+                    )}
+                    {rec.dosage && <p className="rec-item-dosage">💊 Source-Reported Dosage: {rec.dosage}</p>}
                     {rec.medicinalProperties?.length > 0 && (
                       <div className="rec-item-props">
                         {rec.medicinalProperties.slice(0, 2).map((p, idx) => (
@@ -550,13 +679,12 @@ function ResultDashboard({
         <div className="dashboard-card explainable-ai-card">
           <div className="card-header-row">
             <span className="card-label-badge">EXPLAINABLE AI</span>
-            <span className="model-tag">Conv_1 Heatmap</span>
+            <span className="model-tag">Conv_1 Activation Map</span>
           </div>
 
           <h3 className="card-section-title">Visual Activation (Grad-CAM)</h3>
           <p className="card-section-desc">
-            Highlights leaf venation and morphological regions that contributed most strongly to
-            MobileNetV2 classification.
+            Gradient-weighted Class Activation Mapping highlights morphological leaf regions that contributed most strongly to the model's prediction.
           </p>
 
           {gradcam.heatmap ? (
@@ -575,9 +703,7 @@ function ResultDashboard({
               </div>
               <div className="gradcam-note-box">
                 <p>
-                  💡 <strong>Interpretation:</strong> Warmer red and yellow colors represent high-gradient
-                  regions directing the model's prediction. The deep feature map validates botanical
-                  accuracy.
+                  💡 <strong>Interpretability Aid:</strong> Grad-CAM visualization highlights image regions that contributed to the model's prediction. It provides an interpretability aid and does not independently verify prediction correctness.
                 </p>
               </div>
             </div>

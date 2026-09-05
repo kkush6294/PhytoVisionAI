@@ -1,162 +1,322 @@
 {
-  "Aloevera": [
-    "Aloe vera",
-    "Aloe Vera"
-  ],
-  "Amla": [
-    "Phyllanthus emblica",
-    "Amla"
-  ],
-  "Amruta_Balli": [
-    "Tinospora cordifolia",
-    "Heart-leaved Moonseed"
-  ],
-  "Arali": [
-    "Nerium oleander",
-    "Oleander"
-  ],
-  "Ashoka": [
-    "Saraca asoca",
-    "Ashoka"
-  ],
-  "Ashwagandha": [
-    "Withania somnifera",
-    "Ashwagandha"
-  ],
-  "Avacado": [
-    "Persea americana",
-    "Avocado"
-  ],
-  "Bamboo": [
-    "Bambusa vulgaris",
-    "Bamboo"
-  ],
-  "Basale": [
-    "Basella alba",
-    "Malabar Spinach"
-  ],
-  "Betel": [
-    "Piper betle",
-    "Betel"
-  ],
-  "Betel_Nut": [
-    "Areca catechu",
-    "Betel Nut"
-  ],
-  "Brahmi": [
-    "Bacopa monnieri",
-    "Brahmi"
-  ],
-  "Castor": [
-    "Ricinus communis",
-    "Castor"
-  ],
-  "Curry_Leaf": [
-    "Murraya koenigii",
-    "Curry Leaf"
-  ],
-  "Doddapatre": [
-    "Coleus amboinicus",
-    "Doddapatre"
-  ],
-  "Ekka": [
-    "Calotropis gigantea",
-    "Crown Flower"
-  ],
-  "Ganike": [
-    "Solanum nigrum",
-    "Black Nightshade"
-  ],
-  "Gauva": [
-    "Psidium guajava",
-    "Guava"
-  ],
-  "Geranium": [
-    "Pelargonium graveolens",
-    "Geranium"
-  ],
-  "Henna": [
-    "Lawsonia inermis",
-    "Henna"
-  ],
-  "Hibiscus": [
-    "Hibiscus rosa-sinensis",
-    "Hibiscus"
-  ],
-  "Honge": [
-    "Pongamia pinnata",
-    "Honge"
-  ],
-  "Insulin": [
-    "Costus igneus",
-    "Insulin Plant"
-  ],
-  "Jasmine": [
-    "Jasminum auriculatum",
-    "Jasmine"
-  ],
-  "Lemon": [
-    "Citrus limon",
-    "Lemon"
-  ],
-  "Lemon_grass": [
-    "Cymbopogon citratus",
-    "Lemon Grass"
-  ],
-  "Mango": [
-    "Mangifera indica",
-    "Mango"
-  ],
-  "Mint": [
-    "Mentha arvensis",
-    "Mint"
-  ],
-  "Nagadali": [
-    "Ruta graveolens",
-    "Nagadali"
-  ],
-  "Neem": [
-    "Azadirachta indica",
-    "Neem"
-  ],
-  "Nithyapushpa": [
-    "Catharanthus roseus",
-    "Madagascar Periwinkle"
-  ],
-  "Nooni": [
-    "Morinda citrifolia",
-    "Noni"
-  ],
-  "Pappaya": [
-    "Carica papaya",
-    "Papaya"
-  ],
-  "Pepper": [
-    "Piper nigrum",
-    "Pepper"
-  ],
-  "Pomegranate": [
-    "Punica granatum",
-    "Pomegranate"
-  ],
-  "Raktachandini": [
-    "Caesalpinia sappan",
-    "Raktachandini"
-  ],
-  "Rose": [
-    "Rosa indica",
-    "Rose"
-  ],
-  "Sapota": [
-    "Manilkara zapota",
-    "Sapota"
-  ],
-  "Tulasi": [
-    "Ocimum tenuiflorum",
-    "Tulsi"
-  ],
-  "Wood_sorel": [
-    "Oxalis corniculata",
-    "Wood Sorrel"
-  ]
+  "Aloevera": {
+    "scientificName": "Aloe vera",
+    "commonName": "Aloe Vera",
+    "localName": "Lolesara",
+    "family": "Asphodelaceae",
+    "genus": "Aloe",
+    "species": "vera"
+  },
+  "Amla": {
+    "scientificName": "Phyllanthus emblica",
+    "commonName": "Indian Gooseberry",
+    "localName": "Amla",
+    "family": "Phyllanthaceae",
+    "genus": "Phyllanthus",
+    "species": "emblica"
+  },
+  "Amruta_Balli": {
+    "scientificName": "Tinospora cordifolia",
+    "commonName": "Heart-leaved Moonseed",
+    "localName": "Amruta Balli",
+    "family": "Menispermaceae",
+    "genus": "Tinospora",
+    "species": "cordifolia"
+  },
+  "Arali": {
+    "scientificName": "Nerium oleander",
+    "commonName": "Oleander",
+    "localName": "Arali",
+    "family": "Apocynaceae",
+    "genus": "Nerium",
+    "species": "oleander"
+  },
+  "Ashoka": {
+    "scientificName": "Saraca asoca",
+    "commonName": "Ashoka Tree",
+    "localName": "Ashoka",
+    "family": "Fabaceae",
+    "genus": "Saraca",
+    "species": "asoca"
+  },
+  "Ashwagandha": {
+    "scientificName": "Withania somnifera",
+    "commonName": "Indian Ginseng",
+    "localName": "Ashwagandha",
+    "family": "Solanaceae",
+    "genus": "Withania",
+    "species": "somnifera"
+  },
+  "Avacado": {
+    "scientificName": "Persea americana",
+    "commonName": "Avocado",
+    "localName": "Benne Hannu",
+    "family": "Lauraceae",
+    "genus": "Persea",
+    "species": "americana"
+  },
+  "Bamboo": {
+    "scientificName": "Bambusa vulgaris",
+    "commonName": "Common Bamboo",
+    "localName": "Bidiru",
+    "family": "Poaceae",
+    "genus": "Bambusa",
+    "species": "vulgaris"
+  },
+  "Basale": {
+    "scientificName": "Basella alba",
+    "commonName": "Malabar Spinach",
+    "localName": "Basale",
+    "family": "Basellaceae",
+    "genus": "Basella",
+    "species": "alba"
+  },
+  "Betel": {
+    "scientificName": "Piper betle",
+    "commonName": "Betel Leaf",
+    "localName": "Velyada Ele",
+    "family": "Piperaceae",
+    "genus": "Piper",
+    "species": "betle"
+  },
+  "Betel_Nut": {
+    "scientificName": "Areca catechu",
+    "commonName": "Areca Nut / Betel Nut",
+    "localName": "Adike",
+    "family": "Arecaceae",
+    "genus": "Areca",
+    "species": "catechu"
+  },
+  "Brahmi": {
+    "scientificName": "Bacopa monnieri",
+    "commonName": "Water Hyssop",
+    "localName": "Brahmi",
+    "family": "Plantaginaceae",
+    "genus": "Bacopa",
+    "species": "monnieri"
+  },
+  "Castor": {
+    "scientificName": "Ricinus communis",
+    "commonName": "Castor Bean",
+    "localName": "Haralu",
+    "family": "Euphorbiaceae",
+    "genus": "Ricinus",
+    "species": "communis"
+  },
+  "Curry_Leaf": {
+    "scientificName": "Murraya koenigii",
+    "commonName": "Curry Leaf",
+    "localName": "Karibevu",
+    "family": "Rutaceae",
+    "genus": "Murraya",
+    "species": "koenigii"
+  },
+  "Doddapatre": {
+    "scientificName": "Coleus amboinicus",
+    "commonName": "Indian Borage",
+    "localName": "Doddapatre",
+    "family": "Lamiaceae",
+    "genus": "Coleus",
+    "species": "amboinicus"
+  },
+  "Ekka": {
+    "scientificName": "Calotropis gigantea",
+    "commonName": "Crown Flower",
+    "localName": "Ekka",
+    "family": "Apocynaceae",
+    "genus": "Calotropis",
+    "species": "gigantea"
+  },
+  "Ganike": {
+    "scientificName": "Solanum nigrum",
+    "commonName": "Black Nightshade",
+    "localName": "Ganike",
+    "family": "Solanaceae",
+    "genus": "Solanum",
+    "species": "nigrum"
+  },
+  "Gauva": {
+    "scientificName": "Psidium guajava",
+    "commonName": "Guava",
+    "localName": "Seebe",
+    "family": "Myrtaceae",
+    "genus": "Psidium",
+    "species": "guajava"
+  },
+  "Geranium": {
+    "scientificName": "Pelargonium graveolens",
+    "commonName": "Rose Geranium",
+    "localName": "Geranium",
+    "family": "Geraniaceae",
+    "genus": "Pelargonium",
+    "species": "graveolens"
+  },
+  "Henna": {
+    "scientificName": "Lawsonia inermis",
+    "commonName": "Henna",
+    "localName": "Goranti",
+    "family": "Lythraceae",
+    "genus": "Lawsonia",
+    "species": "inermis"
+  },
+  "Hibiscus": {
+    "scientificName": "Hibiscus rosa-sinensis",
+    "commonName": "China Rose",
+    "localName": "Dasavala",
+    "family": "Malvaceae",
+    "genus": "Hibiscus",
+    "species": "rosa-sinensis"
+  },
+  "Honge": {
+    "scientificName": "Pongamia pinnata",
+    "commonName": "Indian Beech",
+    "localName": "Honge",
+    "family": "Fabaceae",
+    "genus": "Pongamia",
+    "species": "pinnata"
+  },
+  "Insulin": {
+    "scientificName": "Costus igneus",
+    "commonName": "Insulin Plant",
+    "localName": "Insulin Plant",
+    "family": "Costaceae",
+    "genus": "Costus",
+    "species": "igneus"
+  },
+  "Jasmine": {
+    "scientificName": "Jasminum auriculatum",
+    "commonName": "Jasmine",
+    "localName": "Mallige",
+    "family": "Oleaceae",
+    "genus": "Jasminum",
+    "species": "auriculatum"
+  },
+  "Lemon": {
+    "scientificName": "Citrus limon",
+    "commonName": "Lemon",
+    "localName": "Nimbe",
+    "family": "Rutaceae",
+    "genus": "Citrus",
+    "species": "limon"
+  },
+  "Lemon_grass": {
+    "scientificName": "Cymbopogon citratus",
+    "commonName": "Lemongrass",
+    "localName": "Majjige Hullu",
+    "family": "Poaceae",
+    "genus": "Cymbopogon",
+    "species": "citratus"
+  },
+  "Mango": {
+    "scientificName": "Mangifera indica",
+    "commonName": "Mango",
+    "localName": "Mavu",
+    "family": "Anacardiaceae",
+    "genus": "Mangifera",
+    "species": "indica"
+  },
+  "Mint": {
+    "scientificName": "Mentha arvensis",
+    "commonName": "Field Mint",
+    "localName": "Pudina",
+    "family": "Lamiaceae",
+    "genus": "Mentha",
+    "species": "arvensis"
+  },
+  "Nagadali": {
+    "scientificName": "Ruta graveolens",
+    "commonName": "Common Rue",
+    "localName": "Nagadali",
+    "family": "Rutaceae",
+    "genus": "Ruta",
+    "species": "graveolens"
+  },
+  "Neem": {
+    "scientificName": "Azadirachta indica",
+    "commonName": "Neem",
+    "localName": "Bevu",
+    "family": "Meliaceae",
+    "genus": "Azadirachta",
+    "species": "indica"
+  },
+  "Nithyapushpa": {
+    "scientificName": "Catharanthus roseus",
+    "commonName": "Madagascar Periwinkle",
+    "localName": "Nithyapushpa",
+    "family": "Apocynaceae",
+    "genus": "Catharanthus",
+    "species": "roseus"
+  },
+  "Nooni": {
+    "scientificName": "Morinda citrifolia",
+    "commonName": "Great Morinda / Noni",
+    "localName": "Noni",
+    "family": "Rubiaceae",
+    "genus": "Morinda",
+    "species": "citrifolia"
+  },
+  "Pappaya": {
+    "scientificName": "Carica papaya",
+    "commonName": "Papaya",
+    "localName": "Pappayi",
+    "family": "Caricaceae",
+    "genus": "Carica",
+    "species": "papaya"
+  },
+  "Pepper": {
+    "scientificName": "Piper nigrum",
+    "commonName": "Black Pepper",
+    "localName": "Menasu",
+    "family": "Piperaceae",
+    "genus": "Piper",
+    "species": "nigrum"
+  },
+  "Pomegranate": {
+    "scientificName": "Punica granatum",
+    "commonName": "Pomegranate",
+    "localName": "Dalimbe",
+    "family": "Lythraceae",
+    "genus": "Punica",
+    "species": "granatum"
+  },
+  "Raktachandini": {
+    "scientificName": "Caesalpinia sappan",
+    "commonName": "Sappan Wood",
+    "localName": "Raktachandini",
+    "family": "Fabaceae",
+    "genus": "Caesalpinia",
+    "species": "sappan"
+  },
+  "Rose": {
+    "scientificName": "Rosa indica",
+    "commonName": "Indian Rose",
+    "localName": "Gulabi",
+    "family": "Rosaceae",
+    "genus": "Rosa",
+    "species": "indica"
+  },
+  "Sapota": {
+    "scientificName": "Manilkara zapota",
+    "commonName": "Sapodilla",
+    "localName": "Chikku",
+    "family": "Sapotaceae",
+    "genus": "Manilkara",
+    "species": "zapota"
+  },
+  "Tulasi": {
+    "scientificName": "Ocimum tenuiflorum",
+    "commonName": "Holy Basil",
+    "localName": "Tulasi",
+    "family": "Lamiaceae",
+    "genus": "Ocimum",
+    "species": "tenuiflorum"
+  },
+  "Wood_sorel": {
+    "scientificName": "Oxalis corniculata",
+    "commonName": "Creeping Wood Sorrel",
+    "localName": "Huli Soppu",
+    "family": "Oxalidaceae",
+    "genus": "Oxalis",
+    "species": "corniculata"
+  }
 }

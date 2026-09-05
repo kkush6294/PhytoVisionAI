@@ -12,6 +12,7 @@ exports.getAllPlants = async (req, res) => {
       const regex = new RegExp(term, 'i');
       query.$or = [
         { commonName: regex },
+        { localName: regex },
         { scientificName: regex },
         { modelClass: regex },
         { alternateNames: regex },
@@ -84,7 +85,8 @@ exports.getPlantByIdOrClass = async (req, res) => {
         $or: [
           { modelClass: new RegExp('^' + identifier + '$', 'i') },
           { scientificName: new RegExp('^' + identifier + '$', 'i') },
-          { commonName: new RegExp('^' + identifier + '$', 'i') }
+          { commonName: new RegExp('^' + identifier + '$', 'i') },
+          { localName: new RegExp('^' + identifier + '$', 'i') }
         ]
       }).select('-__v');
     }
