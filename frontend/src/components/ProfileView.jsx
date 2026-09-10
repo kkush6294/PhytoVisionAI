@@ -28,7 +28,10 @@ function ProfileView({ user, onOpenAuth, onLogout }) {
   const handleRemove = async (plantId) => {
     try {
       await removeSavedPlant(plantId);
-      setSavedPlants((prev) => prev.filter((item) => item.plantId?._id !== plantId && item._id !== plantId));
+      setSavedPlants((prev) => prev.filter((item) => {
+        const pId = item.plant?._id || item.plant?.id || item.plantId?._id || item.plantId || item.savedId || item._id;
+        return pId !== plantId;
+      }));
       setActionMsg("Plant removed from saved collection.");
       setTimeout(() => setActionMsg(""), 3000);
     } catch (err) {
@@ -103,14 +106,15 @@ function ProfileView({ user, onOpenAuth, onLogout }) {
       ) : (
         <div className="saved-plants-grid">
           {savedPlants.map((item) => {
-            const plant = item.plantId || {};
+            const plant = item.plant || item.plantId || {};
+            const plantIdentifier = plant._id || plant.id || item.plantId || item.savedId;
             return (
-              <div key={item._id} className="saved-plant-card">
+              <div key={item._id || item.savedId || plantIdentifier} className="saved-plant-card">
                 <div className="saved-card-top">
                   <span className="rec-plant-badge">{plant.modelClass || "Specimen"}</span>
                   <button
                     className="remove-saved-icon-btn"
-                    onClick={() => handleRemove(plant._id || item.plantId)}
+                    onClick={() => handleRemove(plantIdentifier)}
                     title="Remove from saved collection"
                   >
                     ✕

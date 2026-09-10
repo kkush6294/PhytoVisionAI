@@ -84,7 +84,8 @@ exports.savePlant = async (req, res) => {
           scientificName: plant.scientificName,
           modelClass: plant.modelClass,
           compounds: plant.compounds,
-          safety: plant.safety
+          safety: plant.safety,
+          taxonomy: plant.taxonomy
         },
         savedAt: savedPlant.savedAt
       }
@@ -275,7 +276,7 @@ exports.getSavedPlantById = async (req, res) => {
         { plantId: targetPlantId },
         { _id: cleanPlantId.match(/^[0-9a-fA-F]{24}$/) ? cleanPlantId : null }
       ]
-    }).populate('plantId', 'scientificName commonName modelClass compounds safety extraction taxonomy');
+    }).populate('plantId', 'scientificName commonName localName modelClass compounds safety extraction taxonomy');
 
     if (!saved) {
       return res.status(404).json({

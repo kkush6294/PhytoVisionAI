@@ -22,6 +22,7 @@ exports.recordHistory = async (req, res) => {
 
     const {
       plantId,
+      modelClass,
       scientificName,
       commonName,
       localName,
@@ -40,10 +41,11 @@ exports.recordHistory = async (req, res) => {
     }
 
     if ((!plantId || typeof plantId !== 'string' || plantId.trim() === '') &&
-        (!scientificName || typeof scientificName !== 'string' || scientificName.trim() === '')) {
+        (!scientificName || typeof scientificName !== 'string' || scientificName.trim() === '') &&
+        (!modelClass || typeof modelClass !== 'string' || modelClass.trim() === '')) {
       return res.status(400).json({
         error: 'Bad Request',
-        message: 'A valid plantId or scientificName is required.'
+        message: 'A valid plantId, scientificName, or modelClass is required.'
       });
     }
 
@@ -51,17 +53,20 @@ exports.recordHistory = async (req, res) => {
     let resolvedPlant = null;
     const cleanPlantId = (plantId || '').trim();
     const cleanScientificName = (scientificName || '').trim();
+    const cleanModelClass = (modelClass || '').trim();
 
     if (cleanPlantId && cleanPlantId.match(/^[0-9a-fA-F]{24}$/)) {
       resolvedPlant = await Plant.findById(cleanPlantId);
     }
 
-    if (!resolvedPlant && cleanScientificName) {
+    if (!resolvedPlant && (cleanScientificName || cleanModelClass)) {
+      const searchTerms = [cleanScientificName, cleanModelClass].filter(Boolean);
       resolvedPlant = await Plant.findOne({
         $or: [
           { scientificName: new RegExp('^' + cleanScientificName + '$', 'i') },
-          { modelClass: new RegExp('^' + cleanScientificName + '$', 'i') },
-          { commonName: new RegExp('^' + cleanScientificName + '$', 'i') }
+          { modelClass: { $in: searchTerms.map(t => new RegExp('^' + t + '$', 'i')) } },
+          { commonName: new RegExp('^' + cleanScientificName + '$', 'i') },
+          { localName: new RegExp('^' + cleanScientificName + '$', 'i') }
         ]
       });
     }
@@ -85,9 +90,11 @@ exports.recordHistory = async (req, res) => {
     const historyEntry = new IdentificationHistory({
       userId,
       plantId: resolvedPlant._id,
+      modelClass: (cleanModelClass || resolvedPlant.modelClass || '').trim(),
       scientificName: resolvedPlant.scientificName,
       commonName: (commonName || resolvedPlant.commonName || '').trim(),
       localName: (localName || resolvedPlant.localName || '').trim(),
+      taxonomy: resolvedPlant.taxonomy || null,
       confidence: Math.round(confidence * 10000) / 10000,
       rejected: Boolean(rejected),
       modelVersion: modelVersion || 'MobileNetV2-1.0.0',
@@ -134,8 +141,22 @@ exports.getHistory = async (req, res) => {
         .sort({ uploadedAt: -1 })
         .skip(skip)
         .limit(limitNum)
-        .populate('plantId', 'scientificName commonName localName modelClass compounds safety.toxicityLevel')
+        .populate('plantId', 'scientificName commonName localName modelClass compounds safety.toxicityLevel taxonomy')
     ]);
+
+    const normalizedHistory = history.map(item => {
+      const doc = item.toObject ? item.toObject() : { ...item };
+      if (!doc.localName && doc.plantId?.localName) {
+        doc.localName = doc.plantId.localName;
+      }
+      if (!doc.modelClass && doc.plantId?.modelClass) {
+        doc.modelClass = doc.plantId.modelClass;
+      }
+      if (!doc.taxonomy && doc.plantId?.taxonomy) {
+        doc.taxonomy = doc.plantId.taxonomy;
+      }
+      return doc;
+    });
 
     return res.status(200).json({
       success: true,
@@ -143,7 +164,7 @@ exports.getHistory = async (req, res) => {
       page: pageNum,
       limit: limitNum,
       totalPages: Math.ceil(total / limitNum),
-      history
+      history: normalizedHistory
     });
 
   } catch (error) {
@@ -175,7 +196,7 @@ exports.getHistoryById = async (req, res) => {
     const historyItem = await IdentificationHistory.findOne({
       _id: id,
       userId
-    }).populate('plantId', 'scientificName commonName localName modelClass compounds safety.toxicityLevel extraction');
+    }).populate('plantId', 'scientificName commonName localName modelClass compounds safety.toxicityLevel extraction taxonomy');
 
     if (!historyItem) {
       return res.status(404).json({
@@ -184,9 +205,20 @@ exports.getHistoryById = async (req, res) => {
       });
     }
 
+    const doc = historyItem.toObject ? historyItem.toObject() : { ...historyItem };
+    if (!doc.localName && doc.plantId?.localName) {
+      doc.localName = doc.plantId.localName;
+    }
+    if (!doc.modelClass && doc.plantId?.modelClass) {
+      doc.modelClass = doc.plantId.modelClass;
+    }
+    if (!doc.taxonomy && doc.plantId?.taxonomy) {
+      doc.taxonomy = doc.plantId.taxonomy;
+    }
+
     return res.status(200).json({
       success: true,
-      history: historyItem
+      history: doc
     });
 
   } catch (error) {

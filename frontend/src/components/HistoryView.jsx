@@ -112,10 +112,19 @@ function HistoryView({ user, onOpenAuth, onSelectPlant, onNavigateIdentify }) {
                     })}
                   </td>
                   <td>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      <strong>{item.localName || item.plantId?.localName || item.commonName || item.plantId?.commonName || item.plantId?.modelClass || "Identified Specimen"}</strong>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                      <strong className="specimen-local-name" style={{ fontSize: '0.95rem' }}>
+                        {item.localName || item.plantId?.localName || item.commonName || item.plantId?.commonName || item.plantId?.modelClass || "Identified Specimen"}
+                      </strong>
+                      {(item.scientificName || item.plantId?.scientificName) && (
+                        <em className="specimen-sci-name" style={{ fontSize: '0.85rem', color: '#2d6a4f' }}>
+                          {item.scientificName || item.plantId?.scientificName}
+                        </em>
+                      )}
                       {(item.commonName || item.plantId?.commonName) && (item.commonName || item.plantId?.commonName) !== (item.localName || item.plantId?.localName) && (
-                        <span style={{ fontSize: '0.8rem', color: '#666' }}>English: {item.commonName || item.plantId?.commonName}</span>
+                        <span className="specimen-eng-name" style={{ fontSize: '0.8rem', color: '#666' }}>
+                          English: {item.commonName || item.plantId?.commonName}
+                        </span>
                       )}
                     </div>
                   </td>
