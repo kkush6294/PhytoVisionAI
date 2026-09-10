@@ -1,118 +1,144 @@
-# PHYTOVISIONAI — PROJECT STRUCTURE
+# PhytoVisionAI — Codebase Structure
 
-**Version:** 1.1.0  
-**Updated:** September 02, 2026  
+**Project:** PhytoVisionAI — AI-Based Medicinal Plant Identification and Bioactive Compound Analysis System  
+**Updated:** September 05, 2026  
 
 ---
 
-## Directory Overview
+## Clean Directory Map
 
 ```
-PhytoVisionAI_Research/
-│
+PhytoVisionAI/
 ├── .env                                       # Local environment configuration
 ├── .env.example                               # Environment template
-├── .gitignore                                 # Git ignore patterns
-├── CLEANUP_MANIFEST.md                        # Log of obsolete/temp files deleted during Phase 3
-├── PAPER_VS_CODE_FINAL_AUDIT.md               # Audit comparing research paper claims against actual code
-├── PROJECT_DATA_FLOW.md                       # Comprehensive data flow documentation
-├── PROJECT_IMPLEMENTATION_STATUS.md           # Implementation status table
-├── PROJECT_STRUCTURE.md                       # Workspace structure documentation
-├── FINAL_PROJECT_ARCHITECTURE.md              # System architecture documentation
-├── PROJECT_AUDIT_REPORT.md                    # Complete read-only audit report
-├── PROJECT_AUDIT_SUMMARY.json                 # Machine-readable audit summary
-├── README.md                                  # Architectural overview
-├── TODO.md                                    # Implementation checklist
+├── .gitignore                                 # Git ignore rules
+├── docker-compose.yml                         # Multi-container service configuration
+├── FINAL_PROJECT_ARCHITECTURE.md              # Software system architecture guide
+├── PROJECT_DATA_FLOW.md                       # Complete request/response data flow documentation
+├── PROJECT_STRUCTURE.md                       # This repository directory structure
+├── README.md                                  # Main application project documentation
+├── start_all.bat                              # One-click Windows development startup script
 │
-├── ai_service/                                # Python FastAPI AI Inference Service
-│   ├── requirements.txt                       # Python dependencies (fastapi, uvicorn, tensorflow, pillow, numpy, scipy)
+├── ai_service/                                # Python FastAPI AI Inference Service (Port 8000)
+│   ├── Dockerfile                             # Container build file
+│   ├── requirements.txt                       # Python dependencies (FastAPI, PyTorch/TensorFlow, Pillow, NumPy)
 │   └── app/
 │       ├── main.py                            # FastAPI entry point & CORS configuration
 │       ├── routes/
 │       │   └── predict.py                     # POST /predict route with image validation & Grad-CAM invocation
 │       └── services/
-│           ├── inference_service.py           # MobileNetV2 loading, preprocessing, inference, T-scaling, rejection logic
-│           └── gradcam_service.py             # Conv_1 feature map extraction, gradient tape, jet heatmap generation
+│           ├── gradcam_service.py             # Feature map extraction (Conv_1) & Grad-CAM visualizer
+│           └── inference_service.py           # MobileNetV2 loader, preprocessing, T-scaling & rejection logic
 │
-├── backend/                                   # Node.js / Express API Gateway
-│   ├── package.json                           # Node dependencies (express, cors, dotenv, axios, multer, form-data)
+├── backend/                                   # Node.js / Express API Gateway (Port 5000)
+│   ├── Dockerfile                             # Container build file
+│   ├── package.json                           # Node dependencies (express, mongoose, axios, multer, jwt)
 │   ├── package-lock.json                      # Locked npm dependency tree
-│   ├── server.js                              # Express server entry point (Port 5000, security headers, logging)
+│   ├── server.js                              # Express gateway server entry point
+│   ├── db.js                                  # MongoDB connection lifecycle manager
 │   ├── config/
-│   │   └── config.js                          # Environment loader (.env) & default configurations
-│   ├── routes/
-│   │   └── predict.js                         # POST /api/predict route with Multer memoryStorage upload handling
+│   │   └── config.js                          # Environment loader & default configuration
 │   ├── controllers/
-│   │   └── predictController.js               # Express controller forwarding image to AI service & calling research services
-│   └── services/
-│       └── scientific/
-│           ├── researchService.js             # Aggregator orchestrating GBIF, PubChem, Europe PMC, Crossref, Safety, Extraction
-│           ├── gbifService.js                 # Dynamic GBIF API taxonomy lookup (species/match & species/{key})
-│           ├── pubchemService.js              # Candidate phytochemical lookup & PubChem PUG REST property query
-│           ├── europePmcService.js            # Dynamic Europe PMC REST search for medicinal evidence literature
-│           ├── crossrefService.js             # Dynamic Crossref API search for research paper metadata
-│           ├── safetyService.js               # Pharmacological safety & dosage monograph service
-│           └── extractionService.js           # 2-Tier dynamic literature extraction pipeline + curated monograph fallback
-│
-├── frontend/                                  # React 18 / Vite Web Application
-│   ├── package.json                           # Frontend dependencies (react, react-dom, vite, axios)
-│   ├── vite.config.js                         # Vite dev server configuration
-│   ├── index.html                             # HTML entry template
-│   ├── eslint.config.js                       # ESLint configuration
-│   └── src/
-│       ├── main.jsx                           # React root mounting script
-│       ├── App.jsx                            # Single-file main React UI component (upload, prediction, Grad-CAM, 6 research tabs)
-│       ├── App.css                            # CSS styles for the web application (with dynamic/static badge styles)
-│       └── index.css                          # Base Global CSS resets
-│
-├── dataset/                                   # Image Dataset Directories
-│   ├── raw/                                   # Initial raw Kaggle dataset download (5,945 images)
-│   ├── cleaned/                               # Duplicate-cleaned dataset (5,888 unique images)
-│   ├── external/                              # Additional dataset downloads (preetam_medicinal_leaf)
-│   ├── final/                                 # Merged 40-class dataset (6,788 images)
-│   └── final_split/                           # Stratified train (4,740), val (990), test (1,058) split folders
-│
-├── training/                                  # ML Pipeline & Models
+│   │   ├── authController.js                  # User registration, login, and guest session handling
+│   │   ├── extractionController.js            # Dynamic laboratory extraction guidance endpoint
+│   │   ├── historyController.js               # User plant identification history logging
+│   │   ├── plantController.js                 # 40-class plant metadata & local-name search
+│   │   ├── predictController.js               # Gateway image upload & scientific service aggregator
+│   │   ├── recommendationController.js        # Symptom- and indication-based recommendation engine
+│   │   ├── safetyController.js                # Pharmacovigilance, toxicity, and dosage guidance
+│   │   └── savedPlantController.js            # User personal saved-plants library manager
+│   ├── middleware/
+│   │   └── auth.js                            # JWT authentication & guest permission verification
 │   ├── models/
-│   │   ├── mobilenetv2/
-│   │   │   ├── mobilenetv2_best.keras         # Deployed Keras model file (25.91 MB)
-│   │   │   ├── class_mapping.json             # Index-to-class JSON mapping (40 classes)
-│   │   │   ├── config.json                    # Model architecture & hyperparameter log
-│   │   │   ├── history.json                   # Epoch-by-epoch training/val loss and accuracy
-│   │   │   ├── environment.json               # System environment metadata (TensorFlow version, GPU, seeds)
-│   │   │   └── training_log.csv               # CSV training logs
-│   │   └── efficientnetb0/
-│   │       ├── efficientnetb0_best.keras      # Experimental EfficientNetB0 baseline model file (20.1 MB)
-│   │       ├── class_mapping.json             # Index-to-class JSON mapping
-│   │       └── history.json                   # Training history
-│   └── scripts/
-│       ├── common.py                          # Shared ML utilities (seeds, dataset builder, MD5 leakage verifier, metrics)
-│       ├── 01_inspect_dataset.py              # Dataset resolution, format, and corruption scanner
-│       ├── 02_clean_dataset.py                # MD5 exact-duplicate removal script
-│       ├── 03_split_dataset.py                # 70/15/15 stratified split generator
-│       ├── 04_build_final_dataset.py          # Final dataset merging script (6,788 images)
-│       ├── 05_train_mobilenetv2.py            # MobileNetV2 2-phase training script
-│       ├── 06_train_efficientnetb0.py         # EfficientNetB0 training script
-│       ├── 07_evaluate_models.py              # Model evaluation script on test split
-│       ├── 08_model_comparison.py             # Metric comparison generator
-│       ├── 09_generate_graphs.py              # Graph plot generator
-│       ├── 10_calibrate.py                    # Temperature scaling fitting & ECE computation script
-│       ├── 11_gradcam.py                      # Standalone Grad-CAM visualizer script
-│       ├── 12_model_selection.py              # Weighted rubric model selection script
-│       └── finalize_mobilenetv2.py            # Final MobilenetV2 training & evaluation wrapper
+│   │   ├── History.js                         # Mongoose schema for identification history
+│   │   ├── Plant.js                           # Mongoose schema for 40 botanical taxa records
+│   │   ├── SavedPlant.js                      # Mongoose schema for saved plant bookmarks
+│   │   └── User.js                            # Mongoose schema for researcher user accounts
+│   ├── routes/
+│   │   ├── auth.js                            # /api/auth routes
+│   │   ├── condition.js                       # /api/conditions routes
+│   │   ├── extraction.js                      # /api/extraction routes
+│   │   ├── history.js                         # /api/history routes
+│   │   ├── plant.js                           # /api/plants routes
+│   │   ├── predict.js                         # /api/predict routes
+│   │   ├── recommendation.js                  # /api/recommendations routes
+│   │   ├── safety.js                          # /api/safety routes
+│   │   └── savedPlant.js                      # /api/saved-plants routes
+│   ├── seed/
+│   │   ├── buildData.js                       # Seed dataset generator script
+│   │   ├── plantEvidenceData.js               # Curated monographs, indications, and safety data
+│   │   ├── plantsData.json                    # Compiled JSON dataset for 40 botanical taxa
+│   │   ├── scientific_map.json                # Canonical mapping for local, scientific, and common names
+│   │   └── seedPlants.js                      # MongoDB population script
+│   ├── services/
+│   │   ├── authService.js                     # Authentication token generator
+│   │   └── scientific/
+│   │       ├── conditionService.js            # Symptom query normalizer and matcher
+│   │       ├── crossrefService.js             # Crossref publication and DOI fetcher
+│   │       ├── europePmcService.js            # Europe PMC biomedical literature fetcher
+│   │       ├── extractionService.js           # Dynamic extraction parser & monograph fallback
+│   │       ├── gbifService.js                 # GBIF botanical taxonomy matcher
+│   │       ├── pubchemService.js              # PubChem chemical structure & CID fetcher
+│   │       ├── researchService.js             # Master scientific aggregator service
+│   │       └── safetyService.js               # Pharmacological safety monograph service
+│   └── tests/                                 # Backend integration test suites
+│       ├── test_indications.js               # Condition recommendation test suite
+│       ├── test_leaf_rgb.jpg                  # Test fixture image
+│       ├── test_local_names_and_dynamic_extraction.js # Local names & extraction validation suite
+│       ├── test_phase2_4.js                   # Auth, history, and saved-plants suite
+│       ├── test_phase2_5.js                   # Extraction and safety guidance suite
+│       ├── test_phase2_6.js                   # Advanced integration suite
+│       ├── test_phase2_8.js                   # System orchestration test suite
+│       └── test_upload_prediction.js          # Direct image upload test suite
 │
-├── reports/                                   # Evaluation Reports & Manifests
-│   ├── dataset/                               # Dataset cleaning, sample metadata, and split statistics CSV/MD reports
-│   └── models/
-│       ├── eval_mobilenetv2.json              # Detailed MobileNetV2 test set evaluation metrics & confusion matrix
-│       ├── eval_efficientnetb0.json           # Detailed EfficientNetB0 test set evaluation metrics
-│       ├── selected_model.json                # Model selection rubric scoring result
-│       ├── test_predictions_mobilenetv2.npz   # Saved raw logit array for test set
-│       └── calibration/
-│           ├── calibration_results.json       # Temperature T (0.8037) & Rejection Threshold (0.6234) results
-│           ├── confidence_mobilenetv2.csv     # Per-sample test confidence CSV
-│           └── reliability_mobilenetv2.csv    # Calibration bin accuracy CSV
+├── frontend/                                  # React 18 / Vite Single-Page Application (Port 5173)
+│   ├── Dockerfile                             # Frontend container build file
+│   ├── index.html                             # Single-page HTML application entry point
+│   ├── nginx.conf                             # Production web server configuration
+│   ├── package.json                           # Frontend dependencies (react, vite, axios)
+│   ├── package-lock.json                      # Locked npm dependency tree
+│   ├── vite.config.js                         # Vite build and proxy configuration
+│   └── src/
+│       ├── App.css                            # Global styles and layout
+│       ├── App.jsx                            # Root component with ErrorBoundary and view router
+│       ├── index.css                          # CSS baseline resets
+│       ├── main.jsx                           # React DOM mount point
+│       ├── ResultDashboard.css                # Styling for 7-card scientific dashboard
+│       ├── AnalysisView.css                   # Styling for Grad-CAM analysis screen
+│       ├── assets/                            # Botanical branding assets
+│       ├── components/
+│       │   ├── AnalysisView.jsx               # Dedicated AI model and Grad-CAM view
+│       │   ├── AuthModal.jsx                  # Researcher authentication dialog
+│       │   ├── HistoryView.jsx                # User identification history view
+│       │   ├── Navbar.jsx                     # Top navigation header
+│       │   ├── ProfileView.jsx                # Researcher profile & saved plants library
+│       │   ├── RecommendationsView.jsx        # Symptom-based recommendation explorer
+│       │   └── ResultDashboard.jsx            # Main 7-card identification dashboard
+│       └── services/
+│           └── api.js                         # Centralized Axios client for all backend REST endpoints
 │
-└── research/                                  # Paper Materials & Figures
-    └── figures/                               # Publication-ready PNG plots (loss curves, confusion matrix, Grad-CAM)
+├── dataset/                                   # Botanical Image Datasets (40 Classes)
+│   ├── cleaned/                               # De-duplicated images per botanical class
+│   └── final_split/                           # Stratified train, val, and test splits
+│
+├── reports/                                   # Verification & Reproducibility Metrics
+│   ├── dataset/                               # Dataset cleaning and split verification reports
+│   └── models/                                # Model weights, calibration JSONs, manifests
+│       ├── mobilenetv2_best.pth               # PyTorch model weights file
+│       ├── test_manifest.csv                  # Test set split manifest
+│       ├── train_manifest.csv                 # Training set split manifest
+│       ├── val_manifest.csv                   # Validation set split manifest
+│       └── calibration/                       # Temperature scaling calibration metadata
+│
+├── tests/                                     # Root Integration Tests
+│   └── integration/
+│       └── test_foundation.py                 # End-to-end Python requests test suite
+│
+└── training/                                  # Model Training & Reproducibility Pipeline
+    ├── configs/                               # Training configurations
+    ├── logs/                                  # Training execution logs
+    ├── models/                                # Model architecture checkpoints & history
+    │   ├── efficientnetb0/
+    │   └── mobilenetv2/
+    └── scripts/                               # Numbered reproducible pipeline scripts (01–12)
 ```

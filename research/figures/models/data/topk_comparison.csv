@@ -1,7 +1,0 @@
-model,metric,value
-mobilenetv2,Top-1,0.897
-mobilenetv2,Top-3,0.9783
-mobilenetv2,Top-5,0.9896
-efficientnetb0,Top-1,0.0444
-efficientnetb0,Top-3,0.0681
-efficientnetb0,Top-5,0.0983
