@@ -112,7 +112,12 @@ function HistoryView({ user, onOpenAuth, onSelectPlant, onNavigateIdentify }) {
                     })}
                   </td>
                   <td>
-                    <strong>{item.plantId?.commonName || item.plantId?.modelClass || "Identified Specimen"}</strong>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <strong>{item.localName || item.plantId?.localName || item.commonName || item.plantId?.commonName || item.plantId?.modelClass || "Identified Specimen"}</strong>
+                      {(item.commonName || item.plantId?.commonName) && (item.commonName || item.plantId?.commonName) !== (item.localName || item.plantId?.localName) && (
+                        <span style={{ fontSize: '0.8rem', color: '#666' }}>English: {item.commonName || item.plantId?.commonName}</span>
+                      )}
+                    </div>
                   </td>
                   <td className="scientific-col">
                     <em>{item.scientificName || item.plantId?.scientificName || "Unknown"}</em>

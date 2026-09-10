@@ -24,6 +24,7 @@ exports.recordHistory = async (req, res) => {
       plantId,
       scientificName,
       commonName,
+      localName,
       confidence,
       rejected,
       modelVersion,
@@ -86,6 +87,7 @@ exports.recordHistory = async (req, res) => {
       plantId: resolvedPlant._id,
       scientificName: resolvedPlant.scientificName,
       commonName: (commonName || resolvedPlant.commonName || '').trim(),
+      localName: (localName || resolvedPlant.localName || '').trim(),
       confidence: Math.round(confidence * 10000) / 10000,
       rejected: Boolean(rejected),
       modelVersion: modelVersion || 'MobileNetV2-1.0.0',
@@ -132,7 +134,7 @@ exports.getHistory = async (req, res) => {
         .sort({ uploadedAt: -1 })
         .skip(skip)
         .limit(limitNum)
-        .populate('plantId', 'scientificName commonName modelClass compounds safety.toxicityLevel')
+        .populate('plantId', 'scientificName commonName localName modelClass compounds safety.toxicityLevel')
     ]);
 
     return res.status(200).json({
@@ -173,7 +175,7 @@ exports.getHistoryById = async (req, res) => {
     const historyItem = await IdentificationHistory.findOne({
       _id: id,
       userId
-    }).populate('plantId', 'scientificName commonName modelClass compounds safety.toxicityLevel extraction');
+    }).populate('plantId', 'scientificName commonName localName modelClass compounds safety.toxicityLevel extraction');
 
     if (!historyItem) {
       return res.status(404).json({

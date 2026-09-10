@@ -153,6 +153,8 @@ function App() {
         try {
           await recordHistory({
             scientificName: data.prediction.scientificName,
+            commonName: data.prediction.commonName,
+            localName: data.prediction.localName,
             confidence: data.prediction.calibratedConfidence || data.prediction.confidence,
             modelName: data.model?.name || "MobileNetV2",
             notes: `Class: ${data.prediction.class}`,

@@ -29,7 +29,8 @@ exports.getSafety = async (req, res) => {
         $or: [
           { modelClass: new RegExp('^' + identifier + '$', 'i') },
           { scientificName: new RegExp('^' + identifier + '$', 'i') },
-          { commonName: new RegExp('^' + identifier + '$', 'i') }
+          { commonName: new RegExp('^' + identifier + '$', 'i') },
+          { localName: new RegExp('^' + identifier + '$', 'i') }
         ]
       });
     }
@@ -50,6 +51,7 @@ exports.getSafety = async (req, res) => {
         id: plant._id,
         scientificName: plant.scientificName,
         commonName: plant.commonName,
+        localName: plant.localName,
         modelClass: plant.modelClass
       },
       safety: safetyData

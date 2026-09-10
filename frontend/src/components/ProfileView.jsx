@@ -117,10 +117,15 @@ function ProfileView({ user, onOpenAuth, onLogout }) {
                   </button>
                 </div>
 
-                <h3 className="saved-plant-name">{plant.commonName || "Medicinal Specimen"}</h3>
+                <h3 className="saved-plant-name">{plant.localName || plant.commonName || "Medicinal Specimen"}</h3>
                 <p className="saved-plant-sci">
                   <em>{plant.scientificName || "Taxonomy pending"}</em>
                 </p>
+                {plant.commonName && plant.commonName !== (plant.localName || plant.commonName) && (
+                  <p className="saved-plant-eng" style={{ fontSize: '0.85rem', color: '#666', marginTop: '-0.3rem', marginBottom: '0.5rem' }}>
+                    English: {plant.commonName}
+                  </p>
+                )}
 
                 {plant.medicinalProperties?.length > 0 && (
                   <div className="saved-props-snippet">

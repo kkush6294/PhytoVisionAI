@@ -194,6 +194,42 @@ exports.predictImage = async (req, res) => {
       predictionResponse.sources = [];
     }
 
+    // 10b) Enrich candidate predictions in topPredictions with canonical botanical metadata
+    try {
+      if (prediction && Array.isArray(prediction.topPredictions) && prediction.topPredictions.length > 0) {
+        const candidateClasses = prediction.topPredictions.map(c => c.class).filter(Boolean);
+        const candidateDocs = await Plant.find({
+          $or: [
+            { modelClass: { $in: candidateClasses } },
+            { scientificName: { $in: candidateClasses } }
+          ]
+        }).select('modelClass localName scientificName commonName taxonomy');
+
+        const candidateMap = new Map();
+        candidateDocs.forEach(doc => {
+          if (doc.modelClass) candidateMap.set(doc.modelClass, doc);
+          if (doc.scientificName) candidateMap.set(doc.scientificName, doc);
+        });
+
+        prediction.topPredictions = prediction.topPredictions.map(cand => {
+          const match = candidateMap.get(cand.class);
+          if (match) {
+            return {
+              ...cand,
+              modelClass: match.modelClass || cand.class,
+              localName: match.localName || cand.localName || match.commonName || cand.class,
+              scientificName: match.scientificName || cand.scientificName || '',
+              commonName: match.commonName || cand.commonName || cand.class,
+              taxonomy: match.taxonomy || cand.taxonomy || {}
+            };
+          }
+          return cand;
+        });
+      }
+    } catch (candErr) {
+      console.debug('[Predict Controller] Top predictions enrichment skipped:', candErr.message);
+    }
+
     // 11) Return complete response to frontend
     return res.status(200).json(predictionResponse);
 

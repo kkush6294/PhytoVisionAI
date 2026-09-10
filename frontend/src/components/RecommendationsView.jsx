@@ -98,10 +98,15 @@ function RecommendationsView() {
                 <span className="rec-tox-pill">{plant.toxicityLevel ? "Toxicity Documented" : "Monograph Grounded"}</span>
               </div>
 
-              <h3 className="rec-plant-common">{plant.commonName || plant.plant}</h3>
+              <h3 className="rec-plant-common">{plant.localName || plant.commonName || plant.plant}</h3>
               <p className="rec-plant-sci">
                 <em>{plant.scientificName}</em>
               </p>
+              {plant.commonName && plant.commonName !== (plant.localName || plant.plant) && (
+                <p className="rec-plant-eng" style={{ fontSize: '0.85rem', color: '#666', marginTop: '-0.3rem', marginBottom: '0.5rem' }}>
+                  English: {plant.commonName}
+                </p>
+              )}
 
               {/* Transparent Recommendation Provenance */}
               <div className="rec-basis-info">

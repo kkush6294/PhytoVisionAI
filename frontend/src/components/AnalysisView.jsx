@@ -25,6 +25,7 @@ function AnalysisView({ result, previewImage, onNavigateIdentify }) {
   const { prediction, model, gradcam } = result;
   const isRejected = prediction.rejected === true || prediction.class === "Unknown";
   const primaryClass = prediction.class || "Unknown";
+  const primaryLocal = prediction.localName || prediction.commonName || primaryClass;
   const primaryCommon = prediction.commonName || primaryClass;
   const primarySci = prediction.scientificName || "Species Unconfirmed";
   const calibratedConfidence = prediction.calibratedConfidence || 0;
@@ -71,8 +72,11 @@ function AnalysisView({ result, previewImage, onNavigateIdentify }) {
             <span className="specimen-tag rejected">⚠️ Out-of-Distribution / Unknown</span>
           ) : (
             <div className="specimen-tag-group">
-              <span className="specimen-tag-common">{primaryCommon}</span>
+              <span className="specimen-tag-common">{primaryLocal}</span>
               <span className="specimen-tag-sci">({primarySci})</span>
+              {prediction.commonName && prediction.commonName !== primaryLocal && (
+                <span className="specimen-tag-eng" style={{ fontSize: '0.85rem', opacity: 0.85 }}>• English: {prediction.commonName}</span>
+              )}
             </div>
           )}
         </div>
@@ -131,16 +135,23 @@ function AnalysisView({ result, previewImage, onNavigateIdentify }) {
                     <div className="prediction-info-col">
                       <div className="prediction-names-row">
                         <span className="prediction-common-name">
-                          {item.commonName || item.class}
+                          {item.localName || item.commonName || item.class}
                           {isPrimary && <span className="primary-pill">Primary Prediction</span>}
                         </span>
                         <span className="prediction-percentage">{pct}%</span>
                       </div>
 
                       {item.scientificName && item.scientificName !== "Unknown" && (
-                        <span className="prediction-sci-name">
-                          {item.scientificName}
-                        </span>
+                        <div className="prediction-sci-row" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                          <span className="prediction-sci-name" style={{ fontStyle: 'italic' }}>
+                            {item.scientificName}
+                          </span>
+                          {item.commonName && item.commonName !== (item.localName || item.class) && (
+                            <span className="prediction-eng-name" style={{ fontSize: '0.8rem', color: '#666' }}>
+                              (English: {item.commonName})
+                            </span>
+                          )}
+                        </div>
                       )}
 
                       {/* Horizontal Confidence Bar */}

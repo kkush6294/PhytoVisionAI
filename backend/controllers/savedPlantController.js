@@ -80,6 +80,7 @@ exports.savePlant = async (req, res) => {
         plant: {
           id: plant._id,
           commonName: plant.commonName,
+          localName: plant.localName,
           scientificName: plant.scientificName,
           modelClass: plant.modelClass,
           compounds: plant.compounds,
@@ -176,7 +177,7 @@ exports.getSavedPlants = async (req, res) => {
 
     const savedRecords = await SavedPlant.find({ userId })
       .sort({ savedAt: -1 })
-      .populate('plantId', 'scientificName commonName modelClass compounds safety extraction taxonomy');
+      .populate('plantId', 'scientificName commonName localName modelClass compounds safety extraction taxonomy');
 
     const plants = savedRecords
       .filter(record => record.plantId != null)
