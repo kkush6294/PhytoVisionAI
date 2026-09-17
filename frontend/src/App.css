@@ -1260,3 +1260,77 @@ footer {
   color: #64748b;
   font-style: italic;
 }
+
+/* Phase 4: Privacy-Preserving Location Context UI */
+.location-consent-card {
+  margin: 18px 0;
+  padding: 16px 20px;
+  background: #f8faf9;
+  border: 1px solid #dce9e2;
+  border-radius: 14px;
+}
+
+.location-consent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.location-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.location-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #1e7049;
+}
+
+.location-toggle-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1b3d2f;
+}
+
+.location-status-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.location-status-tag.loading {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.location-status-tag.resolved {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.location-status-tag.unavailable {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.location-consent-note {
+  margin: 8px 0 0 0;
+  font-size: 12px;
+  color: #5c7468;
+  line-height: 1.45;
+}
+
+.location-error-text {
+  margin: 6px 0 0 0;
+  font-size: 12px;
+  color: #b91c1c;
+}
+

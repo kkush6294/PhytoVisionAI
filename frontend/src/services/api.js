@@ -100,5 +100,14 @@ export const getMe = async () => {
   return response.data;
 };
 
+// Phase 4: Privacy-Preserving Geolocation Context
+export const getLocationContext = async (lat, lon) => {
+  const response = await api.get(
+    `/api/context/location?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}`
+  );
+  return response.data;
+};
+
 export default api;
+
 

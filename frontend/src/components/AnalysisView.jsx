@@ -1,7 +1,7 @@
 import React from "react";
 import "../AnalysisView.css";
 
-function AnalysisView({ result, previewImage, onNavigateIdentify }) {
+function AnalysisView({ result, previewImage, locationContext, onNavigateIdentify }) {
   // Empty State: No analysis available yet
   if (!result || !result.prediction) {
     return (
@@ -81,6 +81,14 @@ function AnalysisView({ result, previewImage, onNavigateIdentify }) {
           )}
         </div>
       </header>
+
+      {/* Environmental Context Indicator (Phase 4) */}
+      {locationContext?.available && locationContext?.label && (
+        <div style={{ margin: '0 0 20px 0', padding: '10px 18px', background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', fontSize: '13px', color: '#166534' }}>
+          <span>📍 <strong>Environmental Context:</strong> {locationContext.label}</span>
+          <span style={{ fontSize: '11px', color: '#4b6358' }}>Coarse metadata only • 0% weight in neural inference</span>
+        </div>
+      )}
 
       {/* 6. REJECTION / LOW-CONFIDENCE STATE ALERT */}
       {isRejected && (

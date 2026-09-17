@@ -1533,4 +1533,62 @@
   box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
 
+/* Phase 4: Environmental Context Card */
+.environmental-context-card {
+  background: #ffffff;
+  border: 1px solid #dce9e2;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(22, 60, 44, 0.04);
+}
+
+.context-privacy-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.environmental-context-body {
+  margin-top: 14px;
+}
+
+.context-location-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.context-pin-icon {
+  font-size: 20px;
+}
+
+.context-info-text {
+  font-size: 15px;
+  color: #1c382b;
+}
+
+.context-resolved-name {
+  font-weight: 700;
+  color: #15803d;
+}
+
+.context-unresolved-name {
+  color: #64748b;
+  font-style: italic;
+}
+
+.context-disclaimer-text {
+  margin: 8px 0 0 0;
+  font-size: 12px;
+  color: #62796e;
+  line-height: 1.5;
+}
+
+
 

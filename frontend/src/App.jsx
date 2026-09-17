@@ -10,6 +10,7 @@ import RecommendationsView from "./components/RecommendationsView";
 import ProfileView from "./components/ProfileView";
 import { predictImage, recordHistory, getMe, createGuestSession } from "./services/api";
 import { assessImageQuality } from "./utils/imageQuality";
+import { getBrowserCoarseLocation } from "./utils/geolocation";
 
 const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
 const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5 MB
@@ -63,6 +64,32 @@ function App() {
   const [error, setError] = useState("");
   const [qualityReport, setQualityReport] = useState(null);
   const [qualityLoading, setQualityLoading] = useState(false);
+
+  // Phase 4: Privacy-Preserving Geolocation Context (Default: OFF)
+  const [locationEnabled, setLocationEnabled] = useState(false);
+  const [locationLoading, setLocationLoading] = useState(false);
+  const [locationContext, setLocationContext] = useState(null);
+
+  const handleToggleLocation = async (e) => {
+    const checked = e.target.checked;
+    setLocationEnabled(checked);
+    if (!checked) {
+      setLocationContext(null);
+      return;
+    }
+    setLocationLoading(true);
+    try {
+      const loc = await getBrowserCoarseLocation();
+      setLocationContext(loc);
+    } catch {
+      setLocationContext({
+        available: false,
+        error: "Failed to obtain location context."
+      });
+    } finally {
+      setLocationLoading(false);
+    }
+  };
 
   // Client-side image validation before prediction
   const validateImageFile = (selectedFile) => {
@@ -356,6 +383,34 @@ function App() {
                 </>
               )}
 
+              {/* Phase 4: Privacy-Preserving Environmental Location Context (Optional Opt-in) */}
+              <div className="location-consent-card">
+                <div className="location-consent-header">
+                  <label className="location-toggle-label">
+                    <input
+                      type="checkbox"
+                      checked={locationEnabled}
+                      onChange={handleToggleLocation}
+                      className="location-checkbox"
+                    />
+                    <span className="location-toggle-title">📍 Enable Environmental Location Context (Optional)</span>
+                  </label>
+                  {locationLoading && <span className="location-status-tag loading">Detecting coarse location...</span>}
+                  {locationContext?.available && (
+                    <span className="location-status-tag resolved">📍 {locationContext.label}</span>
+                  )}
+                  {locationContext && !locationContext.available && (
+                    <span className="location-status-tag unavailable">Unavailable</span>
+                  )}
+                </div>
+                <p className="location-consent-note">
+                  Your location is used only to provide local environmental context. It does not determine plant identification.
+                </p>
+                {locationContext?.error && (
+                  <p className="location-error-text">⚠️ {locationContext.error}</p>
+                )}
+              </div>
+
               {error && <div className="error">{error}</div>}
 
               <button
@@ -400,6 +455,7 @@ function App() {
                 result={result}
                 previewImage={preview}
                 user={user}
+                locationContext={locationContext}
                 onOpenAuth={(mode) => setAuthModal(mode)}
                 onReset={resetPrediction}
               />
@@ -422,6 +478,7 @@ function App() {
             <AnalysisView
               result={result}
               previewImage={preview}
+              locationContext={locationContext}
               onNavigateIdentify={() => setCurrentView("identify")}
             />
           </ErrorBoundary>

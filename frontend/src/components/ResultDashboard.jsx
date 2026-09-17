@@ -12,6 +12,7 @@ function ResultDashboard({
   result,
   previewImage,
   user,
+  locationContext,
   onOpenAuth,
   onReset,
   onSelectPlant,
@@ -284,6 +285,30 @@ function ResultDashboard({
       </div>
 
       {saveMessage && <div className="user-feedback-toast">{saveMessage}</div>}
+
+      {/* Phase 4: Privacy-Preserving Environmental Context Card */}
+      <div className="environmental-context-card">
+        <div className="card-header-row">
+          <span className="card-label-badge">ENVIRONMENTAL CONTEXT</span>
+          <span className="context-privacy-pill">Coarse Resolution Only</span>
+        </div>
+        <div className="environmental-context-body">
+          <div className="context-location-row">
+            <span className="context-pin-icon">📍</span>
+            <div className="context-info-text">
+              <strong>Observation Location Context:</strong>{" "}
+              {locationContext?.available && locationContext?.label ? (
+                <span className="context-resolved-name">{locationContext.label}</span>
+              ) : (
+                <span className="context-unresolved-name">Location context not enabled or unavailable</span>
+              )}
+            </div>
+          </div>
+          <p className="context-disclaimer-text">
+            ℹ️ <em>Environmental context is optional and provided for local botanical reference. Plant identification is determined strictly by the MobileNetV2 deep learning classifier based on leaf morphology, and is never influenced by geographic coordinates.</em>
+          </p>
+        </div>
+      </div>
 
       {/* Main Grid Section (Cards 1, 2, 3) */}
       <div className="dashboard-three-col-grid">

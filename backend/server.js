@@ -12,6 +12,7 @@ const savedPlantRoutes = require('./routes/savedPlant');
 const extractionRoutes = require('./routes/extraction');
 const safetyRoutes = require('./routes/safety');
 const recommendationRoutes = require('./routes/recommendation');
+const contextRoutes = require('./routes/context');
 const app = express();
 
 app.use(helmet());
@@ -57,6 +58,7 @@ app.use('/api/saved-plants', savedPlantRoutes);
 app.use('/api/extraction', extractionRoutes);
 app.use('/api/safety', safetyRoutes);
 app.use('/api/recommendations', recommendationRoutes);
+app.use('/api/context', contextRoutes);
 app.use('/api', conditionRoutes);
 app.use('/api', predictRoutes);
 // Root routes
