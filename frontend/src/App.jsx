@@ -8,7 +8,7 @@ import AuthModal from "./components/AuthModal";
 import HistoryView from "./components/HistoryView";
 import RecommendationsView from "./components/RecommendationsView";
 import ProfileView from "./components/ProfileView";
-import { predictImage, recordHistory, getMe, createGuestSession } from "./services/api";
+import { predictImage, recordHistory, getMe, createGuestSession, getWeatherContext } from "./services/api";
 import { assessImageQuality } from "./utils/imageQuality";
 import { getBrowserCoarseLocation } from "./utils/geolocation";
 
@@ -65,29 +65,53 @@ function App() {
   const [qualityReport, setQualityReport] = useState(null);
   const [qualityLoading, setQualityLoading] = useState(false);
 
-  // Phase 4: Privacy-Preserving Geolocation Context (Default: OFF)
+  // Phase 4 & Phase 5: Privacy-Preserving Geolocation & Environmental Weather Context (Default: OFF)
   const [locationEnabled, setLocationEnabled] = useState(false);
   const [locationLoading, setLocationLoading] = useState(false);
   const [locationContext, setLocationContext] = useState(null);
+  const [weatherContext, setWeatherContext] = useState(null);
+  const [weatherLoading, setWeatherLoading] = useState(false);
 
   const handleToggleLocation = async (e) => {
     const checked = e.target.checked;
     setLocationEnabled(checked);
     if (!checked) {
       setLocationContext(null);
+      setWeatherContext(null);
       return;
     }
     setLocationLoading(true);
+    setWeatherLoading(true);
     try {
       const loc = await getBrowserCoarseLocation();
       setLocationContext(loc);
+      if (loc?.available && loc?.city) {
+        try {
+          const weatherRes = await getWeatherContext({
+            city: loc.city,
+            state: loc.state,
+            country: loc.country
+          });
+          setWeatherContext(weatherRes);
+        } catch {
+          setWeatherContext({
+            success: false,
+            weather: null,
+            message: "Weather information is currently unavailable."
+          });
+        }
+      } else {
+        setWeatherContext(null);
+      }
     } catch {
       setLocationContext({
         available: false,
         error: "Failed to obtain location context."
       });
+      setWeatherContext(null);
     } finally {
       setLocationLoading(false);
+      setWeatherLoading(false);
     }
   };
 
@@ -456,6 +480,8 @@ function App() {
                 previewImage={preview}
                 user={user}
                 locationContext={locationContext}
+                weatherContext={weatherContext}
+                weatherLoading={weatherLoading}
                 onOpenAuth={(mode) => setAuthModal(mode)}
                 onReset={resetPrediction}
               />
@@ -479,6 +505,8 @@ function App() {
               result={result}
               previewImage={preview}
               locationContext={locationContext}
+              weatherContext={weatherContext}
+              weatherLoading={weatherLoading}
               onNavigateIdentify={() => setCurrentView("identify")}
             />
           </ErrorBoundary>

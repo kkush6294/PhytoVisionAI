@@ -13,6 +13,8 @@ function ResultDashboard({
   previewImage,
   user,
   locationContext,
+  weatherContext,
+  weatherLoading,
   onOpenAuth,
   onReset,
   onSelectPlant,
@@ -304,8 +306,95 @@ function ResultDashboard({
               )}
             </div>
           </div>
+
+          {/* Phase 5: Environmental Weather Conditions */}
+          {weatherLoading && (
+            <div className="weather-loading-notice">
+              <span>⏳ Loading environmental weather conditions...</span>
+            </div>
+          )}
+
+          {!weatherLoading && weatherContext?.success && weatherContext?.weather && (
+            <div className="weather-conditions-block">
+              <h4 className="weather-section-title">🌤 Current Environmental Conditions</h4>
+              <div className="weather-metrics-grid">
+                {weatherContext.weather.temperatureC !== null && (
+                  <div className="weather-metric-item">
+                    <span className="weather-metric-icon">🌡</span>
+                    <div className="weather-metric-data">
+                      <span className="weather-metric-label">Temperature:</span>
+                      <strong className="weather-metric-val">
+                        {weatherContext.weather.temperatureC} °C
+                        {weatherContext.weather.feelsLikeC !== null && (
+                          <span className="weather-feels-like"> (Feels like {weatherContext.weather.feelsLikeC} °C)</span>
+                        )}
+                      </strong>
+                    </div>
+                  </div>
+                )}
+
+                {weatherContext.weather.humidityPercent !== null && (
+                  <div className="weather-metric-item">
+                    <span className="weather-metric-icon">💧</span>
+                    <div className="weather-metric-data">
+                      <span className="weather-metric-label">Humidity:</span>
+                      <strong className="weather-metric-val">{weatherContext.weather.humidityPercent}%</strong>
+                    </div>
+                  </div>
+                )}
+
+                {weatherContext.weather.precipitationMm !== null && (
+                  <div className="weather-metric-item">
+                    <span className="weather-metric-icon">🌧</span>
+                    <div className="weather-metric-data">
+                      <span className="weather-metric-label">Precipitation:</span>
+                      <strong className="weather-metric-val">{weatherContext.weather.precipitationMm} mm</strong>
+                    </div>
+                  </div>
+                )}
+
+                {weatherContext.weather.windSpeedMs !== null && (
+                  <div className="weather-metric-item">
+                    <span className="weather-metric-icon">💨</span>
+                    <div className="weather-metric-data">
+                      <span className="weather-metric-label">Wind:</span>
+                      <strong className="weather-metric-val">{weatherContext.weather.windSpeedMs} m/s</strong>
+                    </div>
+                  </div>
+                )}
+
+                {weatherContext.weather.weatherDescription && (
+                  <div className="weather-metric-item full-span">
+                    <span className="weather-metric-icon">☁</span>
+                    <div className="weather-metric-data">
+                      <span className="weather-metric-label">Conditions:</span>
+                      <strong className="weather-metric-val" style={{ textTransform: "capitalize" }}>
+                        {weatherContext.weather.weatherDescription}
+                      </strong>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="weather-meta-footer">
+                <span>Source: {weatherContext.weather.source || "OpenWeather"}</span>
+                {weatherContext.weather.observedAt && (
+                  <span>
+                    Observed: {new Date(weatherContext.weather.observedAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+
+          {!weatherLoading && (!weatherContext || !weatherContext.success || !weatherContext.weather) && locationContext?.available && (
+            <div className="weather-unavailable-notice">
+              <span>☁ Environmental weather context unavailable</span>
+            </div>
+          )}
+
           <p className="context-disclaimer-text">
-            ℹ️ <em>Environmental context is optional and provided for local botanical reference. Plant identification is determined strictly by the MobileNetV2 deep learning classifier based on leaf morphology, and is never influenced by geographic coordinates.</em>
+            ℹ️ <em>Weather is provided as contextual environmental information and does not influence plant identification. Plant classification is determined strictly by the MobileNetV2 deep learning classifier based on leaf morphology, and is never influenced by geographic coordinates or meteorological factors.</em>
           </p>
         </div>
       </div>

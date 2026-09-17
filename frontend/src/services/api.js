@@ -108,6 +108,16 @@ export const getLocationContext = async (lat, lon) => {
   return response.data;
 };
 
+// Phase 5: Environmental Weather Context
+export const getWeatherContext = async ({ city, state, country } = {}) => {
+  const params = new URLSearchParams();
+  if (city) params.append("city", city);
+  if (state) params.append("state", state);
+  if (country) params.append("country", country);
+  const response = await api.get(`/api/context/weather?${params.toString()}`);
+  return response.data;
+};
+
 export default api;
 
 
