@@ -6,6 +6,7 @@ const Plant = require('../models/Plant');
 const axios = require('axios');
 const FormData = require('form-data');
 const config = require('../config/config');
+const { assessImageQuality } = require('../utils/imageQuality');
 
 exports.predictImage = async (req, res) => {
   try {
@@ -56,6 +57,13 @@ exports.predictImage = async (req, res) => {
 
     // 6) Get AI prediction response
     const predictionResponse = response.data;
+
+    // 6b) Optional advisory image quality assessment (non-blocking)
+    try {
+      predictionResponse.imageQuality = assessImageQuality(req.file.buffer);
+    } catch (qErr) {
+      console.debug('[Predict Controller] Image quality inspection skipped:', qErr.message);
+    }
 
     // 7) Extract prediction information
     const prediction = predictionResponse.prediction;

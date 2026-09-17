@@ -9,6 +9,7 @@ import HistoryView from "./components/HistoryView";
 import RecommendationsView from "./components/RecommendationsView";
 import ProfileView from "./components/ProfileView";
 import { predictImage, recordHistory, getMe, createGuestSession } from "./services/api";
+import { assessImageQuality } from "./utils/imageQuality";
 
 const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
 const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5 MB
@@ -60,6 +61,8 @@ function App() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [qualityReport, setQualityReport] = useState(null);
+  const [qualityLoading, setQualityLoading] = useState(false);
 
   // Client-side image validation before prediction
   const validateImageFile = (selectedFile) => {
@@ -110,7 +113,7 @@ function App() {
     initAuth();
   }, []);
 
-  const handleFileChange = (event) => {
+  const handleFileChange = async (event) => {
     const selectedFile = event.target.files[0];
     if (!selectedFile) return;
 
@@ -119,6 +122,8 @@ function App() {
       setError(validationError);
       setFile(null);
       setPreview(null);
+      setQualityReport(null);
+      setQualityLoading(false);
       return;
     }
 
@@ -126,6 +131,20 @@ function App() {
     setError("");
     const imageUrl = URL.createObjectURL(selectedFile);
     setPreview(imageUrl);
+
+    // Advisory Image Quality Assessment (Phase 3 - Non-blocking)
+    setQualityLoading(true);
+    try {
+      const report = await assessImageQuality(selectedFile);
+      setQualityReport(report);
+    } catch {
+      setQualityReport({
+        overallStatus: "Unknown",
+        warnings: ["Image quality could not be assessed."]
+      });
+    } finally {
+      setQualityLoading(false);
+    }
   };
 
   const handlePredict = async () => {
@@ -178,6 +197,8 @@ function App() {
     setFile(null);
     setPreview(null);
     setResult(null);
+    setQualityReport(null);
+    setQualityLoading(false);
     setError("");
     setCurrentView("identify");
   };
@@ -239,10 +260,100 @@ function App() {
               </label>
 
               {file && (
-                <div className="selected-file">
-                  <span>📄 {file.name}</span>
-                  <span>{(file.size / 1024).toFixed(1)} KB</span>
-                </div>
+                <>
+                  <div className="selected-file">
+                    <span>📄 {file.name}</span>
+                    <span>{(file.size / 1024).toFixed(1)} KB</span>
+                  </div>
+
+                  {/* Phase 3: Lightweight Advisory Image Quality Assessment */}
+                  <div className="image-quality-widget">
+                    <div className="quality-widget-header">
+                      <h4>🌿 Image Quality</h4>
+                      {qualityLoading ? (
+                        <span className="quality-pill loading">Evaluating...</span>
+                      ) : (
+                        <span
+                          className={`quality-pill ${
+                            qualityReport?.overallStatus === "Good"
+                              ? "good"
+                              : qualityReport?.overallStatus === "Fair"
+                              ? "fair"
+                              : "needs-improvement"
+                          }`}
+                        >
+                          {qualityReport?.overallStatus || "Unknown"}
+                        </span>
+                      )}
+                    </div>
+
+                    {qualityLoading ? (
+                      <div className="quality-evaluating">
+                        <small>Checking resolution, lighting, contrast, and focus...</small>
+                      </div>
+                    ) : qualityReport && !qualityReport.error ? (
+                      <>
+                        <div className="quality-metrics-grid">
+                          <div className="quality-metric-item">
+                            <span className="metric-label">Resolution:</span>
+                            <span
+                              className={`metric-value ${
+                                qualityReport.resolution?.passed ? "passed" : "warning"
+                              }`}
+                            >
+                              {qualityReport.resolution?.passed ? "Passed" : "Needs improvement"}
+                            </span>
+                          </div>
+
+                          <div className="quality-metric-item">
+                            <span className="metric-label">Lighting:</span>
+                            <span
+                              className={`metric-value ${
+                                qualityReport.brightness?.passed ? "passed" : "warning"
+                              }`}
+                            >
+                              {qualityReport.brightness?.passed ? "Good" : "Needs improvement"}
+                            </span>
+                          </div>
+
+                          <div className="quality-metric-item">
+                            <span className="metric-label">Contrast:</span>
+                            <span
+                              className={`metric-value ${
+                                qualityReport.contrast?.passed ? "passed" : "warning"
+                              }`}
+                            >
+                              {qualityReport.contrast?.passed ? "Good" : "Needs improvement"}
+                            </span>
+                          </div>
+
+                          <div className="quality-metric-item">
+                            <span className="metric-label">Sharpness:</span>
+                            <span
+                              className={`metric-value ${
+                                qualityReport.sharpness?.passed ? "passed" : "warning"
+                              }`}
+                            >
+                              {qualityReport.sharpness?.passed ? "Good" : "Needs improvement"}
+                            </span>
+                          </div>
+                        </div>
+
+                        {qualityReport.advice && (
+                          <div className="quality-advice-box">
+                            <p className="quality-advice-text">
+                              💡 {qualityReport.advice}
+                            </p>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <p className="quality-fallback-notice">
+                        Image quality could not be assessed. (You may still proceed with identification)
+                      </p>
+                    )}
+                  </div>
+                </>
               )}
 
               {error && <div className="error">{error}</div>}
