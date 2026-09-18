@@ -118,6 +118,32 @@ export const getWeatherContext = async ({ city, state, country } = {}) => {
   return response.data;
 };
 
+// Final Comprehensive: Ask AI About This Plant (Grounded RAG)
+export const askPlantQuestion = async ({ plantId, modelClass, historyId, question }) => {
+  const response = await api.post("/api/ai/plant-question", {
+    plantId,
+    modelClass,
+    historyId,
+    question
+  });
+  return response.data;
+};
+
+// Final Comprehensive: Factual Plant Comparison
+export const comparePlants = async ({ plantIds, modelClasses }) => {
+  const response = await api.post("/api/comparison/plants", {
+    plantIds,
+    modelClasses
+  });
+  return response.data;
+};
+
+// Final Comprehensive: Multi-Source Evidence Retrieval
+export const getPlantEvidence = async (plantIdOrClass) => {
+  const response = await api.get(`/api/evidence/${encodeURIComponent(plantIdOrClass)}`);
+  return response.data;
+};
+
 export default api;
 
 

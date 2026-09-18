@@ -224,4 +224,5 @@ module.exports = {
   logoutUser,
   verifyToken,
   sanitizeUser,
+  generateToken,
 };

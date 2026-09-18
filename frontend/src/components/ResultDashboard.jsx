@@ -7,6 +7,8 @@ import {
   getPlantExtraction,
   getPlantSafety,
 } from "../services/api";
+import AskAIWidget from "./AskAIWidget";
+import PlantComparisonModal from "./PlantComparisonModal";
 
 function ResultDashboard({
   result,
@@ -24,6 +26,7 @@ function ResultDashboard({
   const [saveMessage, setSaveMessage] = useState("");
   const [showAllCompounds, setShowAllCompounds] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [showComparison, setShowComparison] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -479,6 +482,25 @@ function ResultDashboard({
             >
               {saveLoading ? "Updating..." : isSaved ? "✓ Saved to Collection" : "💚 Save Plant"}
             </button>
+
+            <button
+              type="button"
+              className="compare-plant-button"
+              onClick={() => setShowComparison(true)}
+              style={{
+                marginTop: "8px",
+                width: "100%",
+                padding: "10px",
+                background: "transparent",
+                border: "1px solid #10b981",
+                color: "#10b981",
+                borderRadius: "8px",
+                fontWeight: "600",
+                cursor: "pointer"
+              }}
+            >
+              ⚖️ Compare with Other Plants
+            </button>
           </div>
         </div>
 
@@ -828,6 +850,25 @@ function ResultDashboard({
           )}
         </div>
       </div>
+
+      {/* 8.5 ASK AI ABOUT THIS PLANT (Evidence-Grounded RAG) */}
+      <AskAIWidget
+        plantId={result?.plantId || result?.plant?._id}
+        modelClass={plantClass}
+        localName={localName}
+        scientificName={scientificName}
+        historyId={result?.historyId}
+      />
+
+      {/* PLANT COMPARISON MODAL */}
+      <PlantComparisonModal
+        isOpen={showComparison}
+        onClose={() => setShowComparison(false)}
+        initialPlants={[
+          plantClass,
+          ...(prediction.topPredictions?.map(tp => tp.class || tp.modelClass).filter(c => c && c !== plantClass).slice(0, 1) || ['Neem'])
+        ]}
+      />
 
       {/* 9. Final Output Summary Strip */}
       <div className="final-summary-strip">

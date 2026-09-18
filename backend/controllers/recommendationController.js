@@ -75,7 +75,40 @@ function normalizeQuery(raw) {
     'nervous tension': 'stress'
   };
 
-  return QUERY_MAP[clean] || clean;
+  // Check direct match
+  if (QUERY_MAP[clean]) return QUERY_MAP[clean];
+
+  // Strip conversational prefixes
+  let stripped = clean
+    .replace(/^(i have a|i have|i am experiencing|i feel|feeling|suffering from|got a|having)\s+/i, '')
+    .replace(/\b(bad|severe|mild|chronic|acute|constant)\s+/gi, '')
+    .trim();
+
+  if (QUERY_MAP[stripped]) return QUERY_MAP[stripped];
+
+  // Extract individual symptom tokens if combined with "and", ",", "&"
+  const subterms = stripped.split(/\s*(?:,|&|\band\b)\s*/i).map(t => t.trim()).filter(Boolean);
+  const normalizedSubterms = subterms.map(t => QUERY_MAP[t] || t);
+
+  return normalizedSubterms.length > 0 ? normalizedSubterms[0] : clean;
+}
+
+/**
+ * Parses all natural language symptoms from raw user text.
+ */
+function extractAllSymptoms(raw) {
+  if (!raw || typeof raw !== 'string') return [];
+  const clean = raw.trim().toLowerCase();
+
+  // Strip conversational filler
+  let stripped = clean
+    .replace(/^(i have a|i have|i am experiencing|i feel|feeling|suffering from|got a|having)\s+/i, '')
+    .replace(/\b(bad|severe|mild|chronic|acute|constant)\s+/gi, '')
+    .trim();
+
+  const parts = stripped.split(/\s*(?:,|&|\band\b)\s*/i).map(t => t.trim()).filter(Boolean);
+  const terms = parts.map(p => normalizeQuery(p)).filter(Boolean);
+  return [...new Set(terms)];
 }
 
 /**
@@ -88,48 +121,59 @@ function normalizeQuery(raw) {
  * PROHIBITION CHECK:
  * - Does NOT use safety.recommendedDosage, safety.precautions, safety.safetyNotes,
  *   or extraction.preparation for determining match eligibility.
+ * - Does NOT diagnose disease or fabricate treatment efficacy claims.
  */
 exports.recommendByCondition = async (req, res) => {
   try {
     const rawTerm = req.params.condition ||
                     req.body.condition ||
                     req.body.symptom ||
+                    req.body.symptoms ||
                     req.query.condition ||
                     req.query.symptom;
 
-    if (!rawTerm || typeof rawTerm !== 'string' || rawTerm.trim() === '') {
+    if (!rawTerm || (typeof rawTerm !== 'string' && !Array.isArray(rawTerm)) || (typeof rawTerm === 'string' && rawTerm.trim() === '')) {
       return res.status(400).json({
         error: 'Bad Request',
         message: 'Health condition or symptom query parameter is required.'
       });
     }
 
-    const originalTerm = rawTerm.trim();
-    const normalizedTerm = normalizeQuery(originalTerm);
+    const rawString = Array.isArray(rawTerm) ? rawTerm.join(' and ') : rawTerm.trim();
+    const allNormalized = extractAllSymptoms(rawString);
+    const primaryNormalized = normalizeQuery(rawString);
+    const termsToSearch = allNormalized.length > 0 ? allNormalized : [primaryNormalized];
 
     // Escape special regex characters
     const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const exactRegex = new RegExp(`^${escapeRegex(normalizedTerm)}$`, 'i');
-    const boundaryRegex = new RegExp(`\\b${escapeRegex(normalizedTerm)}\\b`, 'i');
 
-    // Query MongoDB: Search ONLY indications.term, indications.aliases, and medicinalProperties
-    const matchedPlants = await Plant.find({
-      $or: [
+    const orClauses = [];
+    for (const term of termsToSearch) {
+      const exactRegex = new RegExp(`^${escapeRegex(term)}$`, 'i');
+      const boundaryRegex = new RegExp(`\\b${escapeRegex(term)}\\b`, 'i');
+      orClauses.push(
         { 'indications.term': exactRegex },
         { 'indications.aliases': exactRegex },
         { 'indications.term': boundaryRegex },
         { 'indications.aliases': boundaryRegex },
         { medicinalProperties: boundaryRegex }
-      ]
-    })
+      );
+    }
+
+    // Query MongoDB: Search ONLY indications.term, indications.aliases, and medicinalProperties
+    const matchedPlants = await Plant.find({ $or: orClauses })
       .sort({ commonName: 1 })
       .select('scientificName commonName localName modelClass medicinalProperties indications compounds safety taxonomy');
 
     const recommendations = matchedPlants.map(plant => {
       // Find the specific matched indication for transparent provenance attribution
       const matchedInd = (plant.indications || []).find(ind => {
-        if (exactRegex.test(ind.term) || boundaryRegex.test(ind.term)) return true;
-        return (ind.aliases || []).some(alias => exactRegex.test(alias) || boundaryRegex.test(alias));
+        return termsToSearch.some(term => {
+          const exactRegex = new RegExp(`^${escapeRegex(term)}$`, 'i');
+          const boundaryRegex = new RegExp(`\\b${escapeRegex(term)}\\b`, 'i');
+          if (exactRegex.test(ind.term) || boundaryRegex.test(ind.term)) return true;
+          return (ind.aliases || []).some(alias => exactRegex.test(alias) || boundaryRegex.test(alias));
+        });
       });
 
       return {
@@ -139,7 +183,7 @@ exports.recommendByCondition = async (req, res) => {
         commonName: plant.commonName,
         localName: plant.localName || null,
         modelClass: plant.modelClass,
-        matchedIndication: matchedInd ? matchedInd.term : normalizedTerm,
+        matchedIndication: matchedInd ? matchedInd.term : primaryNormalized,
         category: matchedInd ? matchedInd.category : 'pharmacognosy',
         evidenceType: matchedInd ? matchedInd.evidenceType : 'traditional_use',
         evidenceSource: matchedInd ? matchedInd.source : (plant.safety?.source || 'Botanical Monograph'),
@@ -156,9 +200,11 @@ exports.recommendByCondition = async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      condition: originalTerm,
-      normalizedCondition: normalizedTerm,
+      condition: rawString,
+      normalizedCondition: primaryNormalized,
+      normalizedSymptoms: termsToSearch,
       count: recommendations.length,
+      disclaimer: 'This information is compiled from botanical literature and traditional pharmacognosy for educational and reference purposes only. It does not constitute medical diagnosis, advice, or treatment.',
       recommendations
     });
 

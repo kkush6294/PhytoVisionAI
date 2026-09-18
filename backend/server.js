@@ -13,6 +13,9 @@ const extractionRoutes = require('./routes/extraction');
 const safetyRoutes = require('./routes/safety');
 const recommendationRoutes = require('./routes/recommendation');
 const contextRoutes = require('./routes/context');
+const evidenceRoutes = require('./routes/evidence');
+const aiRoutes = require('./routes/ai');
+const comparisonRoutes = require('./routes/comparison');
 const app = express();
 
 app.use(helmet());
@@ -59,6 +62,9 @@ app.use('/api/extraction', extractionRoutes);
 app.use('/api/safety', safetyRoutes);
 app.use('/api/recommendations', recommendationRoutes);
 app.use('/api/context', contextRoutes);
+app.use('/api/evidence', evidenceRoutes);
+app.use('/api/ai', aiRoutes);
+app.use('/api/comparison', comparisonRoutes);
 app.use('/api', conditionRoutes);
 app.use('/api', predictRoutes);
 // Root routes

@@ -710,7 +710,10 @@ async function searchCompounds(scientificName) {
                     name:
                         compound.name ||
                         matchingCandidate?.requestedName ||
-                        'Unknown compound'
+                        'Unknown compound',
+
+                    relationshipType: 'reported_in_literature',
+                    verifiedSource: 'PubChem PUG-REST'
                 };
             });
 
@@ -738,8 +741,11 @@ async function searchCompounds(scientificName) {
 
             compounds: finalCompounds,
 
+            scientificDisclaimer:
+                'PubChem chemical records provide verified structure and molecular identifiers for compounds reported in botanical literature. Chemical records alone do not prove presence or concentration in physical leaf specimens.',
+
             message:
-                'Compounds were resolved from configured phytochemical candidates and verified against PubChem.'
+                'Reported phytochemical compounds associated with this plant in literature, verified against NCBI PubChem chemical records.'
         };
 
     } catch (error) {

@@ -17,6 +17,11 @@ router.get('/:idOrClass/extraction', extractionController.getExtraction);
 // GET /api/plants/:idOrClass/safety - get safety and dosage guidance for plant
 router.get('/:idOrClass/safety', safetyController.getSafety);
 
+const comparisonController = require('../controllers/comparisonController');
+
+// POST /api/plants/compare - side-by-side factual comparison of 2-4 plants
+router.post('/compare', comparisonController.comparePlants);
+
 // GET /api/plants/:idOrClass - get single plant by ID, modelClass, or scientific name
 router.get('/:idOrClass', plantController.getPlantByIdOrClass);
 
