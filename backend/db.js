@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-require('dotenv').config({ path: require('path').join(__dirname, '../../.env') });
+const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config({ path: path.join(__dirname, '../.env') });
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/phyto_vision_cache';
 

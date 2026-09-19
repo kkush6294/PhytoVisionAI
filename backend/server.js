@@ -1,6 +1,7 @@
+// Initialize centralized configuration and environment variables first
+const config = require('./config/config');
 const express = require('express');
 const cors = require('cors');
-const config = require('./config/config');
 const predictRoutes = require('./routes/predict');
 const db = require('./db');
 const helmet = require('helmet');
@@ -94,7 +95,11 @@ const server = app.listen(config.port, () => {
   console.log(`==================================================`);
   console.log(`PhytoVisionAI Backend listening on port ${config.port}`);
   console.log(`AI Inference URL target: ${config.aiServiceUrl}`);
+  console.log(`LLM Provider configured: ${config.llm.provider}`);
+  console.log(`LLM Model configured: ${config.llm.model}`);
+  console.log(`LLM API Key set: ${config.llm.isConfigured()}`);
   console.log(`==================================================`);
 });
+
 
 module.exports = server;

@@ -1,5 +1,5 @@
 const axios = require('axios');
-const url = require('url');
+const config = require('../../config/config');
 
 /**
  * LLM Provider Abstraction & Prompt-Injection Defense Service (PhytoVisionAI)
@@ -11,6 +11,7 @@ const url = require('url');
  * 4. Untrusted Data Isolation: System instructions clearly separated from retrieved text.
  * 5. Absolute No-Hallucination Policy: Missing evidence returns explicit unavailability.
  * 6. Non-blocking & Optional: Zero impact on core plant identification if LLM fails.
+ * 7. Credential Protection: API keys are masked from logs and client error payloads.
  */
 
 const BLOCKED_HOSTS = [
@@ -57,11 +58,25 @@ function sanitizeForPrompt(text) {
 }
 
 /**
+ * Masks sensitive API keys and authorization tokens from strings and objects.
+ */
+function maskSecrets(input, secretToMask) {
+  if (!input) return '';
+  let str = typeof input === 'string' ? input : JSON.stringify(input);
+  if (secretToMask && typeof secretToMask === 'string' && secretToMask.trim().length > 4) {
+    str = str.split(secretToMask.trim()).join('***REDACTED***');
+  }
+  str = str.replace(/([?&]key=)[^&\s"'\\]+/gi, '$1***REDACTED***');
+  str = str.replace(/(Authorization:\s*Bearer\s+)[^\s"'\\]+/gi, '$1***REDACTED***');
+  str = str.replace(/(x-goog-api-key:\s*)[^\s"'\\]+/gi, '$1***REDACTED***');
+  return str;
+}
+
+/**
  * Generates an evidence-grounded answer using configured LLM provider.
  */
 async function generateGroundedAnswer({ question, plantInfo, groundedContext, references = [] }) {
-  const apiKey = process.env.LLM_API_KEY;
-  if (!apiKey || apiKey.trim() === '' || apiKey.trim() === 'your_llm_api_key_here') {
+  if (!config.llm.isConfigured()) {
     return {
       available: false,
       answer: 'The AI explanation service is currently unconfigured (LLM API key not set). All verified botanical, chemical, and literature evidence remains fully accessible in the structured cards above.',
@@ -71,8 +86,9 @@ async function generateGroundedAnswer({ question, plantInfo, groundedContext, re
     };
   }
 
-  const provider = (process.env.LLM_PROVIDER || 'gemini').toLowerCase().trim();
-  const model = process.env.LLM_MODEL || (provider === 'openai' ? 'gpt-4o-mini' : 'gemini-1.5-flash');
+  const apiKey = config.llm.apiKey;
+  const provider = config.llm.provider;
+  const rawModel = config.llm.model;
 
   // Strict structural demarcation for Prompt Injection Protection
   const systemPrompt = `=== IMMUTABLE SYSTEM INSTRUCTIONS ===
@@ -102,47 +118,88 @@ Respond with a concise, grounded explanation citing the relevant [Ref X] referen
 
   try {
     if (provider === 'gemini') {
-      const endpoint = process.env.LLM_ENDPOINT || `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey.trim())}`;
-      if (process.env.LLM_ENDPOINT && !isEndpointSafe(endpoint)) {
+      const cleanModel = rawModel.replace(/^models\//i, '').trim();
+      const actualModel = cleanModel === 'gemini-1.5-flash' ? 'gemini-flash-latest' : cleanModel;
+      const endpoint = config.llm.endpoint || `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(actualModel)}:generateContent`;
+      if (config.llm.endpoint && !isEndpointSafe(endpoint)) {
         throw new Error('Configured LLM_ENDPOINT failed SSRF security validation.');
       }
 
-      const response = await axios.post(
-        endpoint,
-        {
-          contents: [
-            {
-              role: 'user',
-              parts: [{ text: `${systemPrompt}\n\n${userPrompt}` }]
-            }
-          ],
-          generationConfig: {
-            temperature: 0.1, // Low temperature to eliminate hallucination
-            maxOutputTokens: 600
+      const geminiPayload = {
+        contents: [
+          {
+            role: 'user',
+            parts: [{ text: `${systemPrompt}\n\n${userPrompt}` }]
           }
+        ],
+        generationConfig: {
+          temperature: 0.1, // Low temperature to eliminate hallucination
+          maxOutputTokens: 600
         },
-        {
-          timeout: 15000,
-          maxRedirects: 0,
-          headers: { 'Content-Type': 'application/json' }
-        }
-      );
+        safetySettings: [
+          { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_ONLY_HIGH' },
+          { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_ONLY_HIGH' },
+          { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_ONLY_HIGH' },
+          { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_ONLY_HIGH' }
+        ]
+      };
 
-      const candidate = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      const geminiOptions = {
+        timeout: 15000,
+        maxRedirects: 0,
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': apiKey.trim()
+        }
+      };
+
+      let response;
+      try {
+        response = await axios.post(endpoint, geminiPayload, geminiOptions);
+      } catch (geminiErr) {
+        if (geminiErr.response?.status === 503) {
+          await new Promise(r => setTimeout(r, 1200));
+          response = await axios.post(endpoint, geminiPayload, geminiOptions);
+        } else {
+          throw geminiErr;
+        }
+      }
+
+
+      const candidate = response.data?.candidates?.[0];
       if (!candidate) {
+        throw new Error('No candidate response returned from Gemini API.');
+      }
+
+      if (candidate.finishReason === 'SAFETY') {
+        return {
+          available: true,
+          answer: 'The requested botanical safety explanation was restricted by safety filters. Verified toxicology and safety details remain accessible in the evidence cards above.',
+          citations: references,
+          grounded: true,
+          model: cleanModel
+        };
+      }
+
+      const parts = candidate.content?.parts;
+      const answerText = Array.isArray(parts)
+        ? parts.map(p => p.text || '').join('').trim()
+        : (parts?.[0]?.text || '').trim();
+
+      if (!answerText) {
         throw new Error('Empty response payload from Gemini API.');
       }
 
       return {
         available: true,
-        answer: candidate.trim(),
+        answer: answerText,
         citations: references,
         grounded: true,
-        model
+        model: cleanModel
       };
 
     } else if (provider === 'openai') {
-      const endpoint = process.env.LLM_ENDPOINT || 'https://api.openai.com/v1/chat/completions';
+      const endpoint = config.llm.endpoint || 'https://api.openai.com/v1/chat/completions';
       if (!isEndpointSafe(endpoint)) {
         throw new Error('Configured LLM_ENDPOINT failed SSRF security validation.');
       }
@@ -150,7 +207,7 @@ Respond with a concise, grounded explanation citing the relevant [Ref X] referen
       const response = await axios.post(
         endpoint,
         {
-          model,
+          model: rawModel || 'gpt-4o-mini',
           messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
@@ -169,7 +226,7 @@ Respond with a concise, grounded explanation citing the relevant [Ref X] referen
       );
 
       const candidate = response.data?.choices?.[0]?.message?.content;
-      if (!candidate) {
+      if (!candidate || candidate.trim().length === 0) {
         throw new Error('Empty response payload from OpenAI API.');
       }
 
@@ -178,12 +235,12 @@ Respond with a concise, grounded explanation citing the relevant [Ref X] referen
         answer: candidate.trim(),
         citations: references,
         grounded: true,
-        model
+        model: rawModel || 'gpt-4o-mini'
       };
 
     } else {
       // Generic HTTPS completion provider
-      const endpoint = process.env.LLM_ENDPOINT;
+      const endpoint = config.llm.endpoint;
       if (!endpoint || !isEndpointSafe(endpoint)) {
         throw new Error('Valid, safe HTTPS LLM_ENDPOINT required for custom LLM provider.');
       }
@@ -203,17 +260,44 @@ Respond with a concise, grounded explanation citing the relevant [Ref X] referen
         answer: response.data?.text || response.data?.answer || 'Response generated.',
         citations: references,
         grounded: true,
-        model
+        model: rawModel
       };
     }
   } catch (err) {
-    console.error('[LLM Service Error]', err.message);
+    const status = err.response?.status;
+    const errDataStr = JSON.stringify(err.response?.data || {});
+    const sanitizedErrorMsg = maskSecrets(err.message, apiKey);
+    console.error(`[LLM Service Error] Status ${status || 'N/A'}: ${sanitizedErrorMsg}`);
+
+    let userFriendlyAnswer = 'The AI explanation service is temporarily unavailable. All source-supported evidence records remain visible in the cards above.';
+    let errorCode = 'PROVIDER_ERROR';
+
+    const isApiKeyInvalid = status === 401 || status === 403 ||
+      (status === 400 && (errDataStr.includes('API_KEY_INVALID') || errDataStr.includes('API key not valid')));
+    const isQuotaExceeded = status === 429 || errDataStr.includes('RESOURCE_EXHAUSTED');
+    const isTimeout = err.code === 'ECONNABORTED' || err.message?.includes('timeout');
+
+    if (isApiKeyInvalid) {
+      userFriendlyAnswer = 'The configured LLM API key is invalid or unauthorized. Botanical and chemical evidence remains fully accessible in the cards above.';
+      errorCode = 'INVALID_API_KEY';
+    } else if (isQuotaExceeded) {
+      userFriendlyAnswer = 'The LLM service rate limit or quota has been exceeded. Please try again shortly. Structured evidence remains accessible above.';
+      errorCode = 'QUOTA_EXCEEDED';
+    } else if (isTimeout) {
+      userFriendlyAnswer = 'The AI explanation request timed out. Structured botanical cards remain fully accessible.';
+      errorCode = 'TIMEOUT';
+    } else {
+      userFriendlyAnswer = 'The upstream AI explanation provider encountered an error. All source-supported evidence records remain visible in the cards above.';
+      errorCode = 'PROVIDER_ERROR';
+    }
+
     return {
       available: false,
-      answer: 'The AI explanation service is temporarily unavailable. All source-supported evidence records remain visible in the cards above.',
+      answer: userFriendlyAnswer,
       citations: references,
       grounded: true,
-      error: err.message
+      error: errorCode,
+      details: sanitizedErrorMsg
     };
   }
 }
@@ -221,5 +305,6 @@ Respond with a concise, grounded explanation citing the relevant [Ref X] referen
 module.exports = {
   generateGroundedAnswer,
   isEndpointSafe,
-  sanitizeForPrompt
+  sanitizeForPrompt,
+  maskSecrets
 };

@@ -1803,6 +1803,22 @@
   color: #991b1b;
 }
 
+.ask-ai-unconfigured {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+}
+
+.ask-ai-model-tag {
+  font-size: 11px;
+  background: #e2e8f0;
+  color: #475569;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-left: 8px;
+  font-family: monospace;
+}
+
 .ask-ai-response-card {
   margin-top: 18px;
   background: #f8fafc;

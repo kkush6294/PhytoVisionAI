@@ -110,12 +110,29 @@ export default function AskAIWidget({ plantId, modelClass, localName, scientific
         </div>
       )}
 
-      {response && (
+      {response && !response.available && (
+        <div className="ask-ai-notice ask-ai-unconfigured">
+          <div style={{ fontWeight: 600, marginBottom: "6px" }}>
+            ℹ️ AI Explanation Service Status
+          </div>
+          <p style={{ margin: 0, lineHeight: 1.5 }}>{response.answer}</p>
+          <p style={{ margin: "8px 0 0 0", fontSize: "12px", color: "#64748b" }}>
+            Configure <code>LLM_API_KEY</code> and <code>LLM_PROVIDER</code> (Gemini or OpenAI) in your <code>.env</code> file to activate interactive generative explanations.
+          </p>
+        </div>
+      )}
+
+      {response && response.available && (
         <div className="ask-ai-response-card">
           <div className="ask-ai-answer-header">
-            <span className="ask-ai-grounded-tag">
-              {response.grounded ? "✓ Strictly Evidence-Grounded" : "Observation"}
-            </span>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <span className="ask-ai-grounded-tag">
+                {response.grounded ? "✓ Strictly Evidence-Grounded" : "Observation"}
+              </span>
+              {response.model && (
+                <span className="ask-ai-model-tag">{response.model}</span>
+              )}
+            </div>
             {response.citations && response.citations.length > 0 && (
               <button
                 type="button"
